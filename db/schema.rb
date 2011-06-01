@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(:version => 20110601133856) do
     t.integer  "empresa_id"
   end
 
+  create_table "clients", :force => true do |t|
+    t.string   "name"
+    t.string   "app_id"
+    t.string   "app_secret"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "clients_companies", :id => false, :force => true do |t|
     t.integer "client_id"
     t.integer "company_id"
