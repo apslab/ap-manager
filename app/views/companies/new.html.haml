@@ -1,0 +1,9 @@
+- content_for(:title) do
+  = t('scaffold.actions.new', :item => Company.model_name.human).titlecase
+
+- content_for(:controls) do
+  = controls do |control|
+    - control.item t('scaffold.actions.back').titlecase, companies_path, :icon => 'application_view_list'
+
+= render 'form'
+

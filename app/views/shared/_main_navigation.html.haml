@@ -1,0 +1,5 @@
+= navigation(:id => "main-navigation") do |menu|
+  - menu.item(Entry.model_name.human.pluralize, entries_path, :active => controller.controller_name.include?('entries'))
+  - menu.item(Exercise.model_name.human.pluralize, exercises_path, :active => controller.controller_name.include?('exercises'))
+  - menu.item('Cuentas', accounts_path, :active => controller.controller_name.include?('accounts'))
+

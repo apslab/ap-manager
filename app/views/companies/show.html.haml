@@ -1,0 +1,25 @@
+- content_for(:title) do
+  = @company.name.titlecase
+
+- content_for(:breadcrumbs) do
+  = breadcrumbs do |breadcrumb|
+    - breadcrumb.item 'Administración de Companías', companies_path
+    - breadcrumb.item 'Companía', company_path(@company)
+    - breadcrumb.item "#{@company.name.titlecase}", company_path(@company), :active => true
+
+- content_for(:controls) do
+  = controls do |control|
+    - control.item t('scaffold.actions.edit').titlecase, edit_company_path(@company), :icon => 'application_edit'
+    - control.item t('scaffold.actions.back').titlecase, companies_path, :icon => 'application_view_list'
+
+-# content_for(:sidebar) do
+  .block
+    %ul.navigation
+      %li= link_to(icon('report', :small, :style => 'vertical-align: middle;margin-right:5px;') + 'Ejercicios', company_exercises_path(@company))
+
+= semantic_attributes_for(@company) do |s|
+  = s.attributes do
+    = s.attribute :name
+
+.clear
+
