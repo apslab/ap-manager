@@ -46,7 +46,7 @@ class User < ActiveRecord::Base
   has_one :current_company, 
      :class_name => 'Company', 
      :through => :memberships, 
-     :conditions => {:current => true},
+     :conditions => ["memberships.current = ?" , true],
      :source => :company
 
   def admin?
