@@ -29,8 +29,8 @@ gem 'nested_set'
 gem 'kaminari'
 
 # engines
-gem 'odiseo', :path => '../'
-gem 'ares', :path => '../'
+gem 'odiseo', :path => '../' #:git => 'git://github.com/apslab/odiseo-engine.git' 
+gem 'ares', :path => '../' #:git => 'git://github.com/apslab/ares-engine.git' 
 
 group :development, :test do
   # database to development
