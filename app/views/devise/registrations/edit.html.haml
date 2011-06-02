@@ -1,0 +1,31 @@
+- content_for(:title) do
+  Editar
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form login' }) do |f|
+  .group.navform.wat-cf
+    = devise_error_messages!
+  .group.wat-cf
+    .left= f.label :email
+    .right= f.email_field :email
+  .group.wat-cf
+    .left
+      = f.label :password
+      %i (leave blank if you don't want to change it)
+    .right= f.password_field :password
+ .group.wat-cf
+    .left= f.label :password_confirmation
+    .right= f.password_field :password_confirmation
+  .group.wat-cf
+    .left
+      = f.label :current_password
+      %i (we need your current password to confirm your changes)
+    .right= f.password_field :current_password
+  .group.navform.wat-cf{:style => 'margin-top:5px;'}
+    .right
+      %button.button{type: "submit"}
+        = icon('edit', :alt => 'Editar')
+        Editar
+      = link_to "Back", :back
+  .group.navform.wat-cf{:style => 'margin-top:15px;padding-top:15px;padding-bottom:15px;border-top:1px dotted black;'}
+    %h3 Cancel my account
+    %p
+      Unhappy? #{link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete}

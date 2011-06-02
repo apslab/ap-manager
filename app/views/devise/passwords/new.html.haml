@@ -1,0 +1,15 @@
+- content_for(:title) do
+  Recupero de Clave
+
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => 'form login' }) do |f|
+  .group.navform.wat-cf
+    = devise_error_messages!
+  .group.wat-cf
+    .left= f.label :email
+    .right= f.email_field :email
+  .group.navform.wat-cf{:style => 'margin-top:5px;'}
+    .right
+      %button.button{type: "submit"}
+        = icon('email', :alt => 'Enviar las instrucciones de recupero de clave')
+        Enviar las instrucciones de recupero de clave
+  = render :partial => "devise/shared/links"

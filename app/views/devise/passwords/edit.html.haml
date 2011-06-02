@@ -1,0 +1,19 @@
+- content_for(:title) do
+  Cambio de Clave
+
+= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put, :class => 'form login' }) do |f|
+  .group.navform.wat-cf
+    = devise_error_messages!
+    = f.hidden_field :reset_password_token
+  .group.wat-cf
+    .left= f.label :password, "New password"
+    .right= f.password_field :password
+  .group.wat-cf
+    .left= f.label :password_confirmation, "Confirm new password"
+    .right= f.password_field :password_confirmation
+  .group.navform.wat-cf{:style => 'margin-top:5px;'}
+    .right
+      %button.button{type: "submit"}
+        = icon('email', :alt => 'Cambiar Clave')
+        Cambiar Clave
+  = render :partial => "devise/shared/links"

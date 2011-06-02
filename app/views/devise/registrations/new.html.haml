@@ -1,0 +1,26 @@
+- content_for(:title) do
+  Registrarse
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :class => 'form login') do |f|
+  .group.navform.wat-cf
+    = devise_error_messages!
+  .group.wat-cf
+    .left= f.label :first_name
+    .right= f.email_field :first_name
+  .group.wat-cf
+    .left= f.label :last_name
+    .right= f.email_field :last_name
+  .group.wat-cf
+    .left= f.label :email
+    .right= f.email_field :email
+  .group.wat-cf
+    .left= f.label :password
+    .right= f.password_field :password
+  .group.wat-cf
+    .left= f.label :password_confirmation
+    .right= f.password_field :password_confirmation
+  .group.navform.wat-cf{:style => 'margin-top:5px;'}
+    .right
+      %button.button{type: "submit"}
+        = icon('add', :alt => 'Registrarse')
+        Registrarse
+  = render :partial => "devise/shared/links"

@@ -1,0 +1,15 @@
+- content_for(:title) do
+  Instrucciones de Confirmación
+
+= form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post, :class => 'form login' }) do |f|
+  .group.navform.wat-cf
+    = devise_error_messages!
+  .group.wat-cf
+    .left= f.label :email
+    .right= f.email_field :email
+  .group.navform.wat-cf{:style => 'margin-top:5px;'}
+    .right
+      %button.button{type: "submit"}
+        = icon('email', :alt => 'Enviar las instrucciones de confirmación')
+        Enviar las instrucciones de confirmación
+  = render :partial => "devise/shared/links"

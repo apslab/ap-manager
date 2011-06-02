@@ -1,0 +1,21 @@
+- content_for(:title) do
+  Ingresar
+
+= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => 'form login') do |f|
+  .group.wat-cf
+    .left
+      %label.label.right Email
+    .right
+      = f.email_field :email, :class => :text_field
+  .group.wat-cf
+    .left
+      %label.label.right Clave
+    .right
+      = f.password_field :password, :class => :text_field
+  .group.navform.wat-cf{:style => 'margin-top:5px;'}
+    .right
+      %button.button{type: "submit"}
+        = icon('key', :alt => 'Ingresar')
+        Ingresar
+  = render :partial => "devise/shared/links"
+
