@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110601133856) do
+ActiveRecord::Schema.define(:version => 20110602170001) do
 
   create_table "accounts", :force => true do |t|
     t.string  "name"
@@ -61,7 +61,6 @@ ActiveRecord::Schema.define(:version => 20110601133856) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "exercises_count", :default => 0
-    t.boolean  "current",         :default => false
     t.integer  "accounts_count",  :default => 0
   end
 
