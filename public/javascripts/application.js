@@ -19,6 +19,15 @@ $(document).ready(function()
   $('select[title]').each( function() {
       $(this).tipsy();
   });
+
+  $('.flash').ajaxStart(function() {
+    $(this).append("<p class=\"message warning ajax\"><img style=\"vertical-align:middle;margin-right:5px;\" src=\"/images/spinner.gif\"><strong>Cargando ...</strong></p>");
+  });
+
+  $(".flash").ajaxStop(function(){
+    $(".flash > .ajax").hide();
+  });
+
 });
 
 // Scroll effect for anchors
@@ -32,4 +41,3 @@ jQuery(function( $ )
      }
   });
 });
-
