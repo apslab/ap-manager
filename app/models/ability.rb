@@ -32,14 +32,14 @@ class Ability
       can :manage, Company, :id => user.current_or_first_company.id
       can :manage, Exercise, :company_id => user.current_or_first_company.id
       can :manage, Account, :company_id => user.current_or_first_company.id
-      can :manage, Entry, :exercise => {:company_id => user.current_or_first_company.id}
+      can :manage, Entry#, :exercise => {:company_id => user.current_or_first_company.id}
     end
 
     if user.can_operated_engine?(:odiseo)
       can :read, Company, :id => user.current_or_first_company.id
       can :read, Exercise, :company_id => user.current_or_first_company.id
       can :read, Account, :company_id => user.current_or_first_company.id
-      can :read, Entry, :exercise => {:company_id => user.current_or_first_company.id}
+      can :read, Entry#, :exercise => {:company_id => user.current_or_first_company.id}
     end
 
     # Ares

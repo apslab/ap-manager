@@ -1,5 +1,5 @@
 # ESTA EN DESUSO!!!
-class CompaniesController < ApplicationController
+class CompaniesController < AuthorizedController
 
 
   before_filter :find_company, :except => [:index, :new, :create]

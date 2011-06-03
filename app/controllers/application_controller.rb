@@ -9,10 +9,6 @@ class ApplicationController < ActionController::Base
   # devise close for all!
   before_filter :authenticate_user!
 
-  # cancan authorization
-  check_authorization :unless => :skip_check_authorization?
-  load_and_authorize_resource :unless => :skip_check_authorization?
-
   before_filter :check_change_company
 
   rescue_from CanCan::AccessDenied do |exception|
@@ -25,14 +21,8 @@ class ApplicationController < ActionController::Base
   def check_change_company
     return if params[:cc].blank?
     current_user.change_current_company_for(params[:cc])
-    @current_ability = nil
-    @current_user = nil
-
+    @current_user = @current_ability = nil
     redirect_to :back
-  end
-
-  def skip_check_authorization?
-    devise_controller?
   end
 
   def current_company
