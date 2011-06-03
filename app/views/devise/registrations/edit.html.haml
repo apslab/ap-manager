@@ -9,16 +9,17 @@
   .group.wat-cf
     .left
       = f.label :password
-      %i (leave blank if you don't want to change it)
-    .right= f.password_field :password
+    .right
+      = f.password_field :password
+      %span.description leave blank if you don't want to change it
  .group.wat-cf
     .left= f.label :password_confirmation
     .right= f.password_field :password_confirmation
   .group.wat-cf
-    .left
-      = f.label :current_password
-      %i (we need your current password to confirm your changes)
-    .right= f.password_field :current_password
+    .left= f.label :current_password
+    .right
+      = f.password_field :current_password
+      %span.description we need your current password to confirm your changes
   .group.navform.wat-cf{:style => 'margin-top:5px;'}
     .right
       %button.button{type: "submit"}

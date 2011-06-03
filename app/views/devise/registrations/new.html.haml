@@ -5,16 +5,21 @@
     = devise_error_messages!
   .group.wat-cf
     .left= f.label :first_name
-    .right= f.email_field :first_name
+    .right
+      = f.email_field :first_name
   .group.wat-cf
     .left= f.label :last_name
-    .right= f.email_field :last_name
+    .right
+      = f.email_field :last_name
   .group.wat-cf
     .left= f.label :email
-    .right= f.email_field :email
+    .right
+      = f.email_field :email
   .group.wat-cf
     .left= f.label :password
-    .right= f.password_field :password
+    .right
+      = f.password_field :password
+      %span.description mínimo debe contenter 6 caracteres
   .group.wat-cf
     .left= f.label :password_confirmation
     .right= f.password_field :password_confirmation
