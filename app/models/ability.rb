@@ -24,17 +24,33 @@ class Ability
     #   can :update, Article, :published => true
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
-    user ||= User.new # guest user (not logged in)
-    if user.admin?
-      can :manage, :all
-    else
-      can :manage, Company, :user_id => user.id
-      #cannot :create, Company if user.companies.any?
+    user ||= User.new # guest user (not logged in) 
 
-      can :manage, Exercise, :company_id => user.company_ids
+    # rulez engines
+    # Odiseo
+    if user.can_managed_engine?(:odiseo)
+      can :manage, Company, :id => user.current_or_first_company.id
+      can :manage, Exercise, :company_id => user.current_or_first_company.id
+      can :manage, Account, :company_id => user.current_or_first_company.id
+      can :manage, Entry, :exercise => {:company_id => user.current_or_first_company.id}
+    end
 
-      can :manage, Account, :company_id => user.company_ids
-      can :manage, Entry, :exercise_id => user.exercise_ids
+    if user.can_operated_engine?(:odiseo)
+      can :read, Company, :id => user.current_or_first_company.id
+      can :read, Exercise, :company_id => user.current_or_first_company.id
+      can :read, Account, :company_id => user.current_or_first_company.id
+      can :read, Entry, :exercise => {:company_id => user.current_or_first_company.id}
+    end
+
+    # Ares
+    if user.can_managed_engine?(:ares)
+      can :manage, Cliente#, :id => user.current_or_first_company.id
+      can :manage, Tasaiva#, :id => user.current_or_first_company.id
+      can :manage, Condicioniva#, :id => user.current_or_first_company.id
+    end
+
+    if user.can_operated_engine?(:ares)
+      can :read, Cliente#, :id => user.current_or_first_company.id
     end
   end
 end

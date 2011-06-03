@@ -18,13 +18,15 @@ class Company < ActiveRecord::Base
   has_many :exercises, :dependent => :destroy
   has_many :accounts
 
+  serialize :engines
+
   validates_presence_of :name
 
-  before_destroy :any_exercises?
+  before_destroy :can_be_destroyed?
 
   private
   
-  def any_exercises?
+  def can_be_destroyed?
     raise Apslabs::Exceptions::HasExercises if exercises.any?
   end
 

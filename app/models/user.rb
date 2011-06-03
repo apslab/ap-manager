@@ -52,4 +52,26 @@ class User < ActiveRecord::Base
   def admin?
     current_company.memberships.map(&:role).map(&:name).include?('administrator')
   end
+
+  def current_or_first_company
+    current_company || companies.first
+  end
+
+  def can_managed_engine?(engine)
+    current_or_first_company.engines.include?(engine) &&
+    memberships.exists?(:role_id => Role.administrator.id)
+  end
+
+  def can_operated_engine?(engine)
+    current_or_first_company.engines.include?(engine) &&
+    memberships.exists?(:role_id => [Role.administrator.id, Role.operator.id])
+  end
+
+  def change_current_company_for(company)
+    Membership.transaction do
+      memberships.find_by_current(true).toggle!(:current)
+      memberships.find_by_company_id(company).toggle!(:current)
+      reload
+    end
+  end
 end
