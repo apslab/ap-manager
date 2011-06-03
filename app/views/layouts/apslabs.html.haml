@@ -10,9 +10,7 @@
     %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible" }/
     -# Mobile viewport optimized: j.mp/bplateviewport
     %meta{:content => "width=device-width; initial-scale=1.0", :name => "viewport" }/
-    %title
-      Odiseo ::
-      = yield(:title) if content_for?(:title)
+    %title= ['AP Manager', yield(:title)].compact.join(' :: ')
     = stylesheet_link_tag 'jquery.tipsy', :media => 'screen'
     = stylesheet_link_tag 'apslabs', :media => 'screen'
     /[if IE]
@@ -35,7 +33,7 @@
           = content_for?(:status_menu) ? yield(:status_menu) : render('shared/status_menu')
           = content_for?(:user_navigation) ? yield(:user_navigation) : render('shared/user_navigation')
         %h1{:style => 'margin-left:100px;height:70px;'}
-          Odiseo
+          AP Manager
           = render('shared/change_current_company')
         = content_for?(:main_navigation) ? yield(:main_navigation) : render('shared/main_navigation')
       #wrapper.wat-cf
