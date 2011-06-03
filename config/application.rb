@@ -62,5 +62,8 @@ module ApSys
     config.after_initialize do
       Formtastic::SemanticFormBuilder.send(:include, Apslabs::Formtastic::DatePicker)
     end
+
+    # list of availables engines for AP Manager
+    config.engines = %w(odiseo ares).map(&:to_sym)
   end
 end

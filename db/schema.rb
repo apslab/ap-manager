@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110602170001) do
+ActiveRecord::Schema.define(:version => 20110602202950) do
 
   create_table "accounts", :force => true do |t|
     t.string  "name"
@@ -41,27 +41,13 @@ ActiveRecord::Schema.define(:version => 20110602170001) do
     t.integer  "empresa_id"
   end
 
-  create_table "clients", :force => true do |t|
-    t.string   "name"
-    t.string   "app_id"
-    t.string   "app_secret"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "clients_companies", :id => false, :force => true do |t|
-    t.integer "client_id"
-    t.integer "company_id"
-  end
-
-  add_index "clients_companies", ["client_id", "company_id"], :name => "index_clients_companies_on_client_id_and_company_id", :unique => true
-
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "exercises_count", :default => 0
     t.integer  "accounts_count",  :default => 0
+    t.string   "engines"
   end
 
   create_table "comprobantes", :force => true do |t|
