@@ -4,7 +4,7 @@ namespace :db do
     task :populate_accounts => :environment do
       file = ENV["FILE"] || Rails.root.join('doc/MAECO.csv')
       company_id = ENV["COMPANY_ID"] || Company.first.id
-      sh "rails runner script/migrate_accounts_for_company.rb #{company_id} #{file}"
+      sh "bundle exec rails runner script/migrate_accounts_for_company.rb #{company_id} #{file}"
     end
   end
 end
