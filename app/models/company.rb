@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110601133856
+# Schema version: 20110606190406
 #
 # Table name: companies
 #
@@ -8,15 +8,19 @@
 #  created_at      :datetime
 #  updated_at      :datetime
 #  exercises_count :integer         default(0)
-#  current         :boolean         default(FALSE)
 #  accounts_count  :integer         default(0)
+#  engines         :string(255)
 #
 
 class Company < ActiveRecord::Base
   has_many :memberships
   has_many :users, :through => :memberships
+
+# TODO : esto esta muy acoplado - me da feo olor.
   has_many :exercises, :dependent => :destroy
   has_many :accounts
+  has_many :clientes
+
 
   serialize :engines
 
