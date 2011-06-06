@@ -14,7 +14,7 @@
       = f.password_field :password, :class => :text_field
   .group.navform.wat-cf{:style => 'margin-top:5px;'}
     .right
-      %button.button{type: "submit"}
+      %button.button{type => "submit"}
         = icon('key', :alt => 'Ingresar')
         Ingresar
   = render :partial => "devise/shared/links"

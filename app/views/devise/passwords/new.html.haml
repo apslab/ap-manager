@@ -9,7 +9,7 @@
     .right= f.email_field :email
   .group.navform.wat-cf{:style => 'margin-top:5px;'}
     .right
-      %button.button{type: "submit"}
+      %button.button{type => "submit"}
         = icon('email', :alt => 'Enviar las instrucciones de recupero de clave')
         Enviar las instrucciones de recupero de clave
   = render :partial => "devise/shared/links"

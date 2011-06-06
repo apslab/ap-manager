@@ -9,7 +9,7 @@
     .right= f.email_field :email
   .group.navform.wat-cf{:style => 'margin-top:5px;'}
     .right
-      %button.button{type: "submit"}
+      %button.button{type => "submit"}
         = icon('email', :alt => 'Enviar las instrucciones de confirmación')
         Enviar las instrucciones de confirmación
   = render :partial => "devise/shared/links"
