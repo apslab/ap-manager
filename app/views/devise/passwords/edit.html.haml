@@ -13,7 +13,7 @@
     .right= f.password_field :password_confirmation
   .group.navform.wat-cf{:style => 'margin-top:5px;'}
     .right
-      %button.button{type => "submit"}
+      %button.button{:type => "submit"}
         = icon('email', :alt => 'Cambiar Clave')
         Cambiar Clave
   = render :partial => "devise/shared/links"
