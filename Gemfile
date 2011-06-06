@@ -31,9 +31,12 @@ gem 'cancan'
 gem 'nested_set'
 gem 'kaminari'
 
-# engines
-gem 'odiseo', '0.1.0', :git => 'git://github.com/apslab/odiseo-engine.git' 
-gem 'ares', '0.1.0', :git => 'git://github.com/apslab/ares-engine.git' 
+# engines desde git
+#gem 'odiseo', '0.1.0', :git => 'git://github.com/apslab/odiseo-engine.git' 
+#gem 'ares', '0.1.0', :git => 'git://github.com/apslab/ares-engine.git' 
+# engines locales
+gem 'odiseo', :path => '../'
+gem 'ares', :path => '../'
 
 group :development, :test do
   # database to development

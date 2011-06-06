@@ -1,13 +1,7 @@
-GIT
-  remote: git://github.com/apslab/ares-engine.git
-  revision: ec45882459e53f77aadbc7088d76e880522a1681
+PATH
+  remote: ../
   specs:
     ares (0.1.0)
-
-GIT
-  remote: git://github.com/apslab/odiseo-engine.git
-  revision: e22f2ea8a44cbd07dec769a8e83a7a64cd6d31b7
-  specs:
     odiseo (0.1.0)
 
 GEM
@@ -157,7 +151,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  ares (= 0.1.0)!
+  ares!
   attrtastic
   cancan
   cocoon
@@ -172,7 +166,7 @@ DEPENDENCIES
   kaminari
   meta_search
   nested_set
-  odiseo (= 0.1.0)!
+  odiseo!
   prawn
   rails (= 3.0.8.rc1)
   rake (= 0.8.7)
