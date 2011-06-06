@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/apslab/ares-engine.git
-  revision: ec45882459e53f77aadbc7088d76e880522a1681
+  revision: c150ed0934e930840a6c97a1cb2a410bff62d4e6
   specs:
     ares (0.1.0)
 
@@ -157,7 +157,7 @@ PLATFORMS
 
 DEPENDENCIES
   annotate
-  ares (= 0.1.0)!
+  ares!
   attrtastic
   cancan
   cocoon
@@ -172,7 +172,7 @@ DEPENDENCIES
   kaminari
   meta_search
   nested_set
-  odiseo (= 0.1.0)!
+  odiseo!
   prawn
   rails (= 3.0.8.rc1)
   rake (= 0.8.7)
