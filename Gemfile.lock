@@ -6,9 +6,9 @@ GIT
 
 GIT
   remote: git://github.com/apslab/odiseo-engine.git
-  revision: e22f2ea8a44cbd07dec769a8e83a7a64cd6d31b7
+  revision: 42a8932f7c8245e7f7b07050ebb33f10cf52693a
   specs:
-    odiseo (0.1.0)
+    odiseo (0.2.0)
 
 GEM
   remote: http://rubygems.org/
