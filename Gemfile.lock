@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/apslab/ares-engine.git
-  revision: c150ed0934e930840a6c97a1cb2a410bff62d4e6
+  revision: 21b5da96cc037d6c2286323850e8d53eb2466da8
   specs:
     ares (0.1.0)
 
