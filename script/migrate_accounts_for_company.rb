@@ -8,7 +8,8 @@ require 'csv'
 company_id = ARGV.first
 file_to_migrate = ARGV.last
 
-CSV.foreach(file_to_migrate,:col_sep => ';') do |row|
+#CSV.foreach(file_to_migrate,:col_sep => ';') do |row|
+CSV.foreach(file_to_migrate) do |row|
 	code, name, parent_code = row
 	unless parent_code.blank? || parent_code.to_i.zero?
 	  parent_account = Account.scoped_by_company_id(company_id).find_by_code(parent_code)
