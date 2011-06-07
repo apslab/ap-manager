@@ -1,4 +1,6 @@
 ApSys::Application.routes.draw do
+  resources :refenciacontables
+
   resource :dashboard, :only => :show
 
   devise_for :users do
