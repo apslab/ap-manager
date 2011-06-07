@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 20110606190406
+# Schema version: 20110601133856
 #
 # Table name: users
 #
@@ -25,10 +25,10 @@
 #
 # Indexes
 #
+#  index_users_on_authentication_token  (authentication_token) UNIQUE
+#  index_users_on_confirmation_token    (confirmation_token) UNIQUE
 #  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #  index_users_on_email                 (email) UNIQUE
-#  index_users_on_confirmation_token    (confirmation_token) UNIQUE
-#  index_users_on_authentication_token  (authentication_token) UNIQUE
 #
 
 require 'spec_helper'
