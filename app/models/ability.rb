@@ -50,7 +50,6 @@ class Ability
       can :manage, Factura#, :id => user.current_or_first_company.id
       can :manage, Notacredito#, :id => user.current_or_first_company.id
       can :manage, Recibo#, :id => user.current_or_first_company.id
-
     end
 
     if user.can_operated_engine?(:ares)

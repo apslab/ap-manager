@@ -1,13 +1,7 @@
-GIT
-  remote: git://github.com/apslab/ares-engine.git
-  revision: c150ed0934e930840a6c97a1cb2a410bff62d4e6
+PATH
+  remote: ../
   specs:
     ares (0.1.0)
-
-GIT
-  remote: git://github.com/apslab/odiseo-engine.git
-  revision: e22f2ea8a44cbd07dec769a8e83a7a64cd6d31b7
-  specs:
     odiseo (0.1.0)
 
 GEM
