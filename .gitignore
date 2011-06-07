@@ -1,4 +1,5 @@
-Gemfile*
+Gemfile
+Gemfile.lock
 .bundle
 db/*.sqlite3
 log/*.log
