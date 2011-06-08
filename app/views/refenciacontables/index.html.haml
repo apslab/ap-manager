@@ -1,25 +1,29 @@
 - content_for(:title) do
   %h1= t('scaffold.actions.list', :item => Refenciacontable.model_name.human).titlecase
 
-%table
-  %tr
-    %th= Refenciacontable.human_attribute_name('company_id')
-    %th= Refenciacontable.human_attribute_name('account_id')
-    %th= Refenciacontable.human_attribute_name('referencename')
-    %th
-    %th
-    %th
+- content_for(:breadcrumbs) do
+  = breadcrumbs do |breadcrumb|
+    - breadcrumb.item 'Administración de Referencias contables', root_path
+    - breadcrumb.item 'Listado', refenciacontables_path, :active => true
 
-  - @refenciacontables.each do |refenciacontable|
+- if can?(:create, Refenciacontable)
+  - content_for(:controls) do
+    = controls do |control|
+      - control.item t('scaffold.actions.new', :item => Refenciacontable.model_name.human).titlecase, new_refenciacontable_path, :icon => 'add'
+
+- if @refenciacontables.any?
+  %table
     %tr
-      %td= refenciacontable.company_id
-      %td= refenciacontable.account_id
-      %td= refenciacontable.referencename
-      %td= link_to t('scaffold.actions.show').titlecase, refenciacontable
-      %td= link_to t('scaffold.actions.edit').titlecase, edit_refenciacontable_path(refenciacontable)
-      %td= link_to t('scaffold.actions.destroy').titlecase, refenciacontable, :confirm => t('scaffold.actions.destroy_confirm'), :method => :delete
+      %th= Refenciacontable.human_attribute_name('account_name')
+      %th= Refenciacontable.human_attribute_name('referencename')
+      %th
+      %th
+      %th
 
-%br
-
-= link_to t('scaffold.actions.new', :item => Refenciacontable.model_name.human).titlecase, new_refenciacontable_path
-
+    - @refenciacontables.each do |refenciacontable|
+      %tr
+        %td= refenciacontable.account.name
+        %td= refenciacontable.referencename
+        %td= link_to icon('application_get', :small, :title => t('scaffold.actions.show').titlecase), refenciacontable
+        %td= link_to icon('application_edit', :small, :title => t('scaffold.actions.edit').titlecase), edit_refenciacontable_path(refenciacontable)
+        %td= link_to icon('application_delete', :small, :title => t('scaffold.actions.destroy').titlecase), refenciacontable, :confirm => t('scaffold.actions.destroy_confirm'), :method => :delete

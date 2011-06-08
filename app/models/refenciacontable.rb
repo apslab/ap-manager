@@ -8,4 +8,6 @@ class Refenciacontable < ActiveRecord::Base
   
   validates_associated :company
   validates_associated :account
+  
+  scope :by_company, lambda {|company| where(:company_id => company.id) }
 end

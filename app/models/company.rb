@@ -20,7 +20,7 @@ class Company < ActiveRecord::Base
   has_many :exercises, :dependent => :destroy
   has_many :accounts
   has_many :clientes
-  has_many :referenciacontables
+  has_many :refenciacontables
 
   serialize :engines
 
