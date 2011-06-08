@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/apslab/ares-engine.git
-  revision: 21b5da96cc037d6c2286323850e8d53eb2466da8
+  revision: 0b097839a6dc3c3574becd779f0c0d2ad973a268
   specs:
-    ares (0.1.0)
+    ares (0.1.1)
 
 GIT
   remote: git://github.com/apslab/odiseo-engine.git
