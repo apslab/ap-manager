@@ -16,6 +16,7 @@
     %tr
       %th= Refenciacontable.human_attribute_name('account_name')
       %th= Refenciacontable.human_attribute_name('referencename')
+      %th= Refenciacontable.human_attribute_name('debita')
       %th
       %th
       %th
@@ -24,6 +25,7 @@
       %tr
         %td= refenciacontable.account.name
         %td= refenciacontable.referencename
+        %td= refenciacontable.debita? ? 'Si' : 'No'
         %td= link_to icon('application_get', :small, :title => t('scaffold.actions.show').titlecase), refenciacontable
         %td= link_to icon('application_edit', :small, :title => t('scaffold.actions.edit').titlecase), edit_refenciacontable_path(refenciacontable)
         %td= link_to icon('application_delete', :small, :title => t('scaffold.actions.destroy').titlecase), refenciacontable, :confirm => t('scaffold.actions.destroy_confirm'), :method => :delete
