@@ -23,7 +23,7 @@
 =end
 -%>
 - content_for(:title) do
-  %h1= [t('scaffold.actions.show'), <%= singular_table_name.camelize %>.model_name.human].join(' ')).titlecase
+  %h1= [t('scaffold.actions.show'), <%= singular_table_name.camelize %>.model_name.human].join(' ').titlecase
 
 = semantic_attributes_for(@<%= singular_name %>) do |s|
   = s.attributes(<%= singular_table_name.camelize %>.human_name + ' Info') do

@@ -8,7 +8,11 @@ class RefenciacontablesController < ApplicationController
   # GET /refenciacontables.json
   # GET /refenciacontables.xml
   def index
-    @refenciacontables = Refenciacontable.all
+    #@refenciacontables = Refenciacontable.all
+    
+    @search = Refenciacontable.by_company(current_company).search(params[:search])
+    @refenciacontables = @search.page(params[ :page ]).per(10)
+  
     flash[:notice] = t('scaffold.notice.empty') if @refenciacontables.empty?
     respond_with(@refenciacontables)
   end
@@ -24,7 +28,9 @@ class RefenciacontablesController < ApplicationController
   # GET /refenciacontables/new.json
   # GET /refenciacontables/new.xml
   def new
-    @refenciacontable = Refenciacontable.new
+    @refenciacontable = current_company.refenciacontables.build
+    
+    #@refenciacontable = Refenciacontable.new
     respond_with(@refenciacontable)
   end
 
@@ -60,7 +66,7 @@ class RefenciacontablesController < ApplicationController
     respond_with(@refenciacontable)
   end
 
-  protected
+protected
 
   def find_refenciacontable
     @refenciacontable = current_company.refenciacontables.find(params[:id])

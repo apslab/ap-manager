@@ -1,5 +1,16 @@
 - content_for(:title) do
-  %h1= [t('scaffold.actions.show'), Refenciacontable.model_name.human].join(' ')).titlecase
+  %h1= [t('scaffold.actions.show'), Refenciacontable.model_name.human].join(' ').titlecase
+
+- content_for(:breadcrumbs) do
+  = breadcrumbs do |breadcrumb|
+    - breadcrumb.item 'Referencias contables', refenciacontable_path
+    - breadcrumb.item 'Referencia contable', refenciacontable_path(@refenciacontable)
+    - breadcrumb.item "#{current_company.name.titlecase}", refenciacontable_path(@refenciacontable), :active => true
+
+- content_for(:controls) do
+  = controls do |control|
+    - control.item t('scaffold.actions.edit').titlecase, edit_refenciacontable_path(@company), :icon => 'application_edit'
+    - control.item t('scaffold.actions.back').titlecase, refenciacontables_path, :icon => 'application_view_list'
 
 = semantic_attributes_for(@refenciacontable) do |s|
   = s.attributes(Refenciacontable.human_name + ' Info') do
@@ -7,7 +18,4 @@
     = s.attribute :account_id
     = s.attribute :referencename
 
-= link_to t('scaffold.actions.edit').titlecase, edit_refenciacontable_path(@refenciacontable)
-\|
-= link_to t('scaffold.actions.back').titlecase, refenciacontables_path
-
+.clear
