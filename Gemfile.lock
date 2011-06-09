@@ -1,13 +1,8 @@
-GIT
-  remote: git://github.com/apslab/ares-engine.git
-  revision: 21b5da96cc037d6c2286323850e8d53eb2466da8
+PATH
+  remote: ../
   specs:
     ares (0.1.0)
-
-GIT
-  remote: git://github.com/apslab/odiseo-engine.git
-  revision: 19fd8fcc64cea0187826241708d03bf8e1622184
-  specs:
+    hefesto (0.1.0)
     odiseo (0.2.4)
 
 GEM
@@ -167,6 +162,7 @@ DEPENDENCIES
   factory_girl_rails
   formtastic
   haml-rails
+  hefesto!
   hpricot
   jquery-rails
   kaminari

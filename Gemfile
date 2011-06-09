@@ -32,14 +32,16 @@ gem 'nested_set'
 gem 'kaminari'
 
 # engines desde git
-gem 'odiseo', :git => 'git://github.com/apslab/odiseo-engine.git' 
-gem 'ares', :git => 'git://github.com/apslab/ares-engine.git' 
+#gem 'odiseo', :git => 'git://github.com/apslab/odiseo-engine.git' 
+#gem 'ares', :git => 'git://github.com/apslab/ares-engine.git' 
 #gem 'apolo', :git => 'git://github.com/apslab/apolo-engine.git'
+#gem 'hefesto', :git => 'git://github.com/apslab/hefesto-engine.git'
 
 # engines locales
-#gem 'odiseo', :path => '../'
-#gem 'ares', :path => '../'
+gem 'odiseo', :path => '../'
+gem 'ares', :path => '../'
 #gem 'apolo', :path => '../'
+gem 'hefesto', :path => '../'
 
 group :development, :test do
   # database to development

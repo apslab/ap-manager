@@ -64,6 +64,6 @@ module ApSys
     end
 
     # list of availables engines for AP Manager
-    config.engines = %w(odiseo ares).map(&:to_sym)
+    config.engines = %w(odiseo ares hefesto apolo).map(&:to_sym)
   end
 end

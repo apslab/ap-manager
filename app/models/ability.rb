@@ -44,17 +44,28 @@ class Ability
 
     # Ares
     if user.can_managed_engine?(:ares)
-      can :manage, Cliente, :company_id => user.current_or_first_company.id
+      can :manage, Cliente, :empresa_id => user.current_or_first_company.id
       can :manage, Tasaiva, :company_id => user.current_or_first_company.id
-      can :manage, Condicioniva, :company_id => user.current_or_first_company.id
-      can :manage, Factura, :company_id => user.current_or_first_company.id
-      can :manage, Notacredito, :company_id => user.current_or_first_company.id
-      can :manage, Recibo, :company_id => user.current_or_first_company.id
+      can :manage, Condicioniva, :empresa_id => user.current_or_first_company.id
+      can :manage, Factura#, {:cliente => {:empresa_id => user.current_or_first_company.id} }
+      can :manage, Notacredito, :empresa_id => user.current_or_first_company.id
+      can :manage, Recibo, :empresa_id => user.current_or_first_company.id
       can :manage, Refenciacontable, :company_id => user.current_or_first_company.id
     end
 
     if user.can_operated_engine?(:ares)
-      can :read, Cliente, :company_id => user.current_or_first_company.id
+      can :read, Cliente, :empresa_id => user.current_or_first_company.id
     end
+
+    # Hefesto
+    if user.can_managed_engine?(:hefesto)
+      can :manage, Supplier, :empresa_id => user.current_or_first_company.id
+    end
+
+    if user.can_operated_engine?(:hefesto)
+      can :read, Supplier, :empresa_id => user.current_or_first_company.id
+    end
+
+
   end
 end

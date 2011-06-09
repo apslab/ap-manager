@@ -8,4 +8,6 @@
     - menu.item('Tasa de IVA', tasaivas_path, :active => controller.controller_name.include?('tasaivas'))
     - menu.item('Condiciones de IVA', condicionivas_path, :active => controller.controller_name.include?('condicionivas'))
     - menu.item('Referencias contables', refenciacontables_path, :active => controller.controller_name.include?('refenciacontables'))
+  - if current_user.can_operated_engine?(:hefesto) 
+    - menu.item('Proveedores', suppliers_path, :active => controller.controller_name.include?('suppliers'))
 
