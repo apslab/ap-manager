@@ -28,6 +28,7 @@ class Ability
 
     # rulez engines
     # Odiseo
+
     if user.can_managed_engine?(:odiseo)
       can :manage, Company, :id => user.current_or_first_company.id
       can :manage, Exercise, :company_id => user.current_or_first_company.id
@@ -65,7 +66,5 @@ class Ability
     if user.can_operated_engine?(:hefesto)
       can :read, Supplier, :empresa_id => user.current_or_first_company.id
     end
-
-
   end
 end
