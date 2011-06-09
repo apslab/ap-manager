@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110608174120) do
+ActiveRecord::Schema.define(:version => 20110609213607) do
 
   create_table "accounts", :force => true do |t|
     t.string  "name"
@@ -75,8 +75,8 @@ ActiveRecord::Schema.define(:version => 20110608174120) do
     t.integer "entry_id"
     t.string  "description"
     t.integer "account_id"
-    t.decimal "debit"
-    t.decimal "credit"
+    t.decimal "debit",       :default => 0.0
+    t.decimal "credit",      :default => 0.0
   end
 
   add_index "details", ["account_id"], :name => "index_details_on_account_id"
@@ -167,6 +167,18 @@ ActiveRecord::Schema.define(:version => 20110608174120) do
   add_index "memberships", ["user_id", "company_id", "role_id"], :name => "index_memberships_on_user_id_and_company_id_and_role_id"
   add_index "memberships", ["user_id", "company_id"], :name => "index_memberships_on_user_id_and_company_id"
   add_index "memberships", ["user_id", "role_id"], :name => "index_memberships_on_user_id_and_role_id"
+
+  create_table "movements", :force => true do |t|
+    t.string  "detail_account_code"
+    t.string  "exercise_code"
+    t.string  "detail_description"
+    t.date    "exercise_date_on"
+    t.decimal "debit"
+    t.decimal "credit"
+  end
+
+  add_index "movements", ["detail_account_code"], :name => "index_movements_on_detail_account_code"
+  add_index "movements", ["exercise_code"], :name => "index_movements_on_exercise_code"
 
   create_table "notacreditos", :force => true do |t|
     t.integer  "cliente_id"
