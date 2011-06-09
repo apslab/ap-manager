@@ -42,13 +42,6 @@ ActiveRecord::Schema.define(:version => 20110608192013) do
     t.integer  "account_id"
   end
 
-  create_table "clients_companies", :id => false, :force => true do |t|
-    t.integer "client_id"
-    t.integer "company_id"
-  end
-
-  add_index "clients_companies", ["client_id", "company_id"], :name => "index_clients_companies_on_client_id_and_company_id", :unique => true
-
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
