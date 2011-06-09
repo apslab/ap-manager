@@ -19,8 +19,9 @@ class Company < ActiveRecord::Base
 # TODO : esto esta muy acoplado - me da feo olor.
   has_many :exercises, :dependent => :destroy
   has_many :accounts
-  has_many :clientes
+  has_many :clientes, :foreign_key => "empresa_id"
   has_many :refenciacontables
+  has_many :suppliers, :foreign_key => "empresa_id"
 
   serialize :engines
 

@@ -63,6 +63,18 @@ ActiveRecord::Schema.define(:version => 20110609213607) do
     t.datetime "updated_at"
   end
 
+  create_table "comprobantescp", :force => true do |t|
+    t.integer  "supplier_id"
+    t.string   "type"
+    t.date     "fecha"
+    t.decimal  "importe"
+    t.integer  "numero"
+    t.date     "fechavto"
+    t.date     "printed_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "condicionivas", :force => true do |t|
     t.string   "detalle"
     t.datetime "created_at"
@@ -209,6 +221,20 @@ ActiveRecord::Schema.define(:version => 20110609213607) do
 
   create_table "roles", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "suppliers", :force => true do |t|
+    t.string   "codigo"
+    t.string   "razonsocial"
+    t.string   "cuit"
+    t.string   "telefono"
+    t.string   "direccion"
+    t.string   "contacto"
+    t.integer  "condicioniva_id"
+    t.integer  "account_id"
+    t.integer  "empresa_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
