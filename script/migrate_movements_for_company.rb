@@ -1,3 +1,6 @@
+# encoding: UTF-8
+require 'iconv'
+
 unless ARGV.size == 2
   $stderr.puts "USAGE: rails runner #{$0} [company id] [path/to/csv/file]"
   exit(1)
@@ -9,7 +12,7 @@ company_id = ARGV.first
 file_to_migrate = ARGV.last
 
 class Movement < ActiveRecord::Base
-  establish_connection :adapter => 'sqlite3', :database => ':memory:'
+  #establish_connection :adapter => 'sqlite3', :database => ':memory:'
 end
 
 Movement.connection.create_table :movements do |t|
@@ -41,6 +44,39 @@ end
 # print out the number of records
 puts "Import Items count: #{Movement.count}"
 
-require 'pp'
-require 'irb'
-IRB.start
+started_on = Movement.minimum(:exercise_date_on)
+finished_on = Movement.maximum(:exercise_date_on)
+
+exercise = Exercise.create(
+              :started_on => started_on,
+              :finished_on => finished_on,
+              :company_id => company_id,
+              :description => "Ejercicio #{started_on.to_s(:db)}..#{finished_on.to_s(:db)}"
+           )
+exercise_codes = Movement.select("DISTINCT(exercise_code)").group(:exercise_code).map(&:exercise_code)
+
+ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
+
+exercise_codes.each do |exercise_code|
+  movements = Movement.find_all_by_exercise_code(exercise_code)
+  entry = exercise.entries.build(
+              :date_on => movements.first.exercise_date_on,
+              :description => "asiento autogenerado #{Time.now.to_i}"
+            )
+
+  movements.each do |movement|
+    account = Account.find_by_code(movement.detail_account_code)
+
+    detail_attributes = {
+      :description => ic.iconv(movement.detail_description),
+      :account_id => account.id
+    }
+
+    detail_attributes.update(:debit => movement.debit) unless movement.debit.nil?
+    detail_attributes.update(:credit => movement.credit) unless movement.credit.nil?
+    
+    entry.details.build(detail_attributes)
+  end
+
+  Rails.logger.error("entry can't be inserted #{entry.errors.full_messages.join("\n")}") unless entry.save
+end
