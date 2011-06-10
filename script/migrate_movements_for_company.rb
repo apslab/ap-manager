@@ -49,7 +49,7 @@ Movement.connection.add_index :movements, :detail_account_code
 Movement.connection.add_index :movements, :exercise_code
 
 # print out the number of records
-puts "Import Items count: #{Movement.count}"
+Rails.logger.error("Import Items count: #{Movement.count}")
 
 started_on = Movement.minimum(:exercise_date_on)
 finished_on = Movement.maximum(:exercise_date_on)
@@ -89,8 +89,5 @@ exercise_codes.each do |exercise_code|
 
   unless entry.save
     Rails.logger.error("entry can't be inserted | asiento: #{exercise_code} | #{entry.errors.full_messages.join("\n")}")
-    entry.details.each do |detail|
-      $stderr.puts "#{detail.account.code};#{entry.date_on.to_s} | asiento: #{exercise_code} | #{entry.errors.full_messages.join(" :: ")}"
-    end
   end
 end
