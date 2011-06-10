@@ -43,9 +43,10 @@ gem 'ares', :git => 'git://github.com/apslab/ares-engine.git'
 #gem 'apolo', :path => '../'
 #gem 'hefesto', :path => '../'
 
+# database to development & migrations
+gem 'sqlite3'
+
 group :development, :test do
-  # database to development
-  gem 'sqlite3'
   # design depends
   gem 'hpricot'
   gem 'ruby_parser'
