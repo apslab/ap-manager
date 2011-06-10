@@ -1,4 +1,10 @@
 # encoding: UTF-8
+# coding: UTF-8
+# -*- coding: UTF-8 -*-
+
+Encoding.default_internal = "UTF-8"
+Encoding.default_external = "UTF-8"
+
 require 'iconv'
 
 unless ARGV.size == 2
@@ -12,7 +18,7 @@ company_id = ARGV.first
 file_to_migrate = ARGV.last
 
 class Movement < ActiveRecord::Base
-  #establish_connection :adapter => 'sqlite3', :database => ':memory:'
+  establish_connection :adapter => 'sqlite3', :database => ':memory:'
 end
 
 Movement.connection.create_table :movements do |t|
@@ -21,11 +27,8 @@ Movement.connection.create_table :movements do |t|
   t.decimal :debit, :credit
 end
 
-Movement.connection.add_index :movements, :detail_account_code
-Movement.connection.add_index :movements, :exercise_code
-
 # read the file
-CSV.foreach(file_to_migrate,:col_sep => ';') do |row|
+CSV.foreach(file_to_migrate,:col_sep => ',', :quote_char => '"', :encoding => 'ISO-8859-1') do |row|
   detail_account_code, exercise_date_on, exercise_code, detail_description, debit_or_credit, detail_amount = row
   
   data = {
@@ -41,17 +44,22 @@ CSV.foreach(file_to_migrate,:col_sep => ';') do |row|
   Movement.create(data)
 end
 
+# add index
+Movement.connection.add_index :movements, :detail_account_code
+Movement.connection.add_index :movements, :exercise_code
+
 # print out the number of records
-puts "Import Items count: #{Movement.count}"
+Rails.logger.error("Import Items count: #{Movement.count}")
 
 started_on = Movement.minimum(:exercise_date_on)
 finished_on = Movement.maximum(:exercise_date_on)
 
-exercise = Exercise.create(
+exercise = Exercise.create!(
+              :uneven => true,
               :started_on => started_on,
               :finished_on => finished_on,
               :company_id => company_id,
-              :description => "Ejercicio #{started_on.to_s(:db)}..#{finished_on.to_s(:db)}"
+              :description => "Ejercicio autogenerado #{Time.now.to_i} declarado irregular por ser de migracion"
            )
 exercise_codes = Movement.select("DISTINCT(exercise_code)").group(:exercise_code).map(&:exercise_code)
 
@@ -61,7 +69,7 @@ exercise_codes.each do |exercise_code|
   movements = Movement.find_all_by_exercise_code(exercise_code)
   entry = exercise.entries.build(
               :date_on => movements.first.exercise_date_on,
-              :description => "asiento autogenerado #{Time.now.to_i}"
+              :description => "Asiento #{ic.iconv(movements.first.detail_description)} - (autogenerado)"
             )
 
   movements.each do |movement|
@@ -75,8 +83,11 @@ exercise_codes.each do |exercise_code|
     detail_attributes.update(:debit => movement.debit) unless movement.debit.nil?
     detail_attributes.update(:credit => movement.credit) unless movement.credit.nil?
     
-    entry.details.build(detail_attributes)
+    detail = entry.details.build(detail_attributes)
+    entry.details.delete(detail) unless detail.valid?
   end
 
-  Rails.logger.error("entry can't be inserted #{entry.errors.full_messages.join("\n")}") unless entry.save
+  unless entry.save
+    Rails.logger.error("entry can't be inserted | asiento: #{exercise_code} | #{entry.errors.full_messages.join("\n")}")
+  end
 end
