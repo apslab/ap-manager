@@ -10,4 +10,12 @@ class Refenciacontable < ActiveRecord::Base
   validates_associated :account
   
   scope :by_company, lambda {|company| where(:company_id => company.id) }
+
+  cattr_reader :referencias 
+  
+  def self.referencias
+    ['ventas_factura_total','ventas_factura_subtotal','ventas_factura_iva','ventas_factura_iibb']
+  end
+
+
 end
