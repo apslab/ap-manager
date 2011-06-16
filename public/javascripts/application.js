@@ -28,6 +28,24 @@ $(document).ready(function()
     $(".flash > .ajax").hide();
   });
 
+	$('.accordion').accordion({
+	  collapsible: true,
+	  active: false,
+	  autoHeight: true
+	});
+	
+$("#filters .clean-filters").bind('click', function(event){
+   event.preventDefault();
+   $("fieldset.inputs :input").val("");
+ });
+
+ $("#filters fieldset.inputs :input").each(function(){
+   if( $(this).val() != '' ){
+     $('.accordion').accordion("activate");
+   }
+ });
+
+
 });
 
 // Scroll effect for anchors
