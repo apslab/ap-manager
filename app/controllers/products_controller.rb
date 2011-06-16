@@ -19,7 +19,9 @@ class ProductsController < ApplicationController
   # GET /products/1.xml
   def show
     respond_with(@product) do |format|
-      format.json {render :json => {:porcentaje => @product.try(:tasaiva).try(:porcentaje).to_f}}
+      format.json {render :json => {:porcentaje => @product.try(:tasaiva).try(:porcentaje).to_f,
+        :price => @product.try(:price).to_f,
+        :description => @product.observation.presence || @product.name }}
     end
   end
 
