@@ -1,4 +1,6 @@
 ApSys::Application.routes.draw do
+  resources :products
+
   resources :refenciacontables
 
   resource :dashboard, :only => :show
