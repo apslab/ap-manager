@@ -6,6 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
 
+=begin
 $stderr.puts('create user lmpetek@gmail.com with password 123456 and activate...')
 User.create!(:email => 'lmpetek@gmail.com',
              :last_name => 'luis',
@@ -31,3 +32,9 @@ end
 
 $stderr.puts('setting membership\'s current company for lmpetek...')
 Membership.last.toggle!(:current)
+=end
+Company.all.each do |company|
+  (1..100).each do |i|
+     Product.create!(:company_id => company.id,:name => "producto n"+i.to_s+company.name, :since => Date.today)
+   end
+end

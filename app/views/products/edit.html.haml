@@ -1,0 +1,9 @@
+- content_for(:title) do
+  %h1= t('scaffold.actions.edit', :item => Product.model_name.human).titlecase
+
+= render 'form'
+
+= link_to t('scaffold.actions.show').titlecase, @product
+\|
+= link_to t('scaffold.actions.back').titlecase, products_path
+

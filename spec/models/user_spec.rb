@@ -1,5 +1,10 @@
+require 'spec_helper'
+
+describe User do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
+
 # == Schema Information
-# Schema version: 20110601133856
 #
 # Table name: users
 #
@@ -23,16 +28,4 @@
 #  created_at             :datetime
 #  updated_at             :datetime
 #
-# Indexes
-#
-#  index_users_on_authentication_token  (authentication_token) UNIQUE
-#  index_users_on_confirmation_token    (confirmation_token) UNIQUE
-#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
-#  index_users_on_email                 (email) UNIQUE
-#
 
-require 'spec_helper'
-
-describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
-end

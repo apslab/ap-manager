@@ -1,0 +1,17 @@
+- content_for(:title) do
+  %h1= [t('scaffold.actions.show'), Product.model_name.human].join(' ').titlecase
+
+= semantic_attributes_for(@product) do |s|
+  = s.attributes(Product.human_name + ' Info') do
+    = s.attribute :name
+    = s.attribute :observation
+    = s.attribute :company_id
+    = s.attribute :since
+    = s.attribute :until
+    = s.attribute :tasaiva_id
+    = s.attribute :account_id
+
+= link_to t('scaffold.actions.edit').titlecase, edit_product_path(@product)
+\|
+= link_to t('scaffold.actions.back').titlecase, products_path
+

@@ -47,7 +47,8 @@
               = yield(:breadcrumbs) if content_for?(:breadcrumbs)
               = yield(:controls) if content_for?(:controls)
               %h2.title= yield(:title) if content_for?(:title)
-              .inner
+              .inner 
+                = yield(:filtros) if content_for?(:filtros)
                 = yield
         - if content_for?(:sidebar)
           #sidebar

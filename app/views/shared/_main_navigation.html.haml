@@ -10,4 +10,6 @@
     - menu.item('Referencias contables', refenciacontables_path, :active => controller.controller_name.include?('refenciacontables'))
   - if current_user.can_operated_engine?(:hefesto) 
     - menu.item('Proveedores', suppliers_path, :active => controller.controller_name.include?('suppliers'))
+  - if current_user.can_operated_engine?(:ares) 
+    - menu.item('Productos', products_path, :active => controller.controller_name.include?('products'))
 
