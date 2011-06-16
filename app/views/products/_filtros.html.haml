@@ -1,0 +1,10 @@
+- content_for(:filtros) do
+  #filters.accordion
+    %h3
+      %a{:href => "#"} Filtros
+    .filters-content
+      = semantic_form_for @search do |f|
+        = f.inputs do
+          = f.input :name_contains, :label => "Descripcion"
+        = f.buttons do
+          = f.commit_button :search

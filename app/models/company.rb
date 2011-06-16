@@ -22,6 +22,9 @@ class Company < ActiveRecord::Base
   has_many :clientes, :foreign_key => "empresa_id"
   has_many :refenciacontables
   has_many :suppliers, :foreign_key => "empresa_id"
+  has_many :tasaivas
+  has_many :condicionivas
+  has_many :products
 
   serialize :engines
 

@@ -1,0 +1,35 @@
+- content_for(:title) do
+  %h1= t('scaffold.actions.list', :item => Product.model_name.human).titlecase
+
+= render 'filtros'
+
+%table
+  %tr
+    %th= Product.human_attribute_name('name')
+    %th= Product.human_attribute_name('observation')
+    %th= Product.human_attribute_name('since')
+    %th= Product.human_attribute_name('until')
+    %th= Product.human_attribute_name('tasaiva_id')
+    %th= Product.human_attribute_name('account_id')
+    %th
+    %th
+    %th
+
+  - @products.each do |product|
+    %tr
+      %td= product.name
+      %td= product.observation
+      %td= product.since
+      %td= product.until
+      %td= product.tasaiva.try(:detalle)
+      %td= product.account.try(:name)
+      %td= link_to t('scaffold.actions.show').titlecase, product
+      %td= link_to t('scaffold.actions.edit').titlecase, edit_product_path(product)
+      %td= link_to t('scaffold.actions.destroy').titlecase, product, :confirm => t('scaffold.actions.destroy_confirm'), :method => :delete
+
+= paginate @products
+%br
+%br
+
+= link_to t('scaffold.actions.new', :item => Product.model_name.human).titlecase, new_product_path
+
