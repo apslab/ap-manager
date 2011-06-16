@@ -41,8 +41,8 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   # POST /products.xml
-  def create
-    @product = Product.new(params[:product])
+  def create    
+    @product = Product.new(params[:product].update(:company_id => current_company.id))
     flash[:notice] = t('scaffold.notice.created', :item => Product.model_name.human) if @product.save
     respond_with(@product, :location => products_path)
   end
