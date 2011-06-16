@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
   # GET /products/new.json
   # GET /products/new.xml
   def new
-    @product = current_company.product.build
+    @product = current_company.products.build
     respond_with(@product)
   end
 
