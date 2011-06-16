@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110609213607) do
+ActiveRecord::Schema.define(:version => 20110615212251) do
 
   create_table "accounts", :force => true do |t|
     t.string  "name"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(:version => 20110609213607) do
     t.integer  "empresa_id"
     t.integer  "account_id"
   end
+
+  create_table "clients_companies", :id => false, :force => true do |t|
+    t.integer "client_id"
+    t.integer "company_id"
+  end
+
+  add_index "clients_companies", ["client_id", "company_id"], :name => "index_clients_companies_on_client_id_and_company_id", :unique => true
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -91,9 +98,6 @@ ActiveRecord::Schema.define(:version => 20110609213607) do
     t.decimal "credit",      :default => 0.0
   end
 
-  add_index "details", ["account_id"], :name => "index_details_on_account_id"
-  add_index "details", ["entry_id"], :name => "index_details_on_entry_id"
-
   create_table "detalles", :force => true do |t|
     t.integer  "detallable_id"
     t.string   "detallable_type"
@@ -103,6 +107,7 @@ ActiveRecord::Schema.define(:version => 20110609213607) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "tasaiva"
+    t.integer  "product_id"
   end
 
   create_table "entries", :force => true do |t|
@@ -157,16 +162,6 @@ ActiveRecord::Schema.define(:version => 20110609213607) do
     t.datetime "updated_at"
   end
 
-  create_table "facturas", :force => true do |t|
-    t.integer  "cliente_id"
-    t.date     "fecha"
-    t.integer  "numero"
-    t.date     "fechavto"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "isprinted"
-  end
-
   create_table "memberships", :force => true do |t|
     t.integer  "company_id"
     t.integer  "role_id"
@@ -180,23 +175,23 @@ ActiveRecord::Schema.define(:version => 20110609213607) do
   add_index "memberships", ["user_id", "company_id"], :name => "index_memberships_on_user_id_and_company_id"
   add_index "memberships", ["user_id", "role_id"], :name => "index_memberships_on_user_id_and_role_id"
 
-  create_table "movements", :force => true do |t|
-    t.string  "detail_account_code"
-    t.string  "exercise_code"
-    t.string  "detail_description"
-    t.date    "exercise_date_on"
-    t.decimal "debit"
-    t.decimal "credit"
-  end
-
-  add_index "movements", ["detail_account_code"], :name => "index_movements_on_detail_account_code"
-  add_index "movements", ["exercise_code"], :name => "index_movements_on_exercise_code"
-
   create_table "notacreditos", :force => true do |t|
     t.integer  "cliente_id"
     t.date     "fecha"
     t.decimal  "importe"
     t.integer  "numero"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.text     "observation"
+    t.integer  "company_id"
+    t.date     "since"
+    t.date     "until"
+    t.integer  "tasaiva_id"
+    t.integer  "account_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -242,9 +237,12 @@ ActiveRecord::Schema.define(:version => 20110609213607) do
   create_table "tasaivas", :force => true do |t|
     t.string   "detalle"
     t.decimal  "porcentaje"
-    t.date     "vencimiento"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "company_id"
+    t.integer  "account_id"
+    t.date     "since"
+    t.date     "until"
   end
 
   create_table "users", :force => true do |t|
