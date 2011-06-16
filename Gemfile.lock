@@ -6,9 +6,9 @@ GIT
 
 GIT
   remote: git://github.com/apslab/odiseo-engine.git
-  revision: 2e62fb4009547a4d3ee4bc833b3c47745c630194
+  revision: 1c2f7e321e9c2d5b7464531d176c4db17e4fbd9f
   specs:
-    odiseo (0.3.0)
+    odiseo (0.4.0)
       attrtastic
       cocoon
       formtastic
@@ -53,9 +53,9 @@ GEM
     activesupport (3.0.8.rc1)
     annotate (2.4.0)
     arel (2.0.10)
-    attrtastic (0.3.1)
-      actionpack (~> 3.0.0)
-      activesupport (~> 3.0.0)
+    attrtastic (0.3.3)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
     cancan (1.6.5)
@@ -82,7 +82,7 @@ GEM
       activesupport (>= 2.3.7)
       i18n (~> 0.4)
     fssm (0.2.7)
-    haml (3.1.1)
+    haml (3.1.2)
     haml-rails (0.3.4)
       actionpack (~> 3.0)
       activesupport (~> 3.0)
@@ -90,7 +90,7 @@ GEM
       railties (~> 3.0)
     hpricot (0.8.4)
     i18n (0.5.0)
-    jquery-rails (1.0.9)
+    jquery-rails (1.0.11)
       railties (~> 3.0)
       thor (~> 0.14)
     kaminari (0.12.4)
@@ -161,7 +161,7 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     ttfunk (1.0.1)
-    tzinfo (0.3.27)
+    tzinfo (0.3.28)
     warden (1.0.4)
       rack (>= 1.0)
     wicked_pdf (0.7.0)
