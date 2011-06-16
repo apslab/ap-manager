@@ -4,9 +4,10 @@
   = f.inputs do
     = f.input :name
     = f.input :observation
+    = f.input :price
     = f.input :since
     = f.input :until
-    = f.input :tasaiva_id, :label => true, :as => :select, :collection => current_company.tasaivas.map{|c| [c.detalle, c.id]}, :include_blank => false
+    = f.input :tasaiva, :label => true, :as => :select, :collection => current_company.tasaivas.map{|c| [c.detalle, c.id]}, :include_blank => false
     = f.input :account, :label => true, :as => :select, :collection =>  current_company.accounts.leaves.map{|a|[a.self_and_ancestors.map(&:name).join(' &raquo; ').html_safe, a.id]} , :include_blank => true
   = f.buttons
 
