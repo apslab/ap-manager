@@ -13,7 +13,7 @@ class RefenciacontablesController < ApplicationController
     @search = Refenciacontable.by_company(current_company).search(params[:search])
     @refenciacontables = @search.page(params[ :page ]).per(10)
   
-    flash[:notice] = t('scaffold.notice.empty') if @refenciacontables.empty?
+    flash[:notice] = t('flash.actions.index.notice') if @refenciacontables.empty?
     respond_with(@refenciacontables)
   end
 
