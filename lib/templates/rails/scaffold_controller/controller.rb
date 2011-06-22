@@ -33,7 +33,7 @@ class <%= controller_class_name %>Controller < ApplicationController
   # GET <%= route_url %>.xml
   def index
     @<%= plural_table_name %> = <%= orm_class.all(class_name) %>
-    flash[:notice] = t('scaffold.notice.empty') if @<%= plural_table_name %>.empty?
+    flash.now[:notice] = t('flash.actions.index.notice') if @<%= plural_table_name %>.empty?
     respond_with(@<%= plural_table_name %>)
   end
 

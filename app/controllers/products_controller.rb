@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   def index
     @search = Product.by_company(current_company).search(params[:search])
     @products = @search.order("name").page(params[ :page ]).per(20)
-    flash[:notice] = t('scaffold.notice.empty') if @products.empty?
+    flash.now[:notice] = t('flash.actions.index.notice') if @products.empty?
     respond_with(@products)
   end
 
