@@ -1,7 +1,18 @@
 - content_for(:title) do
   %h1= t('scaffold.actions.list', :item => Product.model_name.human).titlecase
 
+- content_for(:controls) do
+  = controls do |c|
+    - c.item "Nuevo", new_product_path, :icon => "add"
+    - c.item "Exportar PDF", products_path, :icon => "report_go"
+
+
 = render 'filtros'
+
+- content_for(:breadcrumbs) do
+  = breadcrumbs do |b|
+    - b.item "Principal", root_path
+    - b.item "Productos", products_path, :active => true
 
 %table
   %tr
@@ -30,6 +41,3 @@
 = paginate @products
 %br
 %br
-
-= link_to t('scaffold.actions.new', :item => Product.model_name.human).titlecase, new_product_path
-

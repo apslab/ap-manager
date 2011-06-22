@@ -17,7 +17,7 @@ CSV.foreach(file_to_migrate) do |row|
 	Cliente.create!(:empresa_id => company_id,
 	                :codigo => code ,
 	                :razonsocial => (name.encode.try(:titlecase)),
-	                :direccion => direccion,
-	                :telefono => telefono)
+	                :direccion => direccion.encode,
+	                :telefono => telefono.encode)
 	
 end
