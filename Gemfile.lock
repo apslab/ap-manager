@@ -12,9 +12,9 @@ GIT
 
 GIT
   remote: git://github.com/apslab/odiseo-engine.git
-  revision: 4c9d273c6d1555e66673488bb974bee36e90fcdb
+  revision: 5f991763ef1f19fd59aab7ccbe07678abfe753b0
   specs:
-    odiseo (0.4.11)
+    odiseo (0.5.0)
       attrtastic
       cocoon
       formtastic
@@ -96,7 +96,7 @@ GEM
       railties (~> 3.0)
     hpricot (0.8.4)
     i18n (0.5.0)
-    jquery-rails (1.0.11)
+    jquery-rails (1.0.12)
       railties (~> 3.0)
       thor (~> 0.14)
     kaminari (0.12.4)
