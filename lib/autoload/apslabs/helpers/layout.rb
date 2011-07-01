@@ -25,7 +25,7 @@ module Apslabs
       end
 
       def navigation(options = {}, &block)
-        options[:class] ||= "".html_safe
+        options[:class] ||= ""
         options[:class].strip!
 
         menu = Apslabs::Builders::Navigation.new
@@ -82,8 +82,8 @@ module Apslabs
       #
       # Returns a set of controls to be displayed.
       def controls(options = {})
-        options[:class] ||= "".html_safe
-        options[:class] << " control".html_safe
+        options[:class] ||= ""
+        options[:class] << " control"
         options[:class].strip!
 
         items = Apslabs::Builders::Navigation.new
@@ -119,8 +119,8 @@ module Apslabs
         items = Apslabs::Builders::Navigation.new
         yield items if block_given?
 
-        options[:class] ||= "".html_safe
-        options[:class] << " breadcrumb".html_safe
+        options[:class] ||= ""
+        options[:class] << " breadcrumb"
         options[:class].strip!
 
         content_tag("div", options) do

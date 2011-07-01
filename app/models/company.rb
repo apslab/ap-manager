@@ -26,16 +26,23 @@ class Company < ActiveRecord::Base
   has_many :condicionivas
   has_many :products
 
+  attr_reader :current_exercise
+
   serialize :engines
 
   validates_presence_of :name
 
   before_destroy :can_be_destroyed?
 
+  def current_exercise
+    @current_exercise ||= exercises.from(Date.today)
+  end
+
   private
-  
+
   def can_be_destroyed?
     raise Apslabs::Exceptions::HasExercises if exercises.any?
   end
 
 end
+
