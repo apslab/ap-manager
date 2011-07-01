@@ -23,7 +23,7 @@ class Company < ActiveRecord::Base
   has_many :refenciacontables
   has_many :suppliers, :foreign_key => "empresa_id"
   has_many :tasaivas
-  has_many :condicionivas
+  has_many :condicionivas, :foreign_key => "empresa_id"
   has_many :products
 
   attr_reader :current_exercise
