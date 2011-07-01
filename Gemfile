@@ -36,11 +36,6 @@ gem 'odiseo', :git => 'git://github.com/apslab/odiseo-engine.git'
 gem 'ares', :git => 'git://github.com/apslab/ares-engine.git' 
 gem 'hefesto', :git => 'git://github.com/apslab/hefesto-engine.git'
 #gem 'apolo', :git => 'git://github.com/apslab/apolo-engine.git'
-<<<<<<< HEAD
-gem 'hefesto', :git => 'git://github.com/apslab/hefesto-engine.git'
-=======
-
->>>>>>> 3d3628915c469d1b36fd61d45e8222a94a99d201
 
 # engines locales
 #gem 'odiseo', :path => '../'
