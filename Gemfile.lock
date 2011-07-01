@@ -1,19 +1,8 @@
-GIT
-  remote: git://github.com/apslab/ares-engine.git
-  revision: c8bda87e1b52aa76ce5980031a310bc22b8d403f
+PATH
+  remote: ../
   specs:
     ares (0.4.1)
-
-GIT
-  remote: git://github.com/apslab/hefesto-engine.git
-  revision: c935f6bfdf3caa5487bdda1f0804b03282fe4e92
-  specs:
     hefesto (0.1.1)
-
-GIT
-  remote: git://github.com/apslab/odiseo-engine.git
-  revision: ed4870fff64edc20b3390671f07640268472c8e6
-  specs:
     odiseo (0.6.0)
       attrtastic
       cocoon
@@ -145,7 +134,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.4)
-    rake (0.9.2)
+    rake (0.8.7)
     rdoc (3.8)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
@@ -198,7 +187,7 @@ DEPENDENCIES
   odiseo!
   prawn
   rails (= 3.0.9)
-  rake
+  rake (= 0.8.7)
   rspec-rails
   ruby_parser
   sqlite3
