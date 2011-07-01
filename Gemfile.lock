@@ -1,14 +1,20 @@
 GIT
   remote: git://github.com/apslab/ares-engine.git
-  revision: daf2b4e9faa5b9d5df267688b92d7a021aa40c05
+  revision: c26e07c1fd725a9b181b56c0f62fd4db235763fd
   specs:
-    ares (0.3.1)
+    ares (0.4.0)
+
+GIT
+  remote: git://github.com/apslab/hefesto-engine.git
+  revision: c935f6bfdf3caa5487bdda1f0804b03282fe4e92
+  specs:
+    hefesto (0.1.1)
 
 GIT
   remote: git://github.com/apslab/odiseo-engine.git
-  revision: 4c9d273c6d1555e66673488bb974bee36e90fcdb
+  revision: ed4870fff64edc20b3390671f07640268472c8e6
   specs:
-    odiseo (0.4.11)
+    odiseo (0.6.0)
       attrtastic
       cocoon
       formtastic
@@ -181,6 +187,7 @@ DEPENDENCIES
   factory_girl_rails
   formtastic
   haml-rails
+  hefesto!
   hpricot
   jquery-rails
   kaminari
