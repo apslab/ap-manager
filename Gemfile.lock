@@ -1,18 +1,18 @@
 GIT
   remote: git://github.com/apslab/ares-engine.git
-  revision: daf2b4e9faa5b9d5df267688b92d7a021aa40c05
+  revision: f7d1f8165a25f59338d9e7ac7d5680aa82e062d2
   specs:
-    ares (0.3.1)
+    ares (0.4.2)
 
 GIT
   remote: git://github.com/apslab/hefesto-engine.git
-  revision: 7d30f760b4de10b30a453cd29161aaba5c5d6851
+  revision: 801083a6c4aff03e213a984d5fa535913f2cb226
   specs:
-    hefesto (0.1.0)
+    hefesto (0.2.0)
 
 GIT
   remote: git://github.com/apslab/odiseo-engine.git
-  revision: 53bbc6cccd9298b3238accd3af24bfe719f75d2a
+  revision: ed4870fff64edc20b3390671f07640268472c8e6
   specs:
     odiseo (0.6.0)
       attrtastic
@@ -198,7 +198,6 @@ DEPENDENCIES
   odiseo!
   prawn
   rails (= 3.0.9)
-  rake
   rspec-rails
   ruby_parser
   sqlite3
