@@ -2,6 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.9'
 
+# fix rake version for DSL problem
+gem 'rake', '0.8.7'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -33,7 +36,6 @@ gem 'odiseo', :git => 'git://github.com/apslab/odiseo-engine.git'
 gem 'ares', :git => 'git://github.com/apslab/ares-engine.git'
 gem 'hefesto', :git => 'git://github.com/apslab/hefesto-engine.git'
 #gem 'apolo', :git => 'git://github.com/apslab/apolo-engine.git'
-
 
 # engines locales
 #gem 'odiseo', :path => '../'

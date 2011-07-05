@@ -1,7 +1,18 @@
 - content_for(:title) do
   %h1= t('scaffold.actions.list', :item => Product.model_name.human).titlecase
 
+- content_for(:controls) do
+  = controls do |c|
+    - c.item "Nuevo", new_product_path, :icon => "add"
+    - c.item "Exportar PDF", products_path, :icon => "report_go"
+
+
 = render 'filtros'
+
+- content_for(:breadcrumbs) do
+  = breadcrumbs do |b|
+    - b.item "Principal", root_path
+    - b.item "Productos", products_path, :active => true
 
 %table
   %tr
@@ -23,13 +34,10 @@
       %td= product.until
       %td= product.tasaiva.try(:detalle)
       %td= product.account.try(:name)
-      %td= link_to t('scaffold.actions.show').titlecase, product
-      %td= link_to t('scaffold.actions.edit').titlecase, edit_product_path(product)
-      %td= link_to t('scaffold.actions.destroy').titlecase, product, :confirm => t('scaffold.actions.destroy_confirm'), :method => :delete
+      %td= link_to icon('application_go', :small, :title => 'ver'), product
+      %td= link_to icon('application_edit', :small, :title => 'editar'), edit_product_path(product)
+      %td= link_to icon('application_delete', :small, :title => 'borrar'), product, :confirm => 'Esta ud. seguro?', :method => :delete
 
 = paginate @products
 %br
 %br
-
-= link_to t('scaffold.actions.new', :item => Product.model_name.human).titlecase, new_product_path
-

@@ -1,13 +1,16 @@
 = semantic_form_for @product do |f|
   = f.semantic_errors
 
-  = f.inputs do
+  = f.inputs(:class => :column_left ) do
     = f.input :name
     = f.input :observation
+
+  = f.inputs(:class => :column_right ) do
     = f.input :price
-    = f.input :since
-    = f.input :until
+    = f.input :since, :as => :datepicker
+    = f.input :until, :as => :datepicker
     = f.input :tasaiva, :label => true, :as => :select, :collection => current_company.tasaivas.map{|c| [c.detalle, c.id]}, :include_blank => false
     = f.input :account, :label => true, :as => :select, :collection =>  current_company.accounts.leaves.map{|a|[a.self_and_ancestors.map(&:name).join(' &raquo; ').html_safe, a.id]} , :include_blank => true
+
   = f.buttons
 

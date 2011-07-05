@@ -14,7 +14,8 @@ class Refenciacontable < ActiveRecord::Base
   cattr_reader :referencias 
   
   def self.referencias
-    ['ventas_factura_total','ventas_factura_subtotal','ventas_factura_iva','ventas_factura_iibb','ventas_factura_item']
+    ['ventas_factura_total','ventas_factura_subtotal','ventas_factura_iva','ventas_factura_iibb','ventas_factura_item',
+      'compras_factura_total','compras_factura_subtotal','compras_factura_iva','compras_factura_iibb','compras_factura_item']
   end
 end
 
