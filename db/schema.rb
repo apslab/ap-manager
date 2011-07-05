@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110616174013) do
+ActiveRecord::Schema.define(:version => 20110702173603) do
 
   create_table "accounts", :force => true do |t|
     t.string  "name"
@@ -40,7 +40,16 @@ ActiveRecord::Schema.define(:version => 20110616174013) do
     t.integer  "condicioniva_id"
     t.integer  "empresa_id"
     t.integer  "account_id"
+    t.string   "email"
+    t.string   "fantasyname"
   end
+
+  create_table "clients_companies", :id => false, :force => true do |t|
+    t.integer "client_id"
+    t.integer "company_id"
+  end
+
+  add_index "clients_companies", ["client_id", "company_id"], :name => "index_clients_companies_on_client_id_and_company_id", :unique => true
 
   create_table "companies", :force => true do |t|
     t.string   "name"
@@ -51,8 +60,8 @@ ActiveRecord::Schema.define(:version => 20110616174013) do
     t.string   "engines"
   end
 
-  create_table "comprobantes", :force => true do |t|
-    t.integer  "cliente_id"
+  create_table "compra_comprobantes", :force => true do |t|
+    t.integer  "supplier_id"
     t.string   "type"
     t.date     "fecha"
     t.decimal  "importe"
@@ -63,8 +72,19 @@ ActiveRecord::Schema.define(:version => 20110616174013) do
     t.datetime "updated_at"
   end
 
-  create_table "comprobantescp", :force => true do |t|
-    t.integer  "supplier_id"
+  create_table "compra_detalles", :force => true do |t|
+    t.integer  "detallable_id"
+    t.string   "detallable_type"
+    t.string   "descripcion"
+    t.decimal  "cantidad"
+    t.decimal  "preciounitario"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "tasaiva"
+  end
+
+  create_table "comprobantes", :force => true do |t|
+    t.integer  "cliente_id"
     t.string   "type"
     t.date     "fecha"
     t.decimal  "importe"
@@ -87,12 +107,9 @@ ActiveRecord::Schema.define(:version => 20110616174013) do
     t.integer "entry_id"
     t.string  "description"
     t.integer "account_id"
-    t.decimal "debit",       :precision => 18, :scale => 2, :default => 0.0
-    t.decimal "credit",      :precision => 18, :scale => 2, :default => 0.0
+    t.decimal "debit",       :default => 0.0
+    t.decimal "credit",      :default => 0.0
   end
-
-  add_index "details", ["account_id"], :name => "index_details_on_account_id"
-  add_index "details", ["entry_id"], :name => "index_details_on_entry_id"
 
   create_table "detalles", :force => true do |t|
     t.integer  "detallable_id"
@@ -156,16 +173,6 @@ ActiveRecord::Schema.define(:version => 20110616174013) do
     t.integer  "recibo_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "facturas", :force => true do |t|
-    t.integer  "cliente_id"
-    t.date     "fecha"
-    t.integer  "numero"
-    t.date     "fechavto"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "isprinted"
   end
 
   create_table "memberships", :force => true do |t|

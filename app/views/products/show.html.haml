@@ -10,10 +10,9 @@
   = s.attributes(Product.human_name + ' Info') do
     = s.attribute :name
     = s.attribute :observation
-    = s.attribute :company_id, :value => @product.try( :company ).try(:name)
     = s.attribute :since
     = s.attribute :until
-    = s.attribute :tasaiva_id, :value => @product.try( :tasaiva ).try(:name)
-    = s.attribute :account_id, :value => @product.try( :account ).try(:name)
+    = s.attribute :tasaiva_id,:value => @product.try( :tasaiva ).try(:detalle)
+    = s.attribute :account_id,:value => @product.try( :account ).try(:name)
 
 .clear
