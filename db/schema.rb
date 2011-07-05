@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(:version => 20110702173603) do
     t.string  "name"
     t.string  "code"
     t.boolean "archive"
-    t.integer "company_id"
+    t.integer "exercise_id"
     t.integer "parent_id"
     t.integer "lft"
     t.integer "rgt"
@@ -24,8 +24,8 @@ ActiveRecord::Schema.define(:version => 20110702173603) do
     t.integer "details_count", :default => 0
   end
 
-  add_index "accounts", ["company_id", "parent_id"], :name => "index_accounts_on_company_id_and_parent_id"
-  add_index "accounts", ["company_id"], :name => "index_accounts_on_company_id"
+  add_index "accounts", ["exercise_id", "parent_id"], :name => "index_accounts_on_company_id_and_parent_id"
+  add_index "accounts", ["exercise_id"], :name => "index_accounts_on_company_id"
   add_index "accounts", ["lft", "rgt"], :name => "index_accounts_on_lft_and_rgt"
 
   create_table "clientes", :force => true do |t|

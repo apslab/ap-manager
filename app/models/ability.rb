@@ -24,7 +24,7 @@ class Ability
     #   can :update, Article, :published => true
     #
     # See the wiki for details: https://github.com/ryanb/cancan/wiki/Defining-Abilities
-    user ||= User.new # guest user (not logged in) 
+    user ||= User.new # guest user (not logged in)
 
     # rulez engines
     # Odiseo
@@ -32,14 +32,14 @@ class Ability
     if user.can_managed_engine?(:odiseo)
       can :manage, Company, :id => user.current_or_first_company.id
       can :manage, Exercise, :company_id => user.current_or_first_company.id
-      can :manage, Account, :company_id => user.current_or_first_company.id
+      can :manage, Account#, :exercise_id => user.current_or_first_company.exercises.map(&:id)
       can :manage, Entry#, :exercise => {:company_id => user.current_or_first_company.id}
     end
 
     if user.can_operated_engine?(:odiseo)
       can :read, Company, :id => user.current_or_first_company.id
       can :read, Exercise, :company_id => user.current_or_first_company.id
-      can :read, Account, :company_id => user.current_or_first_company.id
+      can :read, Account#, :exercise_id => user.current_or_first_company.exercises.map(&:id)
       can :read, Entry#, :exercise => {:company_id => user.current_or_first_company.id}
     end
 
@@ -69,3 +69,4 @@ class Ability
     end
   end
 end
+

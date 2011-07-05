@@ -18,7 +18,7 @@ gem 'attrtastic'
 
 # search
 gem 'meta_search'
- 
+
 # pdf
 gem 'prawn'
 gem 'wicked_pdf'
@@ -32,8 +32,8 @@ gem 'nested_set'
 gem 'kaminari'
 
 # engines desde git
-gem 'odiseo', :git => 'git://github.com/apslab/odiseo-engine.git' 
-gem 'ares', :git => 'git://github.com/apslab/ares-engine.git' 
+gem 'odiseo', :git => 'git://github.com/apslab/odiseo-engine.git'
+gem 'ares', :git => 'git://github.com/apslab/ares-engine.git'
 gem 'hefesto', :git => 'git://github.com/apslab/hefesto-engine.git'
 #gem 'apolo', :git => 'git://github.com/apslab/apolo-engine.git'
 
