@@ -107,6 +107,7 @@ module Apslabs
             movements.each do |movement|
               # get account for this old details
               account = exercise.accounts.find_by_code(movement.detail_account_code)
+              raise "account inexistent!: code #{movement.detail_account_code}"
 
               detail_attributes = {
                 :description => ic.iconv(movement.detail_description),
