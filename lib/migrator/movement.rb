@@ -110,7 +110,7 @@ module Apslabs
 
               detail_attributes = {
                 :description => ic.iconv(movement.detail_description),
-                :account_id => account.id
+                :account_id => account.try(:id)
               }
 
               detail_attributes.update(:debit => movement.debit) unless movement.debit.nil?
