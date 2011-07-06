@@ -32,7 +32,7 @@
         #status
           = content_for?(:status_menu) ? yield(:status_menu) : render('shared/status_menu')
           = content_for?(:user_navigation) ? yield(:user_navigation) : render('shared/user_navigation')
-        %h1{:style => 'margin-left:0px;height:50px;'}
+        %h1{:style => 'margin-left:0px;height:75px;padding: 10px 0px;'}
           AP Manager
           = render('shared/change_current_company')
         = content_for?(:main_navigation) ? yield(:main_navigation) : render('shared/main_navigation')
