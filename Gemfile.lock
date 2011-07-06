@@ -12,9 +12,9 @@ GIT
 
 GIT
   remote: git://github.com/apslab/odiseo-engine.git
-  revision: c960ecf5808423f33104af60bf5f33089034b665
+  revision: 2d91b1134b6b5f7bfc73c2f6169f29a2b639b2b9
   specs:
-    odiseo (0.7.3)
+    odiseo (0.7.4)
       attrtastic
       cocoon
       formtastic
