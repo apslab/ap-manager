@@ -32,6 +32,11 @@ aps_users.each do |aps_user|
                :password_confirmation => '123456').confirm!
 end
 
+aps_companies.each do |aps_company|
+  $stderr.puts("create example company #{aps_company}...")
+  Company.create!(:name => aps_company, :engines => Rails.application.config.engines)
+end
+
 users = User.where(:email => aps_users.map{|aps_user|aps_user[:email]})
 Company.where(:name => aps_companies).each do |company|
   users.each do |user|
