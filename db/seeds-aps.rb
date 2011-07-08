@@ -1,8 +1,8 @@
-encoding: utf-8
+#encoding: utf-8
 =begin
 Execute:
   heroku console
-  load Rails.root.join('db/seeds-cnsp.rb').to_s
+  load Rails.root.join('db/seeds-aps.rb').to_s
 =end
 
 aps_companies = ['APSystems srl', 'APS Prueba']
