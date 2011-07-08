@@ -14,7 +14,7 @@
     %tr
       %td= province.code
       %td= province.name
-      %td= province.country_id
+      %td= province.country.name
       %td= link_to t('scaffold.actions.show').titlecase, province
       %td= link_to t('scaffold.actions.edit').titlecase, edit_province_path(province)
       %td= link_to t('scaffold.actions.destroy').titlecase, province, :confirm => t('scaffold.actions.destroy_confirm'), :method => :delete
