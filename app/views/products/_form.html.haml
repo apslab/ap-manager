@@ -10,7 +10,9 @@
     = f.input :since, :as => :datepicker
     = f.input :until, :as => :datepicker
     = f.input :tasaiva, :label => true, :as => :select, :collection => current_company.tasaivas.map{|c| [c.detalle, c.id]}, :include_blank => false
-    = f.input :account, :label => true, :as => :select, :collection =>  current_company.accounts.leaves.map{|a|[a.self_and_ancestors.map(&:name).join(' &raquo; ').html_safe, a.id]} , :include_blank => true
+    = f.input :account, :label => true, :as => :select, :collection =>  current_company.accounts.leaves.map{|a|[[a.code, a.name].compact.join(' &raquo; ').html_safe, a.id]} , :include_blank => true
+  
+  = f.inputs do
+    = f.buttons
 
-  = f.buttons
-
+.clear

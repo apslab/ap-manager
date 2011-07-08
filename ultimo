@@ -1,0 +1,1 @@
+rake db:aps:populate_data COMPANY_ID=4 MOVEMENTS_FILE=doc/mc2009_maranon.csv ACCOUNTS_FILE=doc/plan_de_cuentas_contables_maranon_2009.csv
