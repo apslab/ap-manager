@@ -1,0 +1,14 @@
+- content_for(:title) do
+  %h1= [t('scaffold.actions.show'), Country.model_name.human].join(' ').titlecase
+
+- content_for(:controls) do
+  = controls do |control|
+    - control.item t('scaffold.actions.edit').titlecase, edit_country_path(@country), :icon => 'application_edit'
+    - control.item t('scaffold.actions.back').titlecase, :back, :icon => 'application_view_list'
+
+= semantic_attributes_for(@country) do |s|
+  = s.attributes(Country.human_name + ' Info') do
+    = s.attribute :code
+    = s.attribute :name
+
+.clear

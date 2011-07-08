@@ -1,4 +1,8 @@
 ApSys::Application.routes.draw do
+  resources :countries
+
+  resources :provinces
+
   resources :products
 
   resources :refenciacontables

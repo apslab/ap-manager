@@ -1,0 +1,10 @@
+= semantic_form_for @province do |f|
+  = f.semantic_errors
+
+  = f.inputs do
+    = f.input :code
+    = f.input :name
+    = f.input :country_id, :label => true, :as => :select, :collection => Country.all.map{|c| [c.name, c.id]}, :include_blank => false
+
+  = f.buttons
+

@@ -12,4 +12,6 @@
     - menu.item('Proveedores', suppliers_path, :active => controller.controller_name.include?('suppliers'))
   - if current_user.can_operated_engine?(:ares) 
     - menu.item('Productos', products_path, :active => controller.controller_name.include?('products'))
+    - menu.item('Paises', countries_path, :active => controller.controller_name.include?('countries'))
+    - menu.item('Provincias', provinces_path, :active => controller.controller_name.include?('provinces'))
 

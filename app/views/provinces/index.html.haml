@@ -1,0 +1,25 @@
+- content_for(:title) do
+  %h1= t('scaffold.actions.list', :item => Province.model_name.human).titlecase
+
+%table
+  %tr
+    %th= Province.human_attribute_name('code')
+    %th= Province.human_attribute_name('name')
+    %th= Province.human_attribute_name('country_id')
+    %th
+    %th
+    %th
+
+  - @provinces.each do |province|
+    %tr
+      %td= province.code
+      %td= province.name
+      %td= province.country_id
+      %td= link_to t('scaffold.actions.show').titlecase, province
+      %td= link_to t('scaffold.actions.edit').titlecase, edit_province_path(province)
+      %td= link_to t('scaffold.actions.destroy').titlecase, province, :confirm => t('scaffold.actions.destroy_confirm'), :method => :delete
+
+%br
+
+= link_to t('scaffold.actions.new', :item => Province.model_name.human).titlecase, new_province_path
+
