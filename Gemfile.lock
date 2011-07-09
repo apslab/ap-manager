@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/apslab/ares-engine.git
-  revision: f731b9f2b915d7d1557b835b09312bf3922fe6da
+  revision: 673bad5a75b44d91510f39e17884d62cc71fc7e8
   specs:
-    ares (0.4.5)
+    ares (0.4.6)
 
 GIT
   remote: git://github.com/apslab/hefesto-engine.git
