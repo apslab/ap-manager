@@ -15,3 +15,5 @@
         account_id: Cuenta contable
         condicioniva_id: Condicion frente al IVA
         email: eMail
+        envelope: Sobre
+        date_and_time_attention: Fecha y hora de atención
