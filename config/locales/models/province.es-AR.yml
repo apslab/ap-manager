@@ -1,0 +1,8 @@
+'es-AR':
+  activerecord:
+    models:
+      province: Provincia
+    attributes:
+      province:
+        code: Código  
+        name: Descripción

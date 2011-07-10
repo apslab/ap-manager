@@ -1,0 +1,8 @@
+'es-AR':
+  activerecord:
+    models:
+      country: Pais
+    attributes:
+      country:
+        code: Código  
+        name: Descripción
