@@ -3,5 +3,5 @@
     models:
       supplier: Proveedor
     attributes:
-      product:
-        account: Cuenta contable
+      supplier:
+        account_id: Cuenta contable
