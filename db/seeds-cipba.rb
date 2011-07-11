@@ -7,11 +7,12 @@ Execute:
 
 aps_companies = ['CIPBA srl', 'Porres Prueba']
 
-aps_users = [{
-    :email => 'dek@fibertel.com.ar',
+aps_users = [{:email => 'dek@fibertel.com.ar',
     :first_name => 'Ezequiel',
-    :last_name => 'Apellido'
-  }]
+    :last_name => 'Apellido'},
+    {:email => 'soporte@ap-sys.com.ar',
+        :first_name => 'soporte',
+        :last_name => 'aps' }]
 
 aps_users.each do |aps_user|
   $stderr.puts("create user #{aps_user[:email]} with password 123456 and activate...")
