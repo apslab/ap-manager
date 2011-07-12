@@ -15,7 +15,9 @@ class Refenciacontable < ActiveRecord::Base
   
   def self.referencias
     ['ventas_factura_total','ventas_factura_subtotal','ventas_factura_iva','ventas_factura_iibb','ventas_factura_item',
-      'compras_factura_total','compras_factura_subtotal','compras_factura_iva','compras_factura_iibb','compras_factura_item']
+      'ventas_nc_total','ventas_nc_subtotal','ventas_nc_iva','ventas_nc_iibb','ventas_nc_item',
+      'compras_factura_total','compras_factura_subtotal','compras_factura_iva','compras_factura_iibb','compras_factura_item',
+      'compras_nc_total','compras_nc_subtotal','compras_nc_iva','compras_nc_iibb','compras_nc_item']
   end
 end
 
