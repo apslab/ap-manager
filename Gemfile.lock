@@ -1,8 +1,8 @@
 GIT
   remote: git://github.com/apslab/ares-engine.git
-  revision: 673bad5a75b44d91510f39e17884d62cc71fc7e8
+  revision: 0d3730a989ffaf4eeba6174ea21a8cdc6ed8f2dd
   specs:
-    ares (0.4.6)
+    ares (0.4.7)
 
 GIT
   remote: git://github.com/apslab/hefesto-engine.git
@@ -12,9 +12,9 @@ GIT
 
 GIT
   remote: git://github.com/apslab/odiseo-engine.git
-  revision: dfd0b5221c7be516ae509c1cde28ddf3124808e3
+  revision: 3e22fa907631e64aab92ae9e353c5a2695803a4b
   specs:
-    odiseo (0.7.5)
+    odiseo (0.7.6)
       attrtastic
       cocoon
       formtastic

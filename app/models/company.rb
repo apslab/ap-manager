@@ -35,7 +35,7 @@ class Company < ActiveRecord::Base
   before_destroy :can_be_destroyed?
 
   def current_exercise
-    @current_exercise ||= exercises.from(Date.today)
+    @current_exercise ||= exercises.from_date(Date.today)
   end
 
   private
