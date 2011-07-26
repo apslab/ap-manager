@@ -49,8 +49,8 @@ class Ability
       can :manage, Tasaiva#, :empresa_id => user.current_or_first_company.id
       can :manage, Condicioniva, :empresa_id => user.current_or_first_company.id
       can :manage, Factura#, {:cliente => {:empresa_id => user.current_or_first_company.id} }
-      can :manage, Notacredito, :empresa_id => user.current_or_first_company.id
-      can :manage, Recibo, :empresa_id => user.current_or_first_company.id
+      can :manage, Notacredito#, :empresa_id => user.current_or_first_company.id
+      can :manage, Recibo#, :empresa_id => user.current_or_first_company.id
       can :manage, Refenciacontable, :company_id => user.current_or_first_company.id
       can :manage, Product,:company_id => user.current_or_first_company.id
     end

@@ -8,6 +8,8 @@ class Refenciacontable < ActiveRecord::Base
   
   validates_associated :company
   validates_associated :account
+
+  validates_uniqueness_of :referencename, :scope => [:company_id], :message => "existe la referencia con el cuenta", :allow_nil => true
   
   scope :by_company, lambda {|company| where(:company_id => company.id) }
 

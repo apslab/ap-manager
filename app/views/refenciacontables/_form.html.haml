@@ -2,7 +2,7 @@
   = f.semantic_errors
 
   = f.inputs do
-    = f.input :account, :collection => current_company.accounts.leaves.map{|a|[[a.code, a.name].compact.join(' &raquo; ').html_safe, a.id]}, :prompt => '-- seleccione una cuenta --', :label => false, :wrapper_html => {:style => 'width:41%'}
+    = f.input :account, :collection => current_company.exercises.first.accounts.leaves.map{|a|[[a.code, a.name].compact.join(' &raquo; ').html_safe, a.id]}, :prompt => '-- seleccione una cuenta --', :label => false, :wrapper_html => {:style => 'width:41%'}
     = f.input :referencename,:as => :select, :collection => Refenciacontable.referencias, :prompt => '-- seleccione una referencia --', :label => false, :wrapper_html => {:style => 'width:41%'}
     = f.input :debita
 
