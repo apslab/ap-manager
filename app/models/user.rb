@@ -36,7 +36,8 @@ class User < ActiveRecord::Base
 
   def change_current_company_for(company)
     Membership.transaction do
-      memberships.find_by_current(true).toggle!(:current)
+      memberships.find_by_current(true).toggle!(:current) unless memberships.find_by_current(true) == nil
+      
       memberships.find_by_company_id(company).toggle!(:current)
       reload
     end
