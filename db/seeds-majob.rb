@@ -17,6 +17,7 @@ maranon_users = [{
     :last_name => 'Bergna'
   }]
 
+=begin
 maranon_users.each do |maranon_user|
   $stderr.puts("create user #{maranon_user[:email]} with password 123456 and activate...")
   User.create!(:email => maranon_user[:email],
@@ -25,6 +26,7 @@ maranon_users.each do |maranon_user|
                :password => '123456', 
                :password_confirmation => '123456').confirm!
 end
+=end
 
 maranon_companies.each do |maranon_company|
   $stderr.puts("create example company #{maranon_company}...")
