@@ -1,0 +1,14 @@
+<h1>Professional Speciality</h1>
+<p>
+	<strong>Professional:</strong>
+	<%= @professional_speciality.professional_id %>
+</p>
+<p>
+	<strong>Specialty:</strong>
+	<%= @professional_speciality.specialty_id %>
+</p>
+<p>
+	<%= link_to "Editar", edit_professional_speciality_path(@professional_speciality) %> |
+	<%= link_to "Eliminar", @professional_speciality, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Professional Specialities", professional_specialities_path %>
+</p>

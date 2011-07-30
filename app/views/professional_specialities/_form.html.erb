@@ -1,0 +1,22 @@
+<%= form_for @professional_speciality do |f| %>
+	<% if @professional_speciality.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@professional_speciality.errors.count, "error") %> prohibido guardar professional_speciality:</h2>
+
+		<ul>
+		<% @professional_speciality.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :professional_id %><br />
+		<%= f.text_field :professional_id %>
+	</p>
+	<p>
+		<%= f.label :specialty_id %><br />
+		<%= f.collection_select :specialty_id, Specialty.all, :id, :name %>
+	</p>
+	<p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Service Specialties</h1>
+
+<table>
+	<tr>
+		<th>Service</th>
+		<th>Name</th>
+		<th>Specialty</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for service_specialty in @service_specialties %>
+		<tr>
+			<td><%= service_specialty.service_id %></td>
+			<td><%= service_specialty.name %></td>
+			<td><%= service_specialty.specialty_id %></td>
+			<td><%= link_to "Ver", service_specialty %></td>
+			<td><%= link_to "Editar", edit_service_specialty_path(service_specialty) %></td>
+			<td><%= link_to "Eliminar", service_specialty, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Service Specialty", new_service_specialty_path %></p>

@@ -1,0 +1,27 @@
+<h1>Assistance Types</h1>
+
+<table>
+	<tr>
+		<th>Company</th>
+		<th>Name</th>
+		<th>Code</th>
+		<th>Default</th>
+		<th>Color</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for assistance_type in @assistance_types %>
+		<tr>
+			<td><%= assistance_type.company_id %></td>
+			<td><%= assistance_type.name %></td>
+			<td><%= assistance_type.code %></td>
+			<td><%= assistance_type.default %></td>
+			<td><%= assistance_type.color %></td>
+			<td><%= link_to "Ver", assistance_type %></td>
+			<td><%= link_to "Editar", edit_assistance_type_path(assistance_type) %></td>
+			<td><%= link_to "Eliminar", assistance_type, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Assistance Type", new_assistance_type_path %></p>

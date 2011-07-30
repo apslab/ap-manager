@@ -1,0 +1,43 @@
+<h1>Peoples</h1>
+
+<table>
+	<tr>
+		<th>Code</th>
+		<th>Last Name</th>
+		<th>Sure Name</th>
+		<th>Sex</th>
+		<th>Birthday</th>
+		<th>Deathday</th>
+		<th>Web Site</th>
+		<th>Document Number</th>
+		<th>Document Type</th>
+		<th>Marital Status</th>
+		<th>Created User</th>
+		<th>Updated User</th>
+		<th>Notes</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for person in @people %>
+		<tr>
+			<td><%= person.code %></td>
+			<td><%= person.last_name %></td>
+			<td><%= person.sure_name %></td>
+			<td><%= person.sex %></td>
+			<td><%= person.birthday %></td>
+			<td><%= person.deathday %></td>
+			<td><%= person.web_site %></td>
+			<td><%= person.document_number %></td>
+			<td><%= person.document_type_id %></td>
+			<td><%= person.marital_status_id %></td>
+			<td><%= person.created_user_id %></td>
+			<td><%= person.updated_user_id %></td>
+			<td><%= person.notes %></td>
+			<td><%= link_to "Ver", person %></td>
+			<td><%= link_to "Editar", edit_person_path(person) %></td>
+			<td><%= link_to "Eliminar", person, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Person", new_person_path %></p>

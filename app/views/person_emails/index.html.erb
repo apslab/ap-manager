@@ -1,0 +1,29 @@
+<h1>Person Emails</h1>
+
+<table>
+	<tr>
+		<th>Person</th>
+		<th>Email Type</th>
+		<th>Email</th>
+		<th>Created User</th>
+		<th>Updated User</th>
+		<th>Notes</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for person_email in @person_emails %>
+		<tr>
+			<td><%= person_email.person_id %></td>
+			<td><%= person_email.email_type_id %></td>
+			<td><%= person_email.email %></td>
+			<td><%= person_email.created_user_id %></td>
+			<td><%= person_email.updated_user_id %></td>
+			<td><%= person_email.notes %></td>
+			<td><%= link_to "Ver", person_email %></td>
+			<td><%= link_to "Editar", edit_person_email_path(person_email) %></td>
+			<td><%= link_to "Eliminar", person_email, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Person Email", new_person_email_path %></p>

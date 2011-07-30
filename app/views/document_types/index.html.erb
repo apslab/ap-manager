@@ -1,0 +1,25 @@
+<h1>Document Types</h1>
+
+<table>
+	<tr>
+		<th>Company</th>
+		<th>Name</th>
+		<th>Code</th>
+		<th>Default</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for document_type in @document_types %>
+		<tr>
+			<td><%= document_type.company_id %></td>
+			<td><%= document_type.name %></td>
+			<td><%= document_type.code %></td>
+			<td><%= document_type.default %></td>
+			<td><%= link_to "Ver", document_type %></td>
+			<td><%= link_to "Editar", edit_document_type_path(document_type) %></td>
+			<td><%= link_to "Eliminar", document_type, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Document Type", new_document_type_path %></p>

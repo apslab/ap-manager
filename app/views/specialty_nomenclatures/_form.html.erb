@@ -1,0 +1,34 @@
+<%= form_for @specialty_nomenclature do |f| %>
+	<% if @specialty_nomenclature.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@specialty_nomenclature.errors.count, "error") %> prohibido guardar specialty_nomenclature:</h2>
+
+		<ul>
+		<% @specialty_nomenclature.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :specialty_id %><br />
+		<%= f.collection_select :specialty_id, Specialty.all, :id, :name, :include_blank => 'Sin datos' %>
+	</p>
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :service_id %><br />
+		<%= f.collection_select :service_id, Service.all, :id, :name, :include_blank => 'Sin datos' %>
+	</p>
+	<p>
+		<%= f.label :nomenclature_id %><br />
+		<%= f.text_field :nomenclature_id %>
+	</p>
+	<p>
+		<%= f.label :ambulatory_or_internship %><br />
+		<%= f.text_field :ambulatory_or_internship %>
+	</p>
+	<p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,27 @@
+<h1>Patient Health Insurances</h1>
+
+<table>
+	<tr>
+		<th>Patient</th>
+		<th>Code</th>
+		<th>Health Insurance</th>
+		<th>Health Insurance Plan</th>
+		<th>Affiliate Number</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for patient_health_insurance in @patient_health_insurances %>
+		<tr>
+			<td><%= patient_health_insurance.patient_id %></td>
+			<td><%= patient_health_insurance.code %></td>
+			<td><%= patient_health_insurance.health_insurance_id %></td>
+			<td><%= patient_health_insurance.health_insurance_plan_id %></td>
+			<td><%= patient_health_insurance.affiliate_number %></td>
+			<td><%= link_to "Ver", patient_health_insurance %></td>
+			<td><%= link_to "Editar", edit_patient_health_insurance_path(patient_health_insurance) %></td>
+			<td><%= link_to "Eliminar", patient_health_insurance, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Patient Health Insurance", new_patient_health_insurance_path %></p>

@@ -1,0 +1,31 @@
+<h1>Care Type Details</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Code</th>
+		<th>Care Type</th>
+		<th>Nomenclature Synonym</th>
+		<th>Medication</th>
+		<th>Disposable</th>
+		<th>Amount</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for care_type_detail in @care_type_details %>
+		<tr>
+			<td><%= care_type_detail.name %></td>
+			<td><%= care_type_detail.code %></td>
+			<td><%= care_type_detail.care_type_id %></td>
+			<td><%= care_type_detail.nomenclature_synonym_id %></td>
+			<td><%= care_type_detail.medication_id %></td>
+			<td><%= care_type_detail.disposable %></td>
+			<td><%= care_type_detail.amount %></td>
+			<td><%= link_to "Ver", care_type_detail %></td>
+			<td><%= link_to "Editar", edit_care_type_detail_path(care_type_detail) %></td>
+			<td><%= link_to "Eliminar", care_type_detail, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Care Type Detail", new_care_type_detail_path %></p>

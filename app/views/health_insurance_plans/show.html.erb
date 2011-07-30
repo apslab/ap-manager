@@ -1,0 +1,30 @@
+<h1>Health Insurance Plan</h1>
+<p>
+	<strong>Health Insurance:</strong>
+	<%= @health_insurance_plan.health_insurance_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @health_insurance_plan.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @health_insurance_plan.code %>
+</p>
+<p>
+	<strong>Valid Since:</strong>
+	<%= @health_insurance_plan.valid_since %>
+</p>
+<p>
+	<strong>Valid Until:</strong>
+	<%= @health_insurance_plan.valid_until %>
+</p>
+<p>
+	<strong>Operative Mode:</strong>
+	<%= @health_insurance_plan.operative_mode %>
+</p>
+<p>
+	<%= link_to "Editar", edit_health_insurance_plan_path(@health_insurance_plan) %> |
+	<%= link_to "Eliminar", @health_insurance_plan, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Health Insurance Plans", health_insurance_plans_path %>
+</p>

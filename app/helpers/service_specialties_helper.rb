@@ -1,0 +1,2 @@
+module ServiceSpecialtiesHelper
+end

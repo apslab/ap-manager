@@ -1,0 +1,98 @@
+<%= form_for @professional_scheduler do |f| %>
+	<% if @professional_scheduler.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@professional_scheduler.errors.count, "error") %> prohibido guardar professional_scheduler:</h2>
+
+		<ul>
+		<% @professional_scheduler.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :professional_id %><br />
+		<%= f.text_field :professional_id %>
+	</p>
+	<p>
+		<%= f.label :specialty_id %><br />
+		<%= f.collection_select :specialty_id, Specialty.all, :id, :name %>
+	</p>
+	<p>
+		<%= f.label :d1 %><br />
+		<%= f.check_box :d1 %>
+	</p>
+	<p>
+		<%= f.label :d2 %><br />
+		<%= f.check_box :d2 %>
+	</p>
+	<p>
+		<%= f.label :d3 %><br />
+		<%= f.check_box :d3 %>
+	</p>
+	<p>
+		<%= f.label :d4 %><br />
+		<%= f.check_box :d4 %>
+	</p>
+	<p>
+		<%= f.label :d5 %><br />
+		<%= f.check_box :d5 %>
+	</p>
+	<p>
+		<%= f.label :d6 %><br />
+		<%= f.check_box :d6 %>
+	</p>
+	<p>
+		<%= f.label :d7 %><br />
+		<%= f.check_box :d7 %>
+	</p>
+	<p>
+		<%= f.label :interval_type %><br />
+		<%= f.text_field :interval_type %>
+	</p>
+	<p>
+		<%= f.label :interval_repeat %><br />
+		<%= f.text_field :interval_repeat %>
+	</p>
+	<p>
+		<%= f.label :minutes %><br />
+		<%= f.text_field :minutes %>
+	</p>
+	<p>
+		<%= f.label :month_week_periodical %><br />
+		<%= f.check_box :month_week_periodical %>
+	</p>
+	<p>
+		<%= f.label :month_day_periodical %><br />
+		<%= f.check_box :month_day_periodical %>
+	</p>
+	<p>
+		<%= f.label :day_of_week %><br />
+		<%= f.text_field :day_of_week %>
+	</p>
+	<p>
+		<%= f.label :date_since %><br />
+		<%= f.text_field :date_since %>
+	</p>
+	<p>
+		<%= f.label :date_until %><br />
+		<%= f.text_field :date_until %>
+	</p>
+	<p>
+		<%= f.label :hour_since %><br />
+		<%= f.text_field :hour_since %>
+	</p>
+	<p>
+		<%= f.label :hour_until %><br />
+		<%= f.text_field :hour_until %>
+	</p>
+	<p>
+		<%= f.label :over_appointment %><br />
+		<%= f.text_field :over_appointment %>
+	</p>
+	<p>
+		<%= f.label :notes %><br />
+		<%= f.text_field :notes %>
+	</p>
+	<p><%= f.submit %></p>
+<% end %>

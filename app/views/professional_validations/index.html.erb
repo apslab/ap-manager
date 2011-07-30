@@ -1,0 +1,23 @@
+<h1>Professional Validations</h1>
+
+<table>
+	<tr>
+		<th>Professional</th>
+		<th>Valid Since</th>
+		<th>Valid Until</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for professional_validation in @professional_validations %>
+		<tr>
+			<td><%= professional_validation.professional_id %></td>
+			<td><%= professional_validation.valid_since %></td>
+			<td><%= professional_validation.valid_until %></td>
+			<td><%= link_to "Ver", professional_validation %></td>
+			<td><%= link_to "Editar", edit_professional_validation_path(professional_validation) %></td>
+			<td><%= link_to "Eliminar", professional_validation, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Professional Validation", new_professional_validation_path %></p>

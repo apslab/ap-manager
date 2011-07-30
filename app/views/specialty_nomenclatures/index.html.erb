@@ -1,0 +1,27 @@
+<h1>Specialty Nomenclatures</h1>
+
+<table>
+	<tr>
+		<th>Specialty</th>
+		<th>Name</th>
+		<th>Service</th>
+		<th>Nomenclature</th>
+		<th>Ambulatory Or Internship</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for specialty_nomenclature in @specialty_nomenclatures %>
+		<tr>
+			<td><%= specialty_nomenclature.specialty_id %></td>
+			<td><%= specialty_nomenclature.name %></td>
+			<td><%= specialty_nomenclature.service_id %></td>
+			<td><%= specialty_nomenclature.nomenclature_id %></td>
+			<td><%= specialty_nomenclature.ambulatory_or_internship %></td>
+			<td><%= link_to "Ver", specialty_nomenclature %></td>
+			<td><%= link_to "Editar", edit_specialty_nomenclature_path(specialty_nomenclature) %></td>
+			<td><%= link_to "Eliminar", specialty_nomenclature, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Specialty Nomenclature", new_specialty_nomenclature_path %></p>

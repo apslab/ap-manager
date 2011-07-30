@@ -1,0 +1,58 @@
+<h1>Person</h1>
+<p>
+	<strong>Code:</strong>
+	<%= @person.code %>
+</p>
+<p>
+	<strong>Last Name:</strong>
+	<%= @person.last_name %>
+</p>
+<p>
+	<strong>Sure Name:</strong>
+	<%= @person.sure_name %>
+</p>
+<p>
+	<strong>Sex:</strong>
+	<%= @person.sex %>
+</p>
+<p>
+	<strong>Birthday:</strong>
+	<%= @person.birthday %>
+</p>
+<p>
+	<strong>Deathday:</strong>
+	<%= @person.deathday %>
+</p>
+<p>
+	<strong>Web Site:</strong>
+	<%= @person.web_site %>
+</p>
+<p>
+	<strong>Document Number:</strong>
+	<%= @person.document_number %>
+</p>
+<p>
+	<strong>Document Type:</strong>
+	<%= @person.document_type_id %>
+</p>
+<p>
+	<strong>Marital Status:</strong>
+	<%= @person.marital_status_id %>
+</p>
+<p>
+	<strong>Created User:</strong>
+	<%= @person.created_user_id %>
+</p>
+<p>
+	<strong>Updated User:</strong>
+	<%= @person.updated_user_id %>
+</p>
+<p>
+	<strong>Notes:</strong>
+	<%= @person.notes %>
+</p>
+<p>
+	<%= link_to "Editar", edit_person_path(@person) %> |
+	<%= link_to "Eliminar", @person, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Peoples", people_path %>
+</p>

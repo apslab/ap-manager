@@ -1,0 +1,23 @@
+<h1>States</h1>
+
+<table>
+	<tr>
+		<th>Country</th>
+		<th>Name</th>
+		<th>Code</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for state in @states %>
+		<tr>
+			<td><%= state.country_id %></td>
+			<td><%= state.name %></td>
+			<td><%= state.code %></td>
+			<td><%= link_to "Ver", state %></td>
+			<td><%= link_to "Editar", edit_state_path(state) %></td>
+			<td><%= link_to "Eliminar", state, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo State", new_state_path %></p>

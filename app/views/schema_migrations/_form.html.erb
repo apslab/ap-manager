@@ -1,0 +1,18 @@
+<%= form_for @schema_migration do |f| %>
+	<% if @schema_migration.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@schema_migration.errors.count, "error") %> prohibido guardar schema_migration:</h2>
+
+		<ul>
+		<% @schema_migration.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :version %><br />
+		<%= f.text_field :version %>
+	</p>
+	<p><%= f.submit %></p>
+<% end %>

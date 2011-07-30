@@ -1,0 +1,22 @@
+<h1>Attention Mode</h1>
+<p>
+	<strong>Company:</strong>
+	<%= @attention_mode.company_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @attention_mode.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @attention_mode.code %>
+</p>
+<p>
+	<strong>Default:</strong>
+	<%= @attention_mode.default %>
+</p>
+<p>
+	<%= link_to "Editar", edit_attention_mode_path(@attention_mode) %> |
+	<%= link_to "Eliminar", @attention_mode, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Attention Modes", attention_modes_path %>
+</p>

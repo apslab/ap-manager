@@ -1,0 +1,33 @@
+<h1>Professionals</h1>
+
+<table>
+	<tr>
+		<th>Person</th>
+		<th>Code</th>
+		<th>National Enrollment</th>
+		<th>State Enrollment</th>
+		<th>Relationship Work</th>
+		<th>Schedule Appointments</th>
+		<th>On Demand Appointments</th>
+		<th>Own</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for professional in @professionals %>
+		<tr>
+			<td><%= professional.person_id %></td>
+			<td><%= professional.code %></td>
+			<td><%= professional.national_enrollment %></td>
+			<td><%= professional.state_enrollment %></td>
+			<td><%= professional.relationship_work %></td>
+			<td><%= professional.schedule_appointments %></td>
+			<td><%= professional.on_demand_appointments %></td>
+			<td><%= professional.own %></td>
+			<td><%= link_to "Ver", professional %></td>
+			<td><%= link_to "Editar", edit_professional_path(professional) %></td>
+			<td><%= link_to "Eliminar", professional, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Professional", new_professional_path %></p>

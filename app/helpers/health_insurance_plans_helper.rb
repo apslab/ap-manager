@@ -1,0 +1,2 @@
+module HealthInsurancePlansHelper
+end

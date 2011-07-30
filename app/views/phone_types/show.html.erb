@@ -1,0 +1,22 @@
+<h1>Phone Type</h1>
+<p>
+	<strong>Company:</strong>
+	<%= @phone_type.company_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @phone_type.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @phone_type.code %>
+</p>
+<p>
+	<strong>Default:</strong>
+	<%= @phone_type.default %>
+</p>
+<p>
+	<%= link_to "Editar", edit_phone_type_path(@phone_type) %> |
+	<%= link_to "Eliminar", @phone_type, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Phone Types", phone_types_path %>
+</p>

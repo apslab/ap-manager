@@ -1,0 +1,46 @@
+<%= form_for @care_type do |f| %>
+	<% if @care_type.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@care_type.errors.count, "error") %> prohibido guardar care_type:</h2>
+
+		<ul>
+		<% @care_type.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :company_id %><br />
+		<%= f.text_field :company_id %>
+	</p>
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.label :code %><br />
+		<%= f.text_field :code %>
+	</p>
+	<p>
+		<%= f.label :specialty_id %><br />
+		<%= f.collection_select :specialty_id, Specialty.all, :id, :name, :include_blank => 'Sin datos' %>
+	</p>
+	<p>
+		<%= f.label :user_message %><br />
+		<%= f.text_field :user_message %>
+	</p>
+	<p>
+		<%= f.label :print_message %><br />
+		<%= f.text_field :print_message %>
+	</p>
+	<p>
+		<%= f.label :need_form %><br />
+		<%= f.check_box :need_form %>
+	</p>
+	<p>
+		<%= f.label :default %><br />
+		<%= f.check_box :default %>
+	</p>
+	<p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,25 @@
+<h1>Email Types</h1>
+
+<table>
+	<tr>
+		<th>Company</th>
+		<th>Name</th>
+		<th>Code</th>
+		<th>Default</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for email_type in @email_types %>
+		<tr>
+			<td><%= email_type.company_id %></td>
+			<td><%= email_type.name %></td>
+			<td><%= email_type.code %></td>
+			<td><%= email_type.default %></td>
+			<td><%= link_to "Ver", email_type %></td>
+			<td><%= link_to "Editar", edit_email_type_path(email_type) %></td>
+			<td><%= link_to "Eliminar", email_type, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Email Type", new_email_type_path %></p>

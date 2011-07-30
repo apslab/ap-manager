@@ -4,3 +4,6 @@ Gemfile.lock
 db/*.sqlite3
 log/*.log
 tmp/
+._*
+.idea
+*.yml

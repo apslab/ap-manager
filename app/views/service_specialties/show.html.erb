@@ -1,0 +1,18 @@
+<h1>Service Specialty</h1>
+<p>
+	<strong>Service:</strong>
+	<%= @service_specialty.service_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @service_specialty.name %>
+</p>
+<p>
+	<strong>Specialty:</strong>
+	<%= @service_specialty.specialty_id %>
+</p>
+<p>
+	<%= link_to "Editar", edit_service_specialty_path(@service_specialty) %> |
+	<%= link_to "Eliminar", @service_specialty, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Service Specialties", service_specialties_path %>
+</p>

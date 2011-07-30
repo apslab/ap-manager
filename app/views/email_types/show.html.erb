@@ -1,0 +1,22 @@
+<h1>Email Type</h1>
+<p>
+	<strong>Company:</strong>
+	<%= @email_type.company_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @email_type.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @email_type.code %>
+</p>
+<p>
+	<strong>Default:</strong>
+	<%= @email_type.default %>
+</p>
+<p>
+	<%= link_to "Editar", edit_email_type_path(@email_type) %> |
+	<%= link_to "Eliminar", @email_type, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Email Types", email_types_path %>
+</p>

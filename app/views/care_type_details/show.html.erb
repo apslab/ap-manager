@@ -1,0 +1,34 @@
+<h1>Care Type Detail</h1>
+<p>
+	<strong>Name:</strong>
+	<%= @care_type_detail.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @care_type_detail.code %>
+</p>
+<p>
+	<strong>Care Type:</strong>
+	<%= @care_type_detail.care_type_id %>
+</p>
+<p>
+	<strong>Nomenclature Synonym:</strong>
+	<%= @care_type_detail.nomenclature_synonym_id %>
+</p>
+<p>
+	<strong>Medication:</strong>
+	<%= @care_type_detail.medication_id %>
+</p>
+<p>
+	<strong>Disposable:</strong>
+	<%= @care_type_detail.disposable %>
+</p>
+<p>
+	<strong>Amount:</strong>
+	<%= @care_type_detail.amount %>
+</p>
+<p>
+	<%= link_to "Editar", edit_care_type_detail_path(@care_type_detail) %> |
+	<%= link_to "Eliminar", @care_type_detail, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Care Type Details", care_type_details_path %>
+</p>

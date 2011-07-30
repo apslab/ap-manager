@@ -1,0 +1,18 @@
+<h1>Patient</h1>
+<p>
+	<strong>Person:</strong>
+	<%= @patient.person_id %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @patient.code %>
+</p>
+<p>
+	<strong>Medical History:</strong>
+	<%= @patient.medical_history %>
+</p>
+<p>
+	<%= link_to "Editar", edit_patient_path(@patient) %> |
+	<%= link_to "Eliminar", @patient, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Patients", patients_path %>
+</p>

@@ -1,0 +1,58 @@
+<%= form_for @person_address do |f| %>
+	<% if @person_address.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@person_address.errors.count, "error") %> prohibido guardar person_address:</h2>
+
+		<ul>
+		<% @person_address.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :person_id %><br />
+		<%= f.text_field :person_id %>
+	</p>
+	<p>
+		<%= f.label :address_type_id %><br />
+		<%= f.collection_select :address_type_id, AddressType.all, :id, :name %>
+	</p>
+	<p>
+		<%= f.label :state_id %><br />
+		<%= f.collection_select :state_id, State.all, :id, :name %>
+	</p>
+	<p>
+		<%= f.label :street %><br />
+		<%= f.text_field :street %>
+	</p>
+	<p>
+		<%= f.label :floor %><br />
+		<%= f.text_field :floor %>
+	</p>
+	<p>
+		<%= f.label :dept %><br />
+		<%= f.text_field :dept %>
+	</p>
+	<p>
+		<%= f.label :ring %><br />
+		<%= f.text_field :ring %>
+	</p>
+	<p>
+		<%= f.label :postal_code %><br />
+		<%= f.text_field :postal_code %>
+	</p>
+	<p>
+		<%= f.label :created_user_id %><br />
+		<%= f.text_field :created_user_id %>
+	</p>
+	<p>
+		<%= f.label :updated_user_id %><br />
+		<%= f.text_field :updated_user_id %>
+	</p>
+	<p>
+		<%= f.label :notes %><br />
+		<%= f.text_field :notes %>
+	</p>
+	<p><%= f.submit %></p>
+<% end %>

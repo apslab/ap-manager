@@ -1,0 +1,18 @@
+<h1>Professional Validation</h1>
+<p>
+	<strong>Professional:</strong>
+	<%= @professional_validation.professional_id %>
+</p>
+<p>
+	<strong>Valid Since:</strong>
+	<%= @professional_validation.valid_since %>
+</p>
+<p>
+	<strong>Valid Until:</strong>
+	<%= @professional_validation.valid_until %>
+</p>
+<p>
+	<%= link_to "Editar", edit_professional_validation_path(@professional_validation) %> |
+	<%= link_to "Eliminar", @professional_validation, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Professional Validations", professional_validations_path %>
+</p>

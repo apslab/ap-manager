@@ -33,15 +33,18 @@ gem 'kaminari'
 
 # engines desde git
 gem 'odiseo', :git => 'git://github.com/apslab/odiseo-engine.git'
-gem 'ares', :git => 'git://github.com/apslab/ares-engine.git'
+#gem 'ares', :git => 'git://github.com/apslab/ares-engine.git'
 gem 'hefesto', :git => 'git://github.com/apslab/hefesto-engine.git'
 #gem 'apolo', :git => 'git://github.com/apslab/apolo-engine.git'
 
 # engines locales
 #gem 'odiseo', :path => '../'
-#gem 'ares', :path => '../'
+gem 'ares', :path => '../'
 #gem 'hefesto', :path => '../'
 #gem 'apolo', :path => '../'
+
+
+gem 'paperclip', :git => "git://github.com/patshaughnessy/paperclip.git"
 
 
 # database to development & migrations

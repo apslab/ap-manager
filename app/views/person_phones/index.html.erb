@@ -1,0 +1,29 @@
+<h1>Person Phones</h1>
+
+<table>
+	<tr>
+		<th>Person</th>
+		<th>Phone Type</th>
+		<th>Phone Number</th>
+		<th>Created User</th>
+		<th>Updated User</th>
+		<th>Notes</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for person_phone in @person_phones %>
+		<tr>
+			<td><%= person_phone.person_id %></td>
+			<td><%= person_phone.phone_type_id %></td>
+			<td><%= person_phone.phone_number %></td>
+			<td><%= person_phone.created_user_id %></td>
+			<td><%= person_phone.updated_user_id %></td>
+			<td><%= person_phone.notes %></td>
+			<td><%= link_to "Ver", person_phone %></td>
+			<td><%= link_to "Editar", edit_person_phone_path(person_phone) %></td>
+			<td><%= link_to "Eliminar", person_phone, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Person Phone", new_person_phone_path %></p>

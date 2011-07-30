@@ -1,12 +1,8 @@
 ApSys::Application.routes.draw do
   resources :countries
-
   resources :provinces
-
   resources :products
-
   resources :refenciacontables
-
   resource :dashboard, :only => :show
 
   devise_for :users do
@@ -15,6 +11,40 @@ ApSys::Application.routes.draw do
   end
 
   root :to => 'dashboards#show'
+
+  resources :address_types
+  resources :assistance_types
+  resources :attention_modes
+  resources :care_types
+  resources :care_type_details
+  resources :currencies
+  resources :document_types
+  resources :email_types
+  resources :health_insurances do
+    resources :health_insurance_plans
+  end
+  resources :marital_statuses
+  resources :patients do
+    resources :patient_health_insurances
+  end
+  resources :people do
+    resources :person_addresses
+    resources :person_emails
+    resources :person_phones
+  end
+  resources :professionals do
+    resources :professional_schedulers
+    resources :professional_specialities
+    resources :professional_attention_modes
+    resources :professional_validations
+  end
+  resources :phone_types
+  resources :services do
+    resources :service_specialties
+  end
+  resources :specialties
+  resources :specialty_nomenclatures
+  resources :states
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

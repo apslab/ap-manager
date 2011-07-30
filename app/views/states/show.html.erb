@@ -1,0 +1,18 @@
+<h1>State</h1>
+<p>
+	<strong>Country:</strong>
+	<%= @state.country_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @state.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @state.code %>
+</p>
+<p>
+	<%= link_to "Editar", edit_state_path(@state) %> |
+	<%= link_to "Eliminar", @state, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "States", states_path %>
+</p>

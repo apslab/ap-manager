@@ -1,0 +1,39 @@
+<h1>Person Addresses</h1>
+
+<table>
+	<tr>
+		<th>Person</th>
+		<th>Address Type</th>
+		<th>State</th>
+		<th>Street</th>
+		<th>Floor</th>
+		<th>Dept</th>
+		<th>Ring</th>
+		<th>Postal Code</th>
+		<th>Created User</th>
+		<th>Updated User</th>
+		<th>Notes</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for person_address in @person_addresses %>
+		<tr>
+			<td><%= person_address.person_id %></td>
+			<td><%= person_address.address_type_id %></td>
+			<td><%= person_address.state_id %></td>
+			<td><%= person_address.street %></td>
+			<td><%= person_address.floor %></td>
+			<td><%= person_address.dept %></td>
+			<td><%= person_address.ring %></td>
+			<td><%= person_address.postal_code %></td>
+			<td><%= person_address.created_user_id %></td>
+			<td><%= person_address.updated_user_id %></td>
+			<td><%= person_address.notes %></td>
+			<td><%= link_to "Ver", person_address %></td>
+			<td><%= link_to "Editar", edit_person_address_path(person_address) %></td>
+			<td><%= link_to "Eliminar", person_address, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Person Address", new_person_address_path %></p>

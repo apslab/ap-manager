@@ -1,0 +1,14 @@
+<h1>Professional Attention Mode</h1>
+<p>
+	<strong>Professional:</strong>
+	<%= @professional_attention_mode.professional_id %>
+</p>
+<p>
+	<strong>Attention Mode:</strong>
+	<%= @professional_attention_mode.attention_mode_id %>
+</p>
+<p>
+	<%= link_to "Editar", edit_professional_attention_mode_path(@professional_attention_mode) %> |
+	<%= link_to "Eliminar", @professional_attention_mode, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Professional Attention Modes", professional_attention_modes_path %>
+</p>

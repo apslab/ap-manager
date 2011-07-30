@@ -1,0 +1,30 @@
+<h1>Specialty</h1>
+<p>
+	<strong>Company:</strong>
+	<%= @specialty.company_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @specialty.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @specialty.code %>
+</p>
+<p>
+	<strong>Default:</strong>
+	<%= @specialty.default %>
+</p>
+<p>
+	<strong>Suspension Type:</strong>
+	<%= @specialty.suspension_type_id %>
+</p>
+<p>
+	<strong>Notes:</strong>
+	<%= @specialty.notes %>
+</p>
+<p>
+	<%= link_to "Editar", edit_specialty_path(@specialty) %> |
+	<%= link_to "Eliminar", @specialty, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Specialties", specialties_path %>
+</p>

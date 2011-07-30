@@ -1,0 +1,26 @@
+<%= form_for @professional_validation do |f| %>
+	<% if @professional_validation.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@professional_validation.errors.count, "error") %> prohibido guardar professional_validation:</h2>
+
+		<ul>
+		<% @professional_validation.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :professional_id %><br />
+		<%= f.text_field :professional_id %>
+	</p>
+	<p>
+		<%= f.label :valid_since %><br />
+		<%= f.text_field :valid_since %>
+	</p>
+	<p>
+		<%= f.label :valid_until %><br />
+		<%= f.text_field :valid_until %>
+	</p>
+	<p><%= f.submit %></p>
+<% end %>

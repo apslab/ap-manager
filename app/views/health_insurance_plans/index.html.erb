@@ -1,0 +1,29 @@
+<h1>Health Insurance Plans</h1>
+
+<table>
+	<tr>
+		<th>Health Insurance</th>
+		<th>Name</th>
+		<th>Code</th>
+		<th>Valid Since</th>
+		<th>Valid Until</th>
+		<th>Operative Mode</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for health_insurance_plan in @health_insurance_plans %>
+		<tr>
+			<td><%= health_insurance_plan.health_insurance_id %></td>
+			<td><%= health_insurance_plan.name %></td>
+			<td><%= health_insurance_plan.code %></td>
+			<td><%= health_insurance_plan.valid_since %></td>
+			<td><%= health_insurance_plan.valid_until %></td>
+			<td><%= health_insurance_plan.operative_mode %></td>
+			<td><%= link_to "Ver", health_insurance_plan %></td>
+			<td><%= link_to "Editar", edit_health_insurance_plan_path(health_insurance_plan) %></td>
+			<td><%= link_to "Eliminar", health_insurance_plan, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Health Insurance Plan", new_health_insurance_plan_path %></p>

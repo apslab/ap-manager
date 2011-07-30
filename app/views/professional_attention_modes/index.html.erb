@@ -1,0 +1,21 @@
+<h1>Professional Attention Modes</h1>
+
+<table>
+	<tr>
+		<th>Professional</th>
+		<th>Attention Mode</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for professional_attention_mode in @professional_attention_modes %>
+		<tr>
+			<td><%= professional_attention_mode.professional_id %></td>
+			<td><%= professional_attention_mode.attention_mode_id %></td>
+			<td><%= link_to "Ver", professional_attention_mode %></td>
+			<td><%= link_to "Editar", edit_professional_attention_mode_path(professional_attention_mode) %></td>
+			<td><%= link_to "Eliminar", professional_attention_mode, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Professional Attention Mode", new_professional_attention_mode_path %></p>

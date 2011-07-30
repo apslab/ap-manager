@@ -5,7 +5,7 @@ $(document).ready(function()
   // jqeury uniform
   //$("select, input:checkbox, input:radio, input:file").uniform();
   //$("input, textarea, select, button").uniform();
-  $("select#company_current").uniform();
+  //$("select#company_current").uniform();
 
   // jQuery datepicker for formtastic (see http://gist.github.com/271377)
   $('input.ui-datepicker').datepicker({ dateFormat: 'yy-mm-dd'});

@@ -1,0 +1,23 @@
+<h1>Tunings</h1>
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Title</th>
+		<th>Content</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for tuning in @tunings %>
+		<tr>
+			<td><%= tuning.name %></td>
+			<td><%= tuning.title %></td>
+			<td><%= tuning.content %></td>
+			<td><%= link_to "Ver", tuning %></td>
+			<td><%= link_to "Editar", edit_tuning_path(tuning) %></td>
+			<td><%= link_to "Eliminar", tuning, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Tuning", new_tuning_path %></p>

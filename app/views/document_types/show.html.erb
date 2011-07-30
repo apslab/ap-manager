@@ -1,0 +1,22 @@
+<h1>Document Type</h1>
+<p>
+	<strong>Company:</strong>
+	<%= @document_type.company_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @document_type.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @document_type.code %>
+</p>
+<p>
+	<strong>Default:</strong>
+	<%= @document_type.default %>
+</p>
+<p>
+	<%= link_to "Editar", edit_document_type_path(@document_type) %> |
+	<%= link_to "Eliminar", @document_type, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Document Types", document_types_path %>
+</p>

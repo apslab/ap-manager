@@ -1,0 +1,21 @@
+<h1>Services</h1>
+
+<table>
+	<tr>
+		<th>Company</th>
+		<th>Name</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for service in @services %>
+		<tr>
+			<td><%= service.company_id %></td>
+			<td><%= service.name %></td>
+			<td><%= link_to "Ver", service %></td>
+			<td><%= link_to "Editar", edit_service_path(service) %></td>
+			<td><%= link_to "Eliminar", service, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Service", new_service_path %></p>

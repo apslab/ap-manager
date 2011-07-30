@@ -1,0 +1,90 @@
+<h1>Professional Scheduler</h1>
+<p>
+	<strong>Professional:</strong>
+	<%= @professional_scheduler.professional_id %>
+</p>
+<p>
+	<strong>Specialty:</strong>
+	<%= @professional_scheduler.specialty_id %>
+</p>
+<p>
+	<strong>D1:</strong>
+	<%= @professional_scheduler.d1 %>
+</p>
+<p>
+	<strong>D2:</strong>
+	<%= @professional_scheduler.d2 %>
+</p>
+<p>
+	<strong>D3:</strong>
+	<%= @professional_scheduler.d3 %>
+</p>
+<p>
+	<strong>D4:</strong>
+	<%= @professional_scheduler.d4 %>
+</p>
+<p>
+	<strong>D5:</strong>
+	<%= @professional_scheduler.d5 %>
+</p>
+<p>
+	<strong>D6:</strong>
+	<%= @professional_scheduler.d6 %>
+</p>
+<p>
+	<strong>D7:</strong>
+	<%= @professional_scheduler.d7 %>
+</p>
+<p>
+	<strong>Interval Type:</strong>
+	<%= @professional_scheduler.interval_type %>
+</p>
+<p>
+	<strong>Interval Repeat:</strong>
+	<%= @professional_scheduler.interval_repeat %>
+</p>
+<p>
+	<strong>Minutes:</strong>
+	<%= @professional_scheduler.minutes %>
+</p>
+<p>
+	<strong>Month Week Periodical:</strong>
+	<%= @professional_scheduler.month_week_periodical %>
+</p>
+<p>
+	<strong>Month Day Periodical:</strong>
+	<%= @professional_scheduler.month_day_periodical %>
+</p>
+<p>
+	<strong>Day Of Week:</strong>
+	<%= @professional_scheduler.day_of_week %>
+</p>
+<p>
+	<strong>Date Since:</strong>
+	<%= @professional_scheduler.date_since %>
+</p>
+<p>
+	<strong>Date Until:</strong>
+	<%= @professional_scheduler.date_until %>
+</p>
+<p>
+	<strong>Hour Since:</strong>
+	<%= @professional_scheduler.hour_since %>
+</p>
+<p>
+	<strong>Hour Until:</strong>
+	<%= @professional_scheduler.hour_until %>
+</p>
+<p>
+	<strong>Over Appointment:</strong>
+	<%= @professional_scheduler.over_appointment %>
+</p>
+<p>
+	<strong>Notes:</strong>
+	<%= @professional_scheduler.notes %>
+</p>
+<p>
+	<%= link_to "Editar", edit_professional_scheduler_path(@professional_scheduler) %> |
+	<%= link_to "Eliminar", @professional_scheduler, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Professional Schedulers", professional_schedulers_path %>
+</p>

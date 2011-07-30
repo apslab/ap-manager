@@ -1,0 +1,25 @@
+<h1>Attention Modes</h1>
+
+<table>
+	<tr>
+		<th>Company</th>
+		<th>Name</th>
+		<th>Code</th>
+		<th>Default</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for attention_mode in @attention_modes %>
+		<tr>
+			<td><%= attention_mode.company_id %></td>
+			<td><%= attention_mode.name %></td>
+			<td><%= attention_mode.code %></td>
+			<td><%= attention_mode.default %></td>
+			<td><%= link_to "Ver", attention_mode %></td>
+			<td><%= link_to "Editar", edit_attention_mode_path(attention_mode) %></td>
+			<td><%= link_to "Eliminar", attention_mode, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Attention Mode", new_attention_mode_path %></p>

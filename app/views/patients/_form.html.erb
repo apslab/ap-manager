@@ -1,0 +1,26 @@
+<%= form_for @patient do |f| %>
+	<% if @patient.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@patient.errors.count, "error") %> prohibido guardar patient:</h2>
+
+		<ul>
+		<% @patient.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :person_id %><br />
+		<%= f.text_field :person_id %>
+	</p>
+	<p>
+		<%= f.label :code %><br />
+		<%= f.text_field :code %>
+	</p>
+	<p>
+		<%= f.label :medical_history %><br />
+		<%= f.text_field :medical_history %>
+	</p>
+	<p><%= f.submit %></p>
+<% end %>

@@ -1,0 +1,22 @@
+<h1>Address Type</h1>
+<p>
+	<strong>Company:</strong>
+	<%= @address_type.company_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @address_type.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @address_type.code %>
+</p>
+<p>
+	<strong>Default:</strong>
+	<%= @address_type.default %>
+</p>
+<p>
+	<%= link_to "Editar", edit_address_type_path(@address_type) %> |
+	<%= link_to "Eliminar", @address_type, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Address Types", address_types_path %>
+</p>

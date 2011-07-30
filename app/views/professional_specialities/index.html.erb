@@ -1,0 +1,21 @@
+<h1>Professional Specialities</h1>
+
+<table>
+	<tr>
+		<th>Professional</th>
+		<th>Specialty</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for professional_speciality in @professional_specialities %>
+		<tr>
+			<td><%= professional_speciality.professional_id %></td>
+			<td><%= professional_speciality.specialty_id %></td>
+			<td><%= link_to "Ver", professional_speciality %></td>
+			<td><%= link_to "Editar", edit_professional_speciality_path(professional_speciality) %></td>
+			<td><%= link_to "Eliminar", professional_speciality, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Professional Speciality", new_professional_speciality_path %></p>

@@ -1,0 +1,38 @@
+<h1>Care Type</h1>
+<p>
+	<strong>Company:</strong>
+	<%= @care_type.company_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @care_type.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @care_type.code %>
+</p>
+<p>
+	<strong>Specialty:</strong>
+	<%= @care_type.specialty_id %>
+</p>
+<p>
+	<strong>User Message:</strong>
+	<%= @care_type.user_message %>
+</p>
+<p>
+	<strong>Print Message:</strong>
+	<%= @care_type.print_message %>
+</p>
+<p>
+	<strong>Need Form:</strong>
+	<%= @care_type.need_form %>
+</p>
+<p>
+	<strong>Default:</strong>
+	<%= @care_type.default %>
+</p>
+<p>
+	<%= link_to "Editar", edit_care_type_path(@care_type) %> |
+	<%= link_to "Eliminar", @care_type, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Care Types", care_types_path %>
+</p>

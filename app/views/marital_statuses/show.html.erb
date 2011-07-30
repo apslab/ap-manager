@@ -1,0 +1,22 @@
+<h1>Marital Status</h1>
+<p>
+	<strong>Company:</strong>
+	<%= @marital_status.company_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @marital_status.name %>
+</p>
+<p>
+	<strong>Code:</strong>
+	<%= @marital_status.code %>
+</p>
+<p>
+	<strong>Default:</strong>
+	<%= @marital_status.default %>
+</p>
+<p>
+	<%= link_to "Editar", edit_marital_status_path(@marital_status) %> |
+	<%= link_to "Eliminar", @marital_status, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Marital Statuses", marital_statuses_path %>
+</p>

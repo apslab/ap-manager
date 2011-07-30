@@ -1,0 +1,33 @@
+<h1>Care Types</h1>
+
+<table>
+	<tr>
+		<th>Company</th>
+		<th>Name</th>
+		<th>Code</th>
+		<th>Specialty</th>
+		<th>User Message</th>
+		<th>Print Message</th>
+		<th>Need Form</th>
+		<th>Default</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	</tr>
+	<% for care_type in @care_types %>
+		<tr>
+			<td><%= care_type.company_id %></td>
+			<td><%= care_type.name %></td>
+			<td><%= care_type.code %></td>
+			<td><%= care_type.specialty_id %></td>
+			<td><%= care_type.user_message %></td>
+			<td><%= care_type.print_message %></td>
+			<td><%= care_type.need_form %></td>
+			<td><%= care_type.default %></td>
+			<td><%= link_to "Ver", care_type %></td>
+			<td><%= link_to "Editar", edit_care_type_path(care_type) %></td>
+			<td><%= link_to "Eliminar", care_type, :confirm => 'Esta seguro?', :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
+<p><%= link_to "Nuevo Care Type", new_care_type_path %></p>

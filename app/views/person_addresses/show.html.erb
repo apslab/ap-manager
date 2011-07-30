@@ -1,0 +1,50 @@
+<h1>Person Address</h1>
+<p>
+	<strong>Person:</strong>
+	<%= @person_address.person_id %>
+</p>
+<p>
+	<strong>Address Type:</strong>
+	<%= @person_address.address_type_id %>
+</p>
+<p>
+	<strong>State:</strong>
+	<%= @person_address.state_id %>
+</p>
+<p>
+	<strong>Street:</strong>
+	<%= @person_address.street %>
+</p>
+<p>
+	<strong>Floor:</strong>
+	<%= @person_address.floor %>
+</p>
+<p>
+	<strong>Dept:</strong>
+	<%= @person_address.dept %>
+</p>
+<p>
+	<strong>Ring:</strong>
+	<%= @person_address.ring %>
+</p>
+<p>
+	<strong>Postal Code:</strong>
+	<%= @person_address.postal_code %>
+</p>
+<p>
+	<strong>Created User:</strong>
+	<%= @person_address.created_user_id %>
+</p>
+<p>
+	<strong>Updated User:</strong>
+	<%= @person_address.updated_user_id %>
+</p>
+<p>
+	<strong>Notes:</strong>
+	<%= @person_address.notes %>
+</p>
+<p>
+	<%= link_to "Editar", edit_person_address_path(@person_address) %> |
+	<%= link_to "Eliminar", @person_address, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Person Addresses", person_addresses_path %>
+</p>

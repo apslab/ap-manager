@@ -1,0 +1,14 @@
+<h1>Service</h1>
+<p>
+	<strong>Company:</strong>
+	<%= @service.company_id %>
+</p>
+<p>
+	<strong>Name:</strong>
+	<%= @service.name %>
+</p>
+<p>
+	<%= link_to "Editar", edit_service_path(@service) %> |
+	<%= link_to "Eliminar", @service, :confirm => 'Esta seguro?', :method => :delete %> |
+	<%= link_to "Services", services_path %>
+</p>
