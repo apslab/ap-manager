@@ -1,8 +1,4 @@
-<h1>Health Insurance</h1>
-<p>
-	<strong>Company:</strong>
-	<%= @health_insurance.company_id %>
-</p>
+<h1>Obra Social</h1>
 <p>
 	<strong>Name:</strong>
 	<%= @health_insurance.name %>
@@ -30,5 +26,5 @@
 <p>
 	<%= link_to "Editar", edit_health_insurance_path(@health_insurance) %> |
 	<%= link_to "Eliminar", @health_insurance, :confirm => 'Esta seguro?', :method => :delete %> |
-	<%= link_to "Health Insurances", health_insurances_path %>
+	<%= link_to "Obras Sociales", health_insurances_path %>
 </p>

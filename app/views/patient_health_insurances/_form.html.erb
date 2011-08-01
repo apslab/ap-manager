@@ -1,13 +1,12 @@
 <%= form_for @patient_health_insurance do |f| %>
 	<% if @patient_health_insurance.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@patient_health_insurance.errors.count, "error") %> prohibido guardar patient_health_insurance:</h2>
-
-		<ul>
-		<% @patient_health_insurance.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-		</ul>
+			<h2><%= pluralize(@patient_health_insurance.errors.count, "error") %> prohibido guardar Patient Health Insurance:</h2>
+			<ul>
+			<% @patient_health_insurance.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
 		</div>
 	<% end %>
 	<p>

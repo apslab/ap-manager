@@ -19,7 +19,7 @@ class HealthInsurancePlansController < ApplicationController
 
   def create
     @health_insurance_plan = HealthInsurancePlan.new(params[:health_insurance_plan])
-	flash[:notice] = "Health Insurance Plan creado con exito." if @health_insurance_plan.save
+	flash[:notice] = "Plan de la Obra Social creado con exito." if @health_insurance_plan.save
     respond_with(@health_insurance_plan)
   end
 
@@ -30,13 +30,13 @@ class HealthInsurancePlansController < ApplicationController
 
   def update
     @health_insurance_plan = HealthInsurancePlan.find(params[:id])
-	flash[:notice] = "Health Insurance Plan actualizado con exito." if @health_insurance_plan.update_attributes(params[:health_insurance_plan])
+	flash[:notice] = "Plan de la Obra Social actualizado con exito." if @health_insurance_plan.update_attributes(params[:health_insurance_plan])
   end
 
   def destroy
     @health_insurance_plan = HealthInsurancePlan.find(params[:id])
     @health_insurance_plan.destroy
-	flash[:notice] = "Health Insurance Plan borrado con exito." if @health_insurance_plan.destroy
+	flash[:notice] = "Plan de la Obra Social borrado con exito." if @health_insurance_plan.destroy
     respond_with(@health_insurance_plan)
   end
 end

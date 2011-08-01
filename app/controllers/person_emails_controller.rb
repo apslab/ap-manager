@@ -19,7 +19,7 @@ class PersonEmailsController < ApplicationController
 
   def create
     @person_email = PersonEmail.new(params[:person_email])
-	flash[:notice] = "Person Email creado con exito." if @person_email.save
+	flash[:notice] = "Email de la Persona creado con exito." if @person_email.save
     respond_with(@person_email)
   end
 
@@ -30,13 +30,13 @@ class PersonEmailsController < ApplicationController
 
   def update
     @person_email = PersonEmail.find(params[:id])
-	flash[:notice] = "Person Email actualizado con exito." if @person_email.update_attributes(params[:person_email])
+	flash[:notice] = "Email de la Persona actualizado con exito." if @person_email.update_attributes(params[:person_email])
   end
 
   def destroy
     @person_email = PersonEmail.find(params[:id])
     @person_email.destroy
-	flash[:notice] = "Person Email borrado con exito." if @person_email.destroy
+	flash[:notice] = "Email de la Persona borrado con exito." if @person_email.destroy
     respond_with(@person_email)
   end
 end

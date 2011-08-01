@@ -2,12 +2,11 @@
 	<% if @tuning.errors.any? %>
 		<div id="error_explanation">
 			<h2><%= pluralize(@tuning.errors.count, "error") %> prohibido guardar tuning:</h2>
-
-		<ul>
-		<% @tuning.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-		</ul>
+			<ul>
+			<% @tuning.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
 		</div>
 	<% end %>
 	<p>

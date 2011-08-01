@@ -19,7 +19,7 @@ class ProfessionalsController < ApplicationController
 
   def create
     @professional = Professional.new(params[:professional])
-	flash[:notice] = "Professional creado con exito." if @professional.save
+	flash[:notice] = "Profesional creado con exito." if @professional.save
     respond_with(@professional)
   end
 
@@ -30,13 +30,13 @@ class ProfessionalsController < ApplicationController
 
   def update
     @professional = Professional.find(params[:id])
-	flash[:notice] = "Professional actualizado con exito." if @professional.update_attributes(params[:professional])
+	flash[:notice] = "Profesional actualizado con exito." if @professional.update_attributes(params[:professional])
   end
 
   def destroy
     @professional = Professional.find(params[:id])
     @professional.destroy
-	flash[:notice] = "Professional borrado con exito." if @professional.destroy
+	flash[:notice] = "Profesional borrado con exito." if @professional.destroy
     respond_with(@professional)
   end
 end

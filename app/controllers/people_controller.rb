@@ -1,4 +1,4 @@
-class PeoplesController < ApplicationController
+class PeopleController < ApplicationController
   respond_to :html, :xml, :json
 
   def index
@@ -19,7 +19,7 @@ class PeoplesController < ApplicationController
 
   def create
     @person = Person.new(params[:person])
-	flash[:notice] = "Person creado con exito." if @person.save
+	flash[:notice] = "Persona creado con exito." if @person.save
     respond_with(@person)
   end
 
@@ -30,13 +30,13 @@ class PeoplesController < ApplicationController
 
   def update
     @person = Person.find(params[:id])
-	flash[:notice] = "Person actualizado con exito." if @person.update_attributes(params[:person])
+	flash[:notice] = "Persona actualizado con exito." if @person.update_attributes(params[:person])
   end
 
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
-	flash[:notice] = "Person borrado con exito." if @person.destroy
+	flash[:notice] = "Persona borrado con exito." if @person.destroy
     respond_with(@person)
   end
 end

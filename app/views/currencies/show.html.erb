@@ -1,8 +1,4 @@
-<h1>Currency</h1>
-<p>
-	<strong>Company:</strong>
-	<%= @currency.company_id %>
-</p>
+<h1>Moneda</h1>
 <p>
 	<strong>Name:</strong>
 	<%= @currency.name %>
@@ -18,5 +14,5 @@
 <p>
 	<%= link_to "Editar", edit_currency_path(@currency) %> |
 	<%= link_to "Eliminar", @currency, :confirm => 'Esta seguro?', :method => :delete %> |
-	<%= link_to "Currencies", currencies_path %>
+	<%= link_to "Monedas", currencies_path %>
 </p>

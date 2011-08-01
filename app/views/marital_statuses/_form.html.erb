@@ -1,19 +1,14 @@
 <%= form_for @marital_status do |f| %>
 	<% if @marital_status.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@marital_status.errors.count, "error") %> prohibido guardar marital_status:</h2>
-
-		<ul>
-		<% @marital_status.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-		</ul>
+			<h2><%= pluralize(@marital_status.errors.count, "error") %> prohibido guardar Estado Civil:</h2>
+			<ul>
+			<% @marital_status.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :company_id %><br />
-		<%= f.text_field :company_id %>
-	</p>
 	<p>
 		<%= f.label :name %><br />
 		<%= f.text_field :name %>

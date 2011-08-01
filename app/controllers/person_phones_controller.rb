@@ -19,7 +19,7 @@ class PersonPhonesController < ApplicationController
 
   def create
     @person_phone = PersonPhone.new(params[:person_phone])
-	flash[:notice] = "Person Phone creado con exito." if @person_phone.save
+	flash[:notice] = "Teléfono de la Person creado con exito." if @person_phone.save
     respond_with(@person_phone)
   end
 
@@ -30,13 +30,13 @@ class PersonPhonesController < ApplicationController
 
   def update
     @person_phone = PersonPhone.find(params[:id])
-	flash[:notice] = "Person Phone actualizado con exito." if @person_phone.update_attributes(params[:person_phone])
+	flash[:notice] = "Teléfono de la Person actualizado con exito." if @person_phone.update_attributes(params[:person_phone])
   end
 
   def destroy
     @person_phone = PersonPhone.find(params[:id])
     @person_phone.destroy
-	flash[:notice] = "Person Phone borrado con exito." if @person_phone.destroy
+	flash[:notice] = "Teléfono de la Person borrado con exito." if @person_phone.destroy
     respond_with(@person_phone)
   end
 end

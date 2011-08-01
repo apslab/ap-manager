@@ -1,13 +1,12 @@
 <%= form_for @professional_validation do |f| %>
 	<% if @professional_validation.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@professional_validation.errors.count, "error") %> prohibido guardar professional_validation:</h2>
-
-		<ul>
-		<% @professional_validation.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-		</ul>
+			<h2><%= pluralize(@professional_validation.errors.count, "error") %> prohibido guardar Professional Validation:</h2>
+			<ul>
+			<% @professional_validation.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
 		</div>
 	<% end %>
 	<p>

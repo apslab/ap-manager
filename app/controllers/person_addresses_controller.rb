@@ -19,7 +19,7 @@ class PersonAddressesController < ApplicationController
 
   def create
     @person_address = PersonAddress.new(params[:person_address])
-	flash[:notice] = "Person Address creado con exito." if @person_address.save
+	flash[:notice] = "Domicilio de la Persona creado con exito." if @person_address.save
     respond_with(@person_address)
   end
 
@@ -30,13 +30,13 @@ class PersonAddressesController < ApplicationController
 
   def update
     @person_address = PersonAddress.find(params[:id])
-	flash[:notice] = "Person Address actualizado con exito." if @person_address.update_attributes(params[:person_address])
+	flash[:notice] = "Domicilio de la Persona actualizado con exito." if @person_address.update_attributes(params[:person_address])
   end
 
   def destroy
     @person_address = PersonAddress.find(params[:id])
     @person_address.destroy
-	flash[:notice] = "Person Address borrado con exito." if @person_address.destroy
+	flash[:notice] = "Domicilio de la Persona borrado con exito." if @person_address.destroy
     respond_with(@person_address)
   end
 end

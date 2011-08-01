@@ -1,4 +1,4 @@
-<h1>Patient</h1>
+<h1>Paciente</h1>
 <p>
 	<strong>Person:</strong>
 	<%= @patient.person_id %>
@@ -14,5 +14,5 @@
 <p>
 	<%= link_to "Editar", edit_patient_path(@patient) %> |
 	<%= link_to "Eliminar", @patient, :confirm => 'Esta seguro?', :method => :delete %> |
-	<%= link_to "Patients", patients_path %>
+	<%= link_to "Pacientes", patients_path %>
 </p>

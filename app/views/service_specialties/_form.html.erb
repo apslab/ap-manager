@@ -1,13 +1,12 @@
 <%= form_for @service_specialty do |f| %>
 	<% if @service_specialty.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@service_specialty.errors.count, "error") %> prohibido guardar service_specialty:</h2>
-
-		<ul>
-		<% @service_specialty.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-		</ul>
+			<h2><%= pluralize(@service_specialty.errors.count, "error") %> prohibido guardar Especialidad por Servicio:</h2>
+			<ul>
+			<% @service_specialty.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
 		</div>
 	<% end %>
 	<p>

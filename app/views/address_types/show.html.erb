@@ -1,8 +1,4 @@
-<h1>Address Type</h1>
-<p>
-	<strong>Company:</strong>
-	<%= @address_type.company_id %>
-</p>
+<h1>Tipo de Dirección</h1>
 <p>
 	<strong>Name:</strong>
 	<%= @address_type.name %>
@@ -18,5 +14,5 @@
 <p>
 	<%= link_to "Editar", edit_address_type_path(@address_type) %> |
 	<%= link_to "Eliminar", @address_type, :confirm => 'Esta seguro?', :method => :delete %> |
-	<%= link_to "Address Types", address_types_path %>
+	<%= link_to "Tipos de Dirección", address_types_path %>
 </p>

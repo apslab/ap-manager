@@ -20,7 +20,7 @@ class EmailTypesController < ApplicationController
   def create
     @email_type = EmailType.new(params[:email_type])
 	@email_type.company = current_company
-	flash[:notice] = "Email Type creado con exito." if @email_type.save
+	flash[:notice] = "Tipo de Email creado con exito." if @email_type.save
     respond_with(@email_type)
   end
 
@@ -31,13 +31,13 @@ class EmailTypesController < ApplicationController
 
   def update
     @email_type = EmailType.find(params[:id])
-	flash[:notice] = "Email Type actualizado con exito." if @email_type.update_attributes(params[:email_type])
+	flash[:notice] = "Tipo de Email actualizado con exito." if @email_type.update_attributes(params[:email_type])
   end
 
   def destroy
     @email_type = EmailType.find(params[:id])
     @email_type.destroy
-	flash[:notice] = "Email Type borrado con exito." if @email_type.destroy
+	flash[:notice] = "Tipo de Email borrado con exito." if @email_type.destroy
     respond_with(@email_type)
   end
 end

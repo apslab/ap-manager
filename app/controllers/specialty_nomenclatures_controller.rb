@@ -19,7 +19,7 @@ class SpecialtyNomenclaturesController < ApplicationController
 
   def create
     @specialty_nomenclature = SpecialtyNomenclature.new(params[:specialty_nomenclature])
-	flash[:notice] = "Specialty Nomenclature creado con exito." if @specialty_nomenclature.save
+	flash[:notice] = "Especialidad por Nomenclador creado con exito." if @specialty_nomenclature.save
     respond_with(@specialty_nomenclature)
   end
 
@@ -30,13 +30,13 @@ class SpecialtyNomenclaturesController < ApplicationController
 
   def update
     @specialty_nomenclature = SpecialtyNomenclature.find(params[:id])
-	flash[:notice] = "Specialty Nomenclature actualizado con exito." if @specialty_nomenclature.update_attributes(params[:specialty_nomenclature])
+	flash[:notice] = "Especialidad por Nomenclador actualizado con exito." if @specialty_nomenclature.update_attributes(params[:specialty_nomenclature])
   end
 
   def destroy
     @specialty_nomenclature = SpecialtyNomenclature.find(params[:id])
     @specialty_nomenclature.destroy
-	flash[:notice] = "Specialty Nomenclature borrado con exito." if @specialty_nomenclature.destroy
+	flash[:notice] = "Especialidad por Nomenclador borrado con exito." if @specialty_nomenclature.destroy
     respond_with(@specialty_nomenclature)
   end
 end

@@ -1,8 +1,4 @@
-<h1>Specialty</h1>
-<p>
-	<strong>Company:</strong>
-	<%= @specialty.company_id %>
-</p>
+<h1>Especialidad</h1>
 <p>
 	<strong>Name:</strong>
 	<%= @specialty.name %>
@@ -26,5 +22,5 @@
 <p>
 	<%= link_to "Editar", edit_specialty_path(@specialty) %> |
 	<%= link_to "Eliminar", @specialty, :confirm => 'Esta seguro?', :method => :delete %> |
-	<%= link_to "Specialties", specialties_path %>
+	<%= link_to "Especialidades", specialties_path %>
 </p>

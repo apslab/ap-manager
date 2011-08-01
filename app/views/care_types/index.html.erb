@@ -2,7 +2,6 @@
 
 <table>
 	<tr>
-		<th>Company</th>
 		<th>Name</th>
 		<th>Code</th>
 		<th>Specialty</th>
@@ -16,7 +15,6 @@
 	</tr>
 	<% for care_type in @care_types %>
 		<tr>
-			<td><%= care_type.company_id %></td>
 			<td><%= care_type.name %></td>
 			<td><%= care_type.code %></td>
 			<td><%= care_type.specialty_id %></td>

@@ -1,8 +1,7 @@
-<h1>Marital Statuses</h1>
+<h1>Estados Civiles</h1>
 
 <table>
 	<tr>
-		<th>Company</th>
 		<th>Name</th>
 		<th>Code</th>
 		<th>Default</th>
@@ -12,7 +11,6 @@
 	</tr>
 	<% for marital_status in @marital_statuses %>
 		<tr>
-			<td><%= marital_status.company_id %></td>
 			<td><%= marital_status.name %></td>
 			<td><%= marital_status.code %></td>
 			<td><%= marital_status.default %></td>
@@ -22,4 +20,4 @@
 		</tr>
 	<% end %>
 </table>
-<p><%= link_to "Nuevo Marital Status", new_marital_status_path %></p>
+<p><%= link_to "Nuevo Estado Civil", new_marital_status_path %></p>

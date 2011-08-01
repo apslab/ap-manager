@@ -1,8 +1,7 @@
-<h1>Document Types</h1>
+<h1>Tipos de Documento</h1>
 
 <table>
 	<tr>
-		<th>Company</th>
 		<th>Name</th>
 		<th>Code</th>
 		<th>Default</th>
@@ -12,7 +11,6 @@
 	</tr>
 	<% for document_type in @document_types %>
 		<tr>
-			<td><%= document_type.company_id %></td>
 			<td><%= document_type.name %></td>
 			<td><%= document_type.code %></td>
 			<td><%= document_type.default %></td>
@@ -22,4 +20,4 @@
 		</tr>
 	<% end %>
 </table>
-<p><%= link_to "Nuevo Document Type", new_document_type_path %></p>
+<p><%= link_to "Nuevo Tipo de Documento", new_document_type_path %></p>

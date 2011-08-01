@@ -1,13 +1,12 @@
 <%= form_for @person_phone do |f| %>
 	<% if @person_phone.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@person_phone.errors.count, "error") %> prohibido guardar person_phone:</h2>
-
-		<ul>
-		<% @person_phone.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-		</ul>
+			<h2><%= pluralize(@person_phone.errors.count, "error") %> prohibido guardar Teléfono de la Person:</h2>
+			<ul>
+			<% @person_phone.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
 		</div>
 	<% end %>
 	<p>

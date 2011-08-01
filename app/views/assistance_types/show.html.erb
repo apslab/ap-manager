@@ -1,8 +1,4 @@
-<h1>Assistance Type</h1>
-<p>
-	<strong>Company:</strong>
-	<%= @assistance_type.company_id %>
-</p>
+<h1>Tipo de Asistencia</h1>
 <p>
 	<strong>Name:</strong>
 	<%= @assistance_type.name %>
@@ -22,5 +18,5 @@
 <p>
 	<%= link_to "Editar", edit_assistance_type_path(@assistance_type) %> |
 	<%= link_to "Eliminar", @assistance_type, :confirm => 'Esta seguro?', :method => :delete %> |
-	<%= link_to "Assistance Types", assistance_types_path %>
+	<%= link_to "Tipos de Asistencia", assistance_types_path %>
 </p>

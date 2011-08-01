@@ -1,13 +1,12 @@
 <%= form_for @professional_attention_mode do |f| %>
 	<% if @professional_attention_mode.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@professional_attention_mode.errors.count, "error") %> prohibido guardar professional_attention_mode:</h2>
-
-		<ul>
-		<% @professional_attention_mode.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-		</ul>
+			<h2><%= pluralize(@professional_attention_mode.errors.count, "error") %> prohibido guardar Professional Attention Mode:</h2>
+			<ul>
+			<% @professional_attention_mode.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
 		</div>
 	<% end %>
 	<p>

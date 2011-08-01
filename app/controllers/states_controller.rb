@@ -19,7 +19,7 @@ class StatesController < ApplicationController
 
   def create
     @state = State.new(params[:state])
-	flash[:notice] = "State creado con exito." if @state.save
+	flash[:notice] = "Estado creado con exito." if @state.save
     respond_with(@state)
   end
 
@@ -30,13 +30,13 @@ class StatesController < ApplicationController
 
   def update
     @state = State.find(params[:id])
-	flash[:notice] = "State actualizado con exito." if @state.update_attributes(params[:state])
+	flash[:notice] = "Estado actualizado con exito." if @state.update_attributes(params[:state])
   end
 
   def destroy
     @state = State.find(params[:id])
     @state.destroy
-	flash[:notice] = "State borrado con exito." if @state.destroy
+	flash[:notice] = "Estado borrado con exito." if @state.destroy
     respond_with(@state)
   end
 end

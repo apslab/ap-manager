@@ -1,8 +1,7 @@
-<h1>Specialties</h1>
+<h1>Especialidades</h1>
 
 <table>
 	<tr>
-		<th>Company</th>
 		<th>Name</th>
 		<th>Code</th>
 		<th>Default</th>
@@ -14,7 +13,6 @@
 	</tr>
 	<% for specialty in @specialties %>
 		<tr>
-			<td><%= specialty.company_id %></td>
 			<td><%= specialty.name %></td>
 			<td><%= specialty.code %></td>
 			<td><%= specialty.default %></td>
@@ -26,4 +24,4 @@
 		</tr>
 	<% end %>
 </table>
-<p><%= link_to "Nuevo Specialty", new_specialty_path %></p>
+<p><%= link_to "Nuevo Especialidad", new_specialty_path %></p>

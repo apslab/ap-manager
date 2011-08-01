@@ -1,8 +1,7 @@
-<h1>Attention Modes</h1>
+<h1>Modos de Atención</h1>
 
 <table>
 	<tr>
-		<th>Company</th>
 		<th>Name</th>
 		<th>Code</th>
 		<th>Default</th>
@@ -12,7 +11,6 @@
 	</tr>
 	<% for attention_mode in @attention_modes %>
 		<tr>
-			<td><%= attention_mode.company_id %></td>
 			<td><%= attention_mode.name %></td>
 			<td><%= attention_mode.code %></td>
 			<td><%= attention_mode.default %></td>
@@ -22,4 +20,4 @@
 		</tr>
 	<% end %>
 </table>
-<p><%= link_to "Nuevo Attention Mode", new_attention_mode_path %></p>
+<p><%= link_to "Nuevo Modo de Atención", new_attention_mode_path %></p>

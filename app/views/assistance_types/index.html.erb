@@ -1,8 +1,7 @@
-<h1>Assistance Types</h1>
+<h1>Tipos de Asistencia</h1>
 
 <table>
 	<tr>
-		<th>Company</th>
 		<th>Name</th>
 		<th>Code</th>
 		<th>Default</th>
@@ -13,7 +12,6 @@
 	</tr>
 	<% for assistance_type in @assistance_types %>
 		<tr>
-			<td><%= assistance_type.company_id %></td>
 			<td><%= assistance_type.name %></td>
 			<td><%= assistance_type.code %></td>
 			<td><%= assistance_type.default %></td>
@@ -24,4 +22,4 @@
 		</tr>
 	<% end %>
 </table>
-<p><%= link_to "Nuevo Assistance Type", new_assistance_type_path %></p>
+<p><%= link_to "Nuevo Tipo de Asistencia", new_assistance_type_path %></p>

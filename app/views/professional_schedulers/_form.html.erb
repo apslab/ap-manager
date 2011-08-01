@@ -1,13 +1,12 @@
 <%= form_for @professional_scheduler do |f| %>
 	<% if @professional_scheduler.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@professional_scheduler.errors.count, "error") %> prohibido guardar professional_scheduler:</h2>
-
-		<ul>
-		<% @professional_scheduler.errors.full_messages.each do |msg| %>
-			<li><%= msg %></li>
-		<% end %>
-		</ul>
+			<h2><%= pluralize(@professional_scheduler.errors.count, "error") %> prohibido guardar Professional Scheduler:</h2>
+			<ul>
+			<% @professional_scheduler.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+			<% end %>
+			</ul>
 		</div>
 	<% end %>
 	<p>

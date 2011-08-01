@@ -19,7 +19,7 @@ class PatientsController < ApplicationController
 
   def create
     @patient = Patient.new(params[:patient])
-	flash[:notice] = "Patient creado con exito." if @patient.save
+	flash[:notice] = "Paciente creado con exito." if @patient.save
     respond_with(@patient)
   end
 
@@ -30,13 +30,13 @@ class PatientsController < ApplicationController
 
   def update
     @patient = Patient.find(params[:id])
-	flash[:notice] = "Patient actualizado con exito." if @patient.update_attributes(params[:patient])
+	flash[:notice] = "Paciente actualizado con exito." if @patient.update_attributes(params[:patient])
   end
 
   def destroy
     @patient = Patient.find(params[:id])
     @patient.destroy
-	flash[:notice] = "Patient borrado con exito." if @patient.destroy
+	flash[:notice] = "Paciente borrado con exito." if @patient.destroy
     respond_with(@patient)
   end
 end

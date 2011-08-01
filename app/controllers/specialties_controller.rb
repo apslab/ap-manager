@@ -20,7 +20,7 @@ class SpecialtiesController < ApplicationController
   def create
     @specialty = Specialty.new(params[:specialty])
 	@specialty.company = current_company
-	flash[:notice] = "Specialty creado con exito." if @specialty.save
+	flash[:notice] = "Especialidad creado con exito." if @specialty.save
     respond_with(@specialty)
   end
 
@@ -31,13 +31,13 @@ class SpecialtiesController < ApplicationController
 
   def update
     @specialty = Specialty.find(params[:id])
-	flash[:notice] = "Specialty actualizado con exito." if @specialty.update_attributes(params[:specialty])
+	flash[:notice] = "Especialidad actualizado con exito." if @specialty.update_attributes(params[:specialty])
   end
 
   def destroy
     @specialty = Specialty.find(params[:id])
     @specialty.destroy
-	flash[:notice] = "Specialty borrado con exito." if @specialty.destroy
+	flash[:notice] = "Especialidad borrado con exito." if @specialty.destroy
     respond_with(@specialty)
   end
 end

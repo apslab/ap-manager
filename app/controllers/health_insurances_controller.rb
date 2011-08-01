@@ -20,7 +20,7 @@ class HealthInsurancesController < ApplicationController
   def create
     @health_insurance = HealthInsurance.new(params[:health_insurance])
 	@health_insurance.company = current_company
-	flash[:notice] = "Health Insurance creado con exito." if @health_insurance.save
+	flash[:notice] = "Obra Social creado con exito." if @health_insurance.save
     respond_with(@health_insurance)
   end
 
@@ -31,13 +31,13 @@ class HealthInsurancesController < ApplicationController
 
   def update
     @health_insurance = HealthInsurance.find(params[:id])
-	flash[:notice] = "Health Insurance actualizado con exito." if @health_insurance.update_attributes(params[:health_insurance])
+	flash[:notice] = "Obra Social actualizado con exito." if @health_insurance.update_attributes(params[:health_insurance])
   end
 
   def destroy
     @health_insurance = HealthInsurance.find(params[:id])
     @health_insurance.destroy
-	flash[:notice] = "Health Insurance borrado con exito." if @health_insurance.destroy
+	flash[:notice] = "Obra Social borrado con exito." if @health_insurance.destroy
     respond_with(@health_insurance)
   end
 end

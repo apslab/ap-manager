@@ -1,8 +1,7 @@
-<h1>Address Types</h1>
+<h1>Tipos de Dirección</h1>
 
 <table>
 	<tr>
-		<th>Company</th>
 		<th>Name</th>
 		<th>Code</th>
 		<th>Default</th>
@@ -12,7 +11,6 @@
 	</tr>
 	<% for address_type in @address_types %>
 		<tr>
-			<td><%= address_type.company_id %></td>
 			<td><%= address_type.name %></td>
 			<td><%= address_type.code %></td>
 			<td><%= address_type.default %></td>
@@ -22,4 +20,4 @@
 		</tr>
 	<% end %>
 </table>
-<p><%= link_to "Nuevo Address Type", new_address_type_path %></p>
+<p><%= link_to "Nuevo Tipo de Dirección", new_address_type_path %></p>

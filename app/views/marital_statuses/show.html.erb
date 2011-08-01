@@ -1,8 +1,4 @@
-<h1>Marital Status</h1>
-<p>
-	<strong>Company:</strong>
-	<%= @marital_status.company_id %>
-</p>
+<h1>Estado Civil</h1>
 <p>
 	<strong>Name:</strong>
 	<%= @marital_status.name %>
@@ -18,5 +14,5 @@
 <p>
 	<%= link_to "Editar", edit_marital_status_path(@marital_status) %> |
 	<%= link_to "Eliminar", @marital_status, :confirm => 'Esta seguro?', :method => :delete %> |
-	<%= link_to "Marital Statuses", marital_statuses_path %>
+	<%= link_to "Estados Civiles", marital_statuses_path %>
 </p>
