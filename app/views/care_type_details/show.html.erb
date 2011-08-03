@@ -1,32 +1,34 @@
 <h1>Care Type Detail</h1>
-<p>
-	<strong>Name:</strong>
-	<%= @care_type_detail.name %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @care_type_detail.code %>
-</p>
-<p>
-	<strong>Care Type:</strong>
-	<%= @care_type_detail.care_type_id %>
-</p>
-<p>
-	<strong>Nomenclature Synonym:</strong>
-	<%= @care_type_detail.nomenclature_synonym_id %>
-</p>
-<p>
-	<strong>Medication:</strong>
-	<%= @care_type_detail.medication_id %>
-</p>
-<p>
-	<strong>Disposable:</strong>
-	<%= @care_type_detail.disposable %>
-</p>
-<p>
-	<strong>Amount:</strong>
-	<%= @care_type_detail.amount %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Name:</strong></td>
+		<td style="width:70%"><%= @care_type_detail.name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @care_type_detail.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Care Type:</strong></td>
+		<td style="width:70%"><%= @care_type_detail.care_type_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Nomenclature Synonym:</strong></td>
+		<td style="width:70%"><%= @care_type_detail.nomenclature_synonym_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Medication:</strong></td>
+		<td style="width:70%"><%= @care_type_detail.medication_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Disposable:</strong></td>
+		<td style="width:70%"><%= @care_type_detail.disposable %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Amount:</strong></td>
+		<td style="width:70%"><%= @care_type_detail.amount %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_care_type_detail_path(@care_type_detail) %> |
 	<%= link_to "Eliminar", @care_type_detail, :confirm => 'Esta seguro?', :method => :delete %> |

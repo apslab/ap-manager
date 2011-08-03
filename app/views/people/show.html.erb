@@ -1,56 +1,58 @@
 <h1>Persona</h1>
-<p>
-	<strong>Code:</strong>
-	<%= @person.code %>
-</p>
-<p>
-	<strong>Last Name:</strong>
-	<%= @person.last_name %>
-</p>
-<p>
-	<strong>Sure Name:</strong>
-	<%= @person.sure_name %>
-</p>
-<p>
-	<strong>Sex:</strong>
-	<%= @person.sex %>
-</p>
-<p>
-	<strong>Birthday:</strong>
-	<%= @person.birthday %>
-</p>
-<p>
-	<strong>Deathday:</strong>
-	<%= @person.deathday %>
-</p>
-<p>
-	<strong>Web Site:</strong>
-	<%= @person.web_site %>
-</p>
-<p>
-	<strong>Document Number:</strong>
-	<%= @person.document_number %>
-</p>
-<p>
-	<strong>Document Type:</strong>
-	<%= @person.document_type_id %>
-</p>
-<p>
-	<strong>Marital Status:</strong>
-	<%= @person.marital_status_id %>
-</p>
-<p>
-	<strong>Created User:</strong>
-	<%= @person.created_user_id %>
-</p>
-<p>
-	<strong>Updated User:</strong>
-	<%= @person.updated_user_id %>
-</p>
-<p>
-	<strong>Notes:</strong>
-	<%= @person.notes %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @person.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Last Name:</strong></td>
+		<td style="width:70%"><%= @person.last_name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Sure Name:</strong></td>
+		<td style="width:70%"><%= @person.sure_name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Sex:</strong></td>
+		<td style="width:70%"><%= @person.sex %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Birthday:</strong></td>
+		<td style="width:70%"><%= @person.birthday %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Deathday:</strong></td>
+		<td style="width:70%"><%= @person.death_day %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Web Site:</strong></td>
+		<td style="width:70%"><%= @person.web_site %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Document Number:</strong></td>
+		<td style="width:70%"><%= @person.document_number %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Document Type:</strong></td>
+		<td style="width:70%"><%= @person.document_type_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Marital Status:</strong></td>
+		<td style="width:70%"><%= @person.marital_status_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Created User:</strong></td>
+		<td style="width:70%"><%= @person.created_user_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Updated User:</strong></td>
+		<td style="width:70%"><%= @person.updated_user_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Notes:</strong></td>
+		<td style="width:70%"><%= @person.notes %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_person_path(@person) %> |
 	<%= link_to "Eliminar", @person, :confirm => 'Esta seguro?', :method => :delete %> |

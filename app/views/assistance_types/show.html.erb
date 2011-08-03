@@ -1,20 +1,22 @@
 <h1>Tipo de Asistencia</h1>
-<p>
-	<strong>Name:</strong>
-	<%= @assistance_type.name %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @assistance_type.code %>
-</p>
-<p>
-	<strong>Default:</strong>
-	<%= @assistance_type.default %>
-</p>
-<p>
-	<strong>Color:</strong>
-	<%= @assistance_type.color %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Name:</strong></td>
+		<td style="width:70%"><%= @assistance_type.name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @assistance_type.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Default:</strong></td>
+		<td style="width:70%"><%= @assistance_type.default %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Color:</strong></td>
+		<td style="width:70%"><%= @assistance_type.color %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_assistance_type_path(@assistance_type) %> |
 	<%= link_to "Eliminar", @assistance_type, :confirm => 'Esta seguro?', :method => :delete %> |

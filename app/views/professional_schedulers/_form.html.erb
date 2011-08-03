@@ -1,7 +1,7 @@
 <%= form_for @professional_scheduler do |f| %>
 	<% if @professional_scheduler.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@professional_scheduler.errors.count, "error") %> prohibido guardar Professional Scheduler:</h2>
+			<h2><%= pluralize(@professional_scheduler.errors.count, "error") %> prohibido guardar Agenda del Profesional:</h2>
 			<ul>
 			<% @professional_scheduler.errors.full_messages.each do |msg| %>
 				<li><%= msg %></li>
@@ -9,89 +9,133 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :professional_id %><br />
-		<%= f.text_field :professional_id %>
-	</p>
-	<p>
-		<%= f.label :specialty_id %><br />
-		<%= f.collection_select :specialty_id, Specialty.all, :id, :name %>
-	</p>
-	<p>
-		<%= f.label :d1 %><br />
-		<%= f.check_box :d1 %>
-	</p>
-	<p>
-		<%= f.label :d2 %><br />
-		<%= f.check_box :d2 %>
-	</p>
-	<p>
-		<%= f.label :d3 %><br />
-		<%= f.check_box :d3 %>
-	</p>
-	<p>
-		<%= f.label :d4 %><br />
-		<%= f.check_box :d4 %>
-	</p>
-	<p>
-		<%= f.label :d5 %><br />
-		<%= f.check_box :d5 %>
-	</p>
-	<p>
-		<%= f.label :d6 %><br />
-		<%= f.check_box :d6 %>
-	</p>
-	<p>
-		<%= f.label :d7 %><br />
-		<%= f.check_box :d7 %>
-	</p>
-	<p>
-		<%= f.label :interval_type %><br />
-		<%= f.text_field :interval_type %>
-	</p>
-	<p>
-		<%= f.label :interval_repeat %><br />
-		<%= f.text_field :interval_repeat %>
-	</p>
-	<p>
-		<%= f.label :minutes %><br />
-		<%= f.text_field :minutes %>
-	</p>
-	<p>
-		<%= f.label :month_week_periodical %><br />
-		<%= f.check_box :month_week_periodical %>
-	</p>
-	<p>
-		<%= f.label :month_day_periodical %><br />
-		<%= f.check_box :month_day_periodical %>
-	</p>
-	<p>
-		<%= f.label :day_of_week %><br />
-		<%= f.text_field :day_of_week %>
-	</p>
-	<p>
-		<%= f.label :date_since %><br />
-		<%= f.text_field :date_since %>
-	</p>
-	<p>
-		<%= f.label :date_until %><br />
-		<%= f.text_field :date_until %>
-	</p>
-	<p>
-		<%= f.label :hour_since %><br />
-		<%= f.text_field :hour_since %>
-	</p>
-	<p>
-		<%= f.label :hour_until %><br />
-		<%= f.text_field :hour_until %>
-	</p>
-	<p>
-		<%= f.label :over_appointment %><br />
-		<%= f.text_field :over_appointment %>
-	</p>
-	<p>
-		<%= f.label :notes %><br />
-		<%= f.text_field :notes %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :professional_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :professional_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :specialty_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :specialty_id, Specialty.all, :id, :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :d1 %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :d1 %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :d2 %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :d2 %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :d3 %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :d3 %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :d4 %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :d4 %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :d5 %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :d5 %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :d6 %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :d6 %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :d7 %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :d7 %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :interval_type %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :interval_type %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :interval_repeat %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :interval_repeat %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :minutes %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :minutes %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :month_week_periodical %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :month_week_periodical %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :month_day_periodical %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :month_day_periodical %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :day_of_week %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :day_of_week %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :date_since %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :date_since, {:class => "dtPicker"} %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :date_until %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :date_until, {:class => "dtPicker"} %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :hour_since %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :hour_since %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :hour_until %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :hour_until %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :over_appointment %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :over_appointment %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :notes %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :notes %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

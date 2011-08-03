@@ -1,8 +1,10 @@
 <h1>Servicio</h1>
-<p>
-	<strong>Name:</strong>
-	<%= @service.name %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Name:</strong></td>
+		<td style="width:70%"><%= @service.name %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_service_path(@service) %> |
 	<%= link_to "Eliminar", @service, :confirm => 'Esta seguro?', :method => :delete %> |

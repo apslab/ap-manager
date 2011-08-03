@@ -1,28 +1,30 @@
 <h1>Email de la Persona</h1>
-<p>
-	<strong>Person:</strong>
-	<%= @person_email.person_id %>
-</p>
-<p>
-	<strong>Email Type:</strong>
-	<%= @person_email.email_type_id %>
-</p>
-<p>
-	<strong>Email:</strong>
-	<%= @person_email.email %>
-</p>
-<p>
-	<strong>Created User:</strong>
-	<%= @person_email.created_user_id %>
-</p>
-<p>
-	<strong>Updated User:</strong>
-	<%= @person_email.updated_user_id %>
-</p>
-<p>
-	<strong>Notes:</strong>
-	<%= @person_email.notes %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Person:</strong></td>
+		<td style="width:70%"><%= @person_email.person_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Email Type:</strong></td>
+		<td style="width:70%"><%= @person_email.email_type_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Email:</strong></td>
+		<td style="width:70%"><%= @person_email.email %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Created User:</strong></td>
+		<td style="width:70%"><%= @person_email.created_user_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Updated User:</strong></td>
+		<td style="width:70%"><%= @person_email.updated_user_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Notes:</strong></td>
+		<td style="width:70%"><%= @person_email.notes %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_person_email_path(@person_email) %> |
 	<%= link_to "Eliminar", @person_email, :confirm => 'Esta seguro?', :method => :delete %> |

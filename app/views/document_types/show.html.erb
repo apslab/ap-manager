@@ -1,16 +1,18 @@
 <h1>Tipo de Documento</h1>
-<p>
-	<strong>Name:</strong>
-	<%= @document_type.name %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @document_type.code %>
-</p>
-<p>
-	<strong>Default:</strong>
-	<%= @document_type.default %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Name:</strong></td>
+		<td style="width:70%"><%= @document_type.name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @document_type.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Default:</strong></td>
+		<td style="width:70%"><%= @document_type.default %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_document_type_path(@document_type) %> |
 	<%= link_to "Eliminar", @document_type, :confirm => 'Esta seguro?', :method => :delete %> |

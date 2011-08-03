@@ -9,29 +9,43 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :person_id %><br />
-		<%= f.text_field :person_id %>
-	</p>
-	<p>
-		<%= f.label :email_type_id %><br />
-		<%= f.collection_select :email_type_id, EmailType.all, :id, :name %>
-	</p>
-	<p>
-		<%= f.label :email %><br />
-		<%= f.text_field :email %>
-	</p>
-	<p>
-		<%= f.label :created_user_id %><br />
-		<%= f.text_field :created_user_id %>
-	</p>
-	<p>
-		<%= f.label :updated_user_id %><br />
-		<%= f.text_field :updated_user_id %>
-	</p>
-	<p>
-		<%= f.label :notes %><br />
-		<%= f.text_field :notes %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :person_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :person_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :email_type_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :email_type_id, EmailType.all, :id, :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :email %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :email %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :created_user_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :created_user_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :updated_user_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :updated_user_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :notes %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :notes %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

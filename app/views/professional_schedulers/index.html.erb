@@ -1,4 +1,4 @@
-<h1>Professional Schedulers</h1>
+<h1>Agendas del Profesional</h1>
 
 <table>
 	<tr>
@@ -31,18 +31,18 @@
 		<tr>
 			<td><%= professional_scheduler.professional_id %></td>
 			<td><%= professional_scheduler.specialty_id %></td>
-			<td><%= professional_scheduler.d1 %></td>
-			<td><%= professional_scheduler.d2 %></td>
-			<td><%= professional_scheduler.d3 %></td>
-			<td><%= professional_scheduler.d4 %></td>
-			<td><%= professional_scheduler.d5 %></td>
-			<td><%= professional_scheduler.d6 %></td>
-			<td><%= professional_scheduler.d7 %></td>
+			<td><%= check_box_tag "eula", professional_scheduler.d1, professional_scheduler.d1, :disabled => true %></td>
+			<td><%= check_box_tag "eula", professional_scheduler.d2, professional_scheduler.d2, :disabled => true %></td>
+			<td><%= check_box_tag "eula", professional_scheduler.d3, professional_scheduler.d3, :disabled => true %></td>
+			<td><%= check_box_tag "eula", professional_scheduler.d4, professional_scheduler.d4, :disabled => true %></td>
+			<td><%= check_box_tag "eula", professional_scheduler.d5, professional_scheduler.d5, :disabled => true %></td>
+			<td><%= check_box_tag "eula", professional_scheduler.d6, professional_scheduler.d6, :disabled => true %></td>
+			<td><%= check_box_tag "eula", professional_scheduler.d7, professional_scheduler.d7, :disabled => true %></td>
 			<td><%= professional_scheduler.interval_type %></td>
 			<td><%= professional_scheduler.interval_repeat %></td>
 			<td><%= professional_scheduler.minutes %></td>
-			<td><%= professional_scheduler.month_week_periodical %></td>
-			<td><%= professional_scheduler.month_day_periodical %></td>
+			<td><%= check_box_tag "eula", professional_scheduler.month_week_periodical, professional_scheduler.month_week_periodical, :disabled => true %></td>
+			<td><%= check_box_tag "eula", professional_scheduler.month_day_periodical, professional_scheduler.month_day_periodical, :disabled => true %></td>
 			<td><%= professional_scheduler.day_of_week %></td>
 			<td><%= professional_scheduler.date_since %></td>
 			<td><%= professional_scheduler.date_until %></td>
@@ -56,4 +56,4 @@
 		</tr>
 	<% end %>
 </table>
-<p><%= link_to "Nuevo Professional Scheduler", new_professional_scheduler_path %></p>
+<p><%= link_to "Nuevo Agenda del Profesional", new_professional_scheduler_path %></p>

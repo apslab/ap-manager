@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110730135827) do
+ActiveRecord::Schema.define(:version => 20110802175858) do
 
   create_table "accounts", :force => true do |t|
     t.string  "name"
@@ -48,6 +48,13 @@ ActiveRecord::Schema.define(:version => 20110730135827) do
     t.string   "name",       :limit => 128,                    :null => false
     t.string   "code",       :limit => 8
     t.boolean  "default",                   :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "authorizations", :force => true do |t|
+    t.string   "code",       :limit => 16,  :null => false
+    t.string   "name",       :limit => 128, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -294,6 +301,29 @@ ActiveRecord::Schema.define(:version => 20110730135827) do
   add_index "memberships", ["user_id", "company_id", "role_id"], :name => "index_memberships_on_user_id_and_company_id_and_role_id"
   add_index "memberships", ["user_id", "company_id"], :name => "index_memberships_on_user_id_and_company_id"
   add_index "memberships", ["user_id", "role_id"], :name => "index_memberships_on_user_id_and_role_id"
+
+  create_table "menu_roles", :force => true do |t|
+    t.integer  "menu_id",    :null => false
+    t.integer  "rol_id",     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "menu_users", :force => true do |t|
+    t.integer  "menu_id",    :null => false
+    t.integer  "user_id",    :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "menus", :force => true do |t|
+    t.integer  "parent_id"
+    t.string   "name",       :limit => 128, :null => false
+    t.string   "link_url",   :limit => 128
+    t.integer  "order_no"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "notacreditos", :force => true do |t|
     t.integer  "cliente_id"
@@ -547,6 +577,21 @@ ActiveRecord::Schema.define(:version => 20110730135827) do
     t.integer  "account_id"
     t.date     "since"
     t.date     "until"
+  end
+
+  create_table "user_authorizations", :force => true do |t|
+    t.integer  "user_id",          :null => false
+    t.integer  "authorization_id", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_roles", :force => true do |t|
+    t.integer  "user_id",                       :null => false
+    t.integer  "rol_id",                        :null => false
+    t.boolean  "is_active",  :default => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|

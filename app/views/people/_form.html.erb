@@ -9,57 +9,85 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :code %><br />
-		<%= f.text_field :code %>
-	</p>
-	<p>
-		<%= f.label :last_name %><br />
-		<%= f.text_field :last_name %>
-	</p>
-	<p>
-		<%= f.label :sure_name %><br />
-		<%= f.text_field :sure_name %>
-	</p>
-	<p>
-		<%= f.label :sex %><br />
-		<%= f.text_field :sex %>
-	</p>
-	<p>
-		<%= f.label :birthday %><br />
-		<%= f.text_field :birthday %>
-	</p>
-	<p>
-		<%= f.label :deathday %><br />
-		<%= f.text_field :deathday %>
-	</p>
-	<p>
-		<%= f.label :web_site %><br />
-		<%= f.text_field :web_site %>
-	</p>
-	<p>
-		<%= f.label :document_number %><br />
-		<%= f.text_field :document_number %>
-	</p>
-	<p>
-		<%= f.label :document_type_id %><br />
-		<%= f.collection_select :document_type_id, DocumentType.all, :id, :name %>
-	</p>
-	<p>
-		<%= f.label :marital_status_id %><br />
-		<%= f.collection_select :marital_status_id, MaritalStatus.all, :id, :name, :include_blank => 'Sin datos' %>
-	</p>
-	<p>
-		<%= f.label :created_user_id %><br />
-		<%= f.text_field :created_user_id %>
-	</p>
-	<p>
-		<%= f.label :updated_user_id %><br />
-		<%= f.text_field :updated_user_id %>
-	</p>
-	<p>
-		<%= f.label :notes %><br />
-		<%= f.text_field :notes %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :code %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :code %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :last_name %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :last_name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :sure_name %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :sure_name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :sex %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :sex %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :birthday %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :birthday, {:class => "dtPicker"} %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :death_day %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :death_day, {:class => "dtPicker"} %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :web_site %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :web_site %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :document_number %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :document_number %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :document_type_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :document_type_id, DocumentType.all, :id, :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :marital_status_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :marital_status_id, MaritalStatus.all, :id, :name, :include_blank => 'Sin datos' %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :created_user_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :created_user_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :updated_user_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :updated_user_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :notes %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :notes %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

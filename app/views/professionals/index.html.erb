@@ -20,10 +20,10 @@
 			<td><%= professional.code %></td>
 			<td><%= professional.national_enrollment %></td>
 			<td><%= professional.state_enrollment %></td>
-			<td><%= professional.relationship_work %></td>
-			<td><%= professional.schedule_appointments %></td>
-			<td><%= professional.on_demand_appointments %></td>
-			<td><%= professional.own %></td>
+			<td><%= check_box_tag "eula", professional.relationship_work, professional.relationship_work, :disabled => true %></td>
+			<td><%= check_box_tag "eula", professional.schedule_appointments, professional.schedule_appointments, :disabled => true %></td>
+			<td><%= check_box_tag "eula", professional.on_demand_appointments, professional.on_demand_appointments, :disabled => true %></td>
+			<td><%= check_box_tag "eula", professional.own, professional.own, :disabled => true %></td>
 			<td><%= link_to "Ver", professional %></td>
 			<td><%= link_to "Editar", edit_professional_path(professional) %></td>
 			<td><%= link_to "Eliminar", professional, :confirm => 'Esta seguro?', :method => :delete %></td>

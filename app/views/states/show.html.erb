@@ -1,16 +1,18 @@
 <h1>Estado</h1>
-<p>
-	<strong>Country:</strong>
-	<%= @state.country_id %>
-</p>
-<p>
-	<strong>Name:</strong>
-	<%= @state.name %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @state.code %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Country:</strong></td>
+		<td style="width:70%"><%= @state.country_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Name:</strong></td>
+		<td style="width:70%"><%= @state.name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @state.code %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_state_path(@state) %> |
 	<%= link_to "Eliminar", @state, :confirm => 'Esta seguro?', :method => :delete %> |

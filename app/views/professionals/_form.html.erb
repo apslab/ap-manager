@@ -9,37 +9,55 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :person_id %><br />
-		<%= f.text_field :person_id %>
-	</p>
-	<p>
-		<%= f.label :code %><br />
-		<%= f.text_field :code %>
-	</p>
-	<p>
-		<%= f.label :national_enrollment %><br />
-		<%= f.text_field :national_enrollment %>
-	</p>
-	<p>
-		<%= f.label :state_enrollment %><br />
-		<%= f.text_field :state_enrollment %>
-	</p>
-	<p>
-		<%= f.label :relationship_work %><br />
-		<%= f.check_box :relationship_work %>
-	</p>
-	<p>
-		<%= f.label :schedule_appointments %><br />
-		<%= f.check_box :schedule_appointments %>
-	</p>
-	<p>
-		<%= f.label :on_demand_appointments %><br />
-		<%= f.check_box :on_demand_appointments %>
-	</p>
-	<p>
-		<%= f.label :own %><br />
-		<%= f.check_box :own %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :person_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :person_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :code %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :code %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :national_enrollment %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :national_enrollment %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :state_enrollment %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :state_enrollment %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :relationship_work %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :relationship_work %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :schedule_appointments %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :schedule_appointments %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :on_demand_appointments %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :on_demand_appointments %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :own %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :own %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

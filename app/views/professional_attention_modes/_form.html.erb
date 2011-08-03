@@ -9,13 +9,19 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :professional_id %><br />
-		<%= f.text_field :professional_id %>
-	</p>
-	<p>
-		<%= f.label :attention_mode_id %><br />
-		<%= f.collection_select :attention_mode_id, AttentionMode.all, :id, :name %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :professional_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :professional_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :attention_mode_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :attention_mode_id, AttentionMode.all, :id, :name %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

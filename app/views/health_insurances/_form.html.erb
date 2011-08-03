@@ -9,29 +9,43 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :code %><br />
-		<%= f.text_field :code %>
-	</p>
-	<p>
-		<%= f.label :valid_until %><br />
-		<%= f.text_field :valid_until %>
-	</p>
-	<p>
-		<%= f.label :is_particular %><br />
-		<%= f.check_box :is_particular %>
-	</p>
-	<p>
-		<%= f.label :is_beneficiary %><br />
-		<%= f.check_box :is_beneficiary %>
-	</p>
-	<p>
-		<%= f.label :notes %><br />
-		<%= f.text_field :notes %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :name %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :code %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :code %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :valid_until %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :valid_until, {:class => "dtPicker"} %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :is_particular %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :is_particular %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :is_beneficiary %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :is_beneficiary %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :notes %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :notes %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

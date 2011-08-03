@@ -1,12 +1,14 @@
 <h1>Professional Speciality</h1>
-<p>
-	<strong>Professional:</strong>
-	<%= @professional_speciality.professional_id %>
-</p>
-<p>
-	<strong>Specialty:</strong>
-	<%= @professional_speciality.specialty_id %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Professional:</strong></td>
+		<td style="width:70%"><%= @professional_speciality.professional_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Specialty:</strong></td>
+		<td style="width:70%"><%= @professional_speciality.specialty_id %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_professional_speciality_path(@professional_speciality) %> |
 	<%= link_to "Eliminar", @professional_speciality, :confirm => 'Esta seguro?', :method => :delete %> |

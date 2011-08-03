@@ -9,33 +9,49 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :code %><br />
-		<%= f.text_field :code %>
-	</p>
-	<p>
-		<%= f.label :specialty_id %><br />
-		<%= f.collection_select :specialty_id, Specialty.all, :id, :name, :include_blank => 'Sin datos' %>
-	</p>
-	<p>
-		<%= f.label :user_message %><br />
-		<%= f.text_field :user_message %>
-	</p>
-	<p>
-		<%= f.label :print_message %><br />
-		<%= f.text_field :print_message %>
-	</p>
-	<p>
-		<%= f.label :need_form %><br />
-		<%= f.check_box :need_form %>
-	</p>
-	<p>
-		<%= f.label :default %><br />
-		<%= f.check_box :default %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :name %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :code %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :code %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :specialty_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :specialty_id, Specialty.all, :id, :name, :include_blank => 'Sin datos' %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :user_message %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :user_message %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :print_message %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :print_message %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :need_form %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :need_form %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :default %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :default %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

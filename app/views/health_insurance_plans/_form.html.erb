@@ -9,29 +9,43 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :health_insurance_id %><br />
-		<%= f.collection_select :health_insurance_id, HealthInsurance.all, :id, :name %>
-	</p>
-	<p>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :code %><br />
-		<%= f.text_field :code %>
-	</p>
-	<p>
-		<%= f.label :valid_since %><br />
-		<%= f.text_field :valid_since %>
-	</p>
-	<p>
-		<%= f.label :valid_until %><br />
-		<%= f.text_field :valid_until %>
-	</p>
-	<p>
-		<%= f.label :operative_mode %><br />
-		<%= f.text_field :operative_mode %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :health_insurance_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :health_insurance_id, HealthInsurance.all, :id, :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :name %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :code %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :code %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :valid_since %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :valid_since, {:class => "dtPicker"} %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :valid_until %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :valid_until, {:class => "dtPicker"} %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :operative_mode %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :operative_mode %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

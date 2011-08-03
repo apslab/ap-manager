@@ -9,9 +9,13 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :name %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :name %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

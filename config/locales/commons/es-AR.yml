@@ -19,4 +19,7 @@
           attributes:
             name:
               taken: "ya ha sido usado"
+  unauthorized:
+    manage:
+      all: "Usted no esta autorizado a realizar esta operación %{action} %{subject}."
 

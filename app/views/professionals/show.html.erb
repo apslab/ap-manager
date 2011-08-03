@@ -1,36 +1,38 @@
 <h1>Profesional</h1>
-<p>
-	<strong>Person:</strong>
-	<%= @professional.person_id %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @professional.code %>
-</p>
-<p>
-	<strong>National Enrollment:</strong>
-	<%= @professional.national_enrollment %>
-</p>
-<p>
-	<strong>State Enrollment:</strong>
-	<%= @professional.state_enrollment %>
-</p>
-<p>
-	<strong>Relationship Work:</strong>
-	<%= @professional.relationship_work %>
-</p>
-<p>
-	<strong>Schedule Appointments:</strong>
-	<%= @professional.schedule_appointments %>
-</p>
-<p>
-	<strong>On Demand Appointments:</strong>
-	<%= @professional.on_demand_appointments %>
-</p>
-<p>
-	<strong>Own:</strong>
-	<%= @professional.own %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Person:</strong></td>
+		<td style="width:70%"><%= @professional.person_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @professional.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>National Enrollment:</strong></td>
+		<td style="width:70%"><%= @professional.national_enrollment %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>State Enrollment:</strong></td>
+		<td style="width:70%"><%= @professional.state_enrollment %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Relationship Work:</strong></td>
+		<td style="width:70%"><%= @professional.relationship_work %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Schedule Appointments:</strong></td>
+		<td style="width:70%"><%= @professional.schedule_appointments %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>On Demand Appointments:</strong></td>
+		<td style="width:70%"><%= @professional.on_demand_appointments %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Own:</strong></td>
+		<td style="width:70%"><%= @professional.own %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_professional_path(@professional) %> |
 	<%= link_to "Eliminar", @professional, :confirm => 'Esta seguro?', :method => :delete %> |

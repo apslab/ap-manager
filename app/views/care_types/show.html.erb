@@ -1,32 +1,34 @@
 <h1>Care Type</h1>
-<p>
-	<strong>Name:</strong>
-	<%= @care_type.name %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @care_type.code %>
-</p>
-<p>
-	<strong>Specialty:</strong>
-	<%= @care_type.specialty_id %>
-</p>
-<p>
-	<strong>User Message:</strong>
-	<%= @care_type.user_message %>
-</p>
-<p>
-	<strong>Print Message:</strong>
-	<%= @care_type.print_message %>
-</p>
-<p>
-	<strong>Need Form:</strong>
-	<%= @care_type.need_form %>
-</p>
-<p>
-	<strong>Default:</strong>
-	<%= @care_type.default %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Name:</strong></td>
+		<td style="width:70%"><%= @care_type.name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @care_type.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Specialty:</strong></td>
+		<td style="width:70%"><%= @care_type.specialty_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>User Message:</strong></td>
+		<td style="width:70%"><%= @care_type.user_message %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Print Message:</strong></td>
+		<td style="width:70%"><%= @care_type.print_message %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Need Form:</strong></td>
+		<td style="width:70%"><%= @care_type.need_form %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Default:</strong></td>
+		<td style="width:70%"><%= @care_type.default %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_care_type_path(@care_type) %> |
 	<%= link_to "Eliminar", @care_type, :confirm => 'Esta seguro?', :method => :delete %> |

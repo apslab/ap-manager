@@ -13,11 +13,11 @@
 		<tr>
 			<td><%= currency.name %></td>
 			<td><%= currency.code %></td>
-			<td><%= currency.default %></td>
+			<td><%= check_box_tag "eula", currency.default, currency.default, :disabled => true %></td>
 			<td><%= link_to "Ver", currency %></td>
 			<td><%= link_to "Editar", edit_currency_path(currency) %></td>
 			<td><%= link_to "Eliminar", currency, :confirm => 'Esta seguro?', :method => :delete %></td>
 		</tr>
 	<% end %>
 </table>
-<p><%= link_to "Nuevo Moneda", new_currency_path %></p>
+<p><%= link_to "Nueva Moneda", new_currency_path %></p>

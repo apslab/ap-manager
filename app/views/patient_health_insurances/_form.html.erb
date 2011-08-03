@@ -1,7 +1,7 @@
 <%= form_for @patient_health_insurance do |f| %>
 	<% if @patient_health_insurance.errors.any? %>
 		<div id="error_explanation">
-			<h2><%= pluralize(@patient_health_insurance.errors.count, "error") %> prohibido guardar Patient Health Insurance:</h2>
+			<h2><%= pluralize(@patient_health_insurance.errors.count, "error") %> prohibido guardar Paciente Obra Social:</h2>
 			<ul>
 			<% @patient_health_insurance.errors.full_messages.each do |msg| %>
 				<li><%= msg %></li>
@@ -9,25 +9,37 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :patient_id %><br />
-		<%= f.text_field :patient_id %>
-	</p>
-	<p>
-		<%= f.label :code %><br />
-		<%= f.text_field :code %>
-	</p>
-	<p>
-		<%= f.label :health_insurance_id %><br />
-		<%= f.collection_select :health_insurance_id, HealthInsurance.all, :id, :name %>
-	</p>
-	<p>
-		<%= f.label :health_insurance_plan_id %><br />
-		<%= f.collection_select :health_insurance_plan_id, HealthInsurancePlan.all, :id, :name, :include_blank => 'Sin datos' %>
-	</p>
-	<p>
-		<%= f.label :affiliate_number %><br />
-		<%= f.text_field :affiliate_number %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :patient_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :patient_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :code %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :code %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :health_insurance_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :health_insurance_id, HealthInsurance.all, :id, :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :health_insurance_plan_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :health_insurance_plan_id, HealthInsurancePlan.all, :id, :name, :include_blank => 'Sin datos' %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :affiliate_number %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :affiliate_number %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

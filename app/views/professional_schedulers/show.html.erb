@@ -1,90 +1,92 @@
-<h1>Professional Scheduler</h1>
-<p>
-	<strong>Professional:</strong>
-	<%= @professional_scheduler.professional_id %>
-</p>
-<p>
-	<strong>Specialty:</strong>
-	<%= @professional_scheduler.specialty_id %>
-</p>
-<p>
-	<strong>D1:</strong>
-	<%= @professional_scheduler.d1 %>
-</p>
-<p>
-	<strong>D2:</strong>
-	<%= @professional_scheduler.d2 %>
-</p>
-<p>
-	<strong>D3:</strong>
-	<%= @professional_scheduler.d3 %>
-</p>
-<p>
-	<strong>D4:</strong>
-	<%= @professional_scheduler.d4 %>
-</p>
-<p>
-	<strong>D5:</strong>
-	<%= @professional_scheduler.d5 %>
-</p>
-<p>
-	<strong>D6:</strong>
-	<%= @professional_scheduler.d6 %>
-</p>
-<p>
-	<strong>D7:</strong>
-	<%= @professional_scheduler.d7 %>
-</p>
-<p>
-	<strong>Interval Type:</strong>
-	<%= @professional_scheduler.interval_type %>
-</p>
-<p>
-	<strong>Interval Repeat:</strong>
-	<%= @professional_scheduler.interval_repeat %>
-</p>
-<p>
-	<strong>Minutes:</strong>
-	<%= @professional_scheduler.minutes %>
-</p>
-<p>
-	<strong>Month Week Periodical:</strong>
-	<%= @professional_scheduler.month_week_periodical %>
-</p>
-<p>
-	<strong>Month Day Periodical:</strong>
-	<%= @professional_scheduler.month_day_periodical %>
-</p>
-<p>
-	<strong>Day Of Week:</strong>
-	<%= @professional_scheduler.day_of_week %>
-</p>
-<p>
-	<strong>Date Since:</strong>
-	<%= @professional_scheduler.date_since %>
-</p>
-<p>
-	<strong>Date Until:</strong>
-	<%= @professional_scheduler.date_until %>
-</p>
-<p>
-	<strong>Hour Since:</strong>
-	<%= @professional_scheduler.hour_since %>
-</p>
-<p>
-	<strong>Hour Until:</strong>
-	<%= @professional_scheduler.hour_until %>
-</p>
-<p>
-	<strong>Over Appointment:</strong>
-	<%= @professional_scheduler.over_appointment %>
-</p>
-<p>
-	<strong>Notes:</strong>
-	<%= @professional_scheduler.notes %>
-</p>
+<h1>Agenda del Profesional</h1>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Professional:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.professional_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Specialty:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.specialty_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>D1:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.d1 %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>D2:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.d2 %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>D3:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.d3 %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>D4:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.d4 %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>D5:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.d5 %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>D6:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.d6 %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>D7:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.d7 %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Interval Type:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.interval_type %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Interval Repeat:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.interval_repeat %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Minutes:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.minutes %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Month Week Periodical:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.month_week_periodical %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Month Day Periodical:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.month_day_periodical %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Day Of Week:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.day_of_week %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Date Since:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.date_since %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Date Until:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.date_until %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Hour Since:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.hour_since %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Hour Until:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.hour_until %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Over Appointment:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.over_appointment %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Notes:</strong></td>
+		<td style="width:70%"><%= @professional_scheduler.notes %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_professional_scheduler_path(@professional_scheduler) %> |
 	<%= link_to "Eliminar", @professional_scheduler, :confirm => 'Esta seguro?', :method => :delete %> |
-	<%= link_to "Professional Schedulers", professional_schedulers_path %>
+	<%= link_to "Agendas del Profesional", professional_schedulers_path %>
 </p>

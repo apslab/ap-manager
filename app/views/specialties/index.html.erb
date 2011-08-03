@@ -15,7 +15,7 @@
 		<tr>
 			<td><%= specialty.name %></td>
 			<td><%= specialty.code %></td>
-			<td><%= specialty.default %></td>
+			<td><%= check_box_tag "eula", specialty.default, specialty.default, :disabled => true %></td>
 			<td><%= specialty.suspension_type_id %></td>
 			<td><%= specialty.notes %></td>
 			<td><%= link_to "Ver", specialty %></td>
@@ -24,4 +24,4 @@
 		</tr>
 	<% end %>
 </table>
-<p><%= link_to "Nuevo Especialidad", new_specialty_path %></p>
+<p><%= link_to "Nueva Especialidad", new_specialty_path %></p>

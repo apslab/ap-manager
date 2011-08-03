@@ -9,33 +9,49 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :code %><br />
-		<%= f.text_field :code %>
-	</p>
-	<p>
-		<%= f.label :care_type_id %><br />
-		<%= f.collection_select :care_type_id, CareType.all, :id, :name %>
-	</p>
-	<p>
-		<%= f.label :nomenclature_synonym_id %><br />
-		<%= f.text_field :nomenclature_synonym_id %>
-	</p>
-	<p>
-		<%= f.label :medication_id %><br />
-		<%= f.text_field :medication_id %>
-	</p>
-	<p>
-		<%= f.label :disposable %><br />
-		<%= f.text_field :disposable %>
-	</p>
-	<p>
-		<%= f.label :amount %><br />
-		<%= f.text_field :amount %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :name %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :code %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :code %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :care_type_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :care_type_id, CareType.all, :id, :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :nomenclature_synonym_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :nomenclature_synonym_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :medication_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :medication_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :disposable %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :disposable %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :amount %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :amount %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

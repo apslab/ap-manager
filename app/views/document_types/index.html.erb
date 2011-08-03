@@ -13,7 +13,7 @@
 		<tr>
 			<td><%= document_type.name %></td>
 			<td><%= document_type.code %></td>
-			<td><%= document_type.default %></td>
+			<td><%= check_box_tag "eula", document_type.default, document_type.default, :disabled => true %></td>
 			<td><%= link_to "Ver", document_type %></td>
 			<td><%= link_to "Editar", edit_document_type_path(document_type) %></td>
 			<td><%= link_to "Eliminar", document_type, :confirm => 'Esta seguro?', :method => :delete %></td>

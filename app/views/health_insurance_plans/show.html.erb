@@ -1,28 +1,30 @@
 <h1>Plan de la Obra Social</h1>
-<p>
-	<strong>Health Insurance:</strong>
-	<%= @health_insurance_plan.health_insurance_id %>
-</p>
-<p>
-	<strong>Name:</strong>
-	<%= @health_insurance_plan.name %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @health_insurance_plan.code %>
-</p>
-<p>
-	<strong>Valid Since:</strong>
-	<%= @health_insurance_plan.valid_since %>
-</p>
-<p>
-	<strong>Valid Until:</strong>
-	<%= @health_insurance_plan.valid_until %>
-</p>
-<p>
-	<strong>Operative Mode:</strong>
-	<%= @health_insurance_plan.operative_mode %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Health Insurance:</strong></td>
+		<td style="width:70%"><%= @health_insurance_plan.health_insurance_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Name:</strong></td>
+		<td style="width:70%"><%= @health_insurance_plan.name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @health_insurance_plan.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Valid Since:</strong></td>
+		<td style="width:70%"><%= @health_insurance_plan.valid_since %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Valid Until:</strong></td>
+		<td style="width:70%"><%= @health_insurance_plan.valid_until %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Operative Mode:</strong></td>
+		<td style="width:70%"><%= @health_insurance_plan.operative_mode %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_health_insurance_plan_path(@health_insurance_plan) %> |
 	<%= link_to "Eliminar", @health_insurance_plan, :confirm => 'Esta seguro?', :method => :delete %> |

@@ -17,8 +17,8 @@
 			<td><%= health_insurance.name %></td>
 			<td><%= health_insurance.code %></td>
 			<td><%= health_insurance.valid_until %></td>
-			<td><%= health_insurance.is_particular %></td>
-			<td><%= health_insurance.is_beneficiary %></td>
+			<td><%= check_box_tag "eula", health_insurance.is_particular, health_insurance.is_particular, :disabled => true %></td>
+			<td><%= check_box_tag "eula", health_insurance.is_beneficiary, health_insurance.is_beneficiary, :disabled => true %></td>
 			<td><%= health_insurance.notes %></td>
 			<td><%= link_to "Ver", health_insurance %></td>
 			<td><%= link_to "Editar", edit_health_insurance_path(health_insurance) %></td>
@@ -26,4 +26,4 @@
 		</tr>
 	<% end %>
 </table>
-<p><%= link_to "Nuevo Obra Social", new_health_insurance_path %></p>
+<p><%= link_to "Nueva Obra Social", new_health_insurance_path %></p>

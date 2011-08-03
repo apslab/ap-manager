@@ -13,7 +13,7 @@
 		<tr>
 			<td><%= marital_status.name %></td>
 			<td><%= marital_status.code %></td>
-			<td><%= marital_status.default %></td>
+			<td><%= check_box_tag "eula", marital_status.default, marital_status.default, :disabled => true %></td>
 			<td><%= link_to "Ver", marital_status %></td>
 			<td><%= link_to "Editar", edit_marital_status_path(marital_status) %></td>
 			<td><%= link_to "Eliminar", marital_status, :confirm => 'Esta seguro?', :method => :delete %></td>

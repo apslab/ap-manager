@@ -1,28 +1,30 @@
 <h1>Obra Social</h1>
-<p>
-	<strong>Name:</strong>
-	<%= @health_insurance.name %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @health_insurance.code %>
-</p>
-<p>
-	<strong>Valid Until:</strong>
-	<%= @health_insurance.valid_until %>
-</p>
-<p>
-	<strong>Is Particular:</strong>
-	<%= @health_insurance.is_particular %>
-</p>
-<p>
-	<strong>Is Beneficiary:</strong>
-	<%= @health_insurance.is_beneficiary %>
-</p>
-<p>
-	<strong>Notes:</strong>
-	<%= @health_insurance.notes %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Name:</strong></td>
+		<td style="width:70%"><%= @health_insurance.name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @health_insurance.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Valid Until:</strong></td>
+		<td style="width:70%"><%= @health_insurance.valid_until %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Is Particular:</strong></td>
+		<td style="width:70%"><%= @health_insurance.is_particular %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Is Beneficiary:</strong></td>
+		<td style="width:70%"><%= @health_insurance.is_beneficiary %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Notes:</strong></td>
+		<td style="width:70%"><%= @health_insurance.notes %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_health_insurance_path(@health_insurance) %> |
 	<%= link_to "Eliminar", @health_insurance, :confirm => 'Esta seguro?', :method => :delete %> |

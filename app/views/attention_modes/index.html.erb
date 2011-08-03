@@ -13,7 +13,7 @@
 		<tr>
 			<td><%= attention_mode.name %></td>
 			<td><%= attention_mode.code %></td>
-			<td><%= attention_mode.default %></td>
+			<td><%= check_box_tag "eula", attention_mode.default, attention_mode.default, :disabled => true %></td>
 			<td><%= link_to "Ver", attention_mode %></td>
 			<td><%= link_to "Editar", edit_attention_mode_path(attention_mode) %></td>
 			<td><%= link_to "Eliminar", attention_mode, :confirm => 'Esta seguro?', :method => :delete %></td>

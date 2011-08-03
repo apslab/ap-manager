@@ -1,24 +1,26 @@
 <h1>Especialidad</h1>
-<p>
-	<strong>Name:</strong>
-	<%= @specialty.name %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @specialty.code %>
-</p>
-<p>
-	<strong>Default:</strong>
-	<%= @specialty.default %>
-</p>
-<p>
-	<strong>Suspension Type:</strong>
-	<%= @specialty.suspension_type_id %>
-</p>
-<p>
-	<strong>Notes:</strong>
-	<%= @specialty.notes %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Name:</strong></td>
+		<td style="width:70%"><%= @specialty.name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @specialty.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Default:</strong></td>
+		<td style="width:70%"><%= @specialty.default %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Suspension Type:</strong></td>
+		<td style="width:70%"><%= @specialty.suspension_type_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Notes:</strong></td>
+		<td style="width:70%"><%= @specialty.notes %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_specialty_path(@specialty) %> |
 	<%= link_to "Eliminar", @specialty, :confirm => 'Esta seguro?', :method => :delete %> |

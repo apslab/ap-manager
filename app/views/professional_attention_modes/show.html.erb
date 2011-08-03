@@ -1,12 +1,14 @@
 <h1>Professional Attention Mode</h1>
-<p>
-	<strong>Professional:</strong>
-	<%= @professional_attention_mode.professional_id %>
-</p>
-<p>
-	<strong>Attention Mode:</strong>
-	<%= @professional_attention_mode.attention_mode_id %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Professional:</strong></td>
+		<td style="width:70%"><%= @professional_attention_mode.professional_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Attention Mode:</strong></td>
+		<td style="width:70%"><%= @professional_attention_mode.attention_mode_id %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_professional_attention_mode_path(@professional_attention_mode) %> |
 	<%= link_to "Eliminar", @professional_attention_mode, :confirm => 'Esta seguro?', :method => :delete %> |

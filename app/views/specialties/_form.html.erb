@@ -9,25 +9,37 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :code %><br />
-		<%= f.text_field :code %>
-	</p>
-	<p>
-		<%= f.label :default %><br />
-		<%= f.check_box :default %>
-	</p>
-	<p>
-		<%= f.label :suspension_type_id %><br />
-		<%= f.text_field :suspension_type_id %>
-	</p>
-	<p>
-		<%= f.label :notes %><br />
-		<%= f.text_field :notes %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :name %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :code %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :code %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :default %></strong></td>
+			<td style="width:70%">
+				<%= f.check_box :default %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :suspension_type_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :suspension_type_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :notes %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :notes %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

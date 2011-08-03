@@ -9,25 +9,37 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :specialty_id %><br />
-		<%= f.collection_select :specialty_id, Specialty.all, :id, :name, :include_blank => 'Sin datos' %>
-	</p>
-	<p>
-		<%= f.label :name %><br />
-		<%= f.text_field :name %>
-	</p>
-	<p>
-		<%= f.label :service_id %><br />
-		<%= f.collection_select :service_id, Service.all, :id, :name, :include_blank => 'Sin datos' %>
-	</p>
-	<p>
-		<%= f.label :nomenclature_id %><br />
-		<%= f.text_field :nomenclature_id %>
-	</p>
-	<p>
-		<%= f.label :ambulatory_or_internship %><br />
-		<%= f.text_field :ambulatory_or_internship %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :specialty_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :specialty_id, Specialty.all, :id, :name, :include_blank => 'Sin datos' %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :name %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :service_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :service_id, Service.all, :id, :name, :include_blank => 'Sin datos' %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :nomenclature_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :nomenclature_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :ambulatory_or_internship %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :ambulatory_or_internship %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

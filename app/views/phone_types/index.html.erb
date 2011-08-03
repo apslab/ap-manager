@@ -13,7 +13,7 @@
 		<tr>
 			<td><%= phone_type.name %></td>
 			<td><%= phone_type.code %></td>
-			<td><%= phone_type.default %></td>
+			<td><%= check_box_tag "eula", phone_type.default, phone_type.default, :disabled => true %></td>
 			<td><%= link_to "Ver", phone_type %></td>
 			<td><%= link_to "Editar", edit_phone_type_path(phone_type) %></td>
 			<td><%= link_to "Eliminar", phone_type, :confirm => 'Esta seguro?', :method => :delete %></td>

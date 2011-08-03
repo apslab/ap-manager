@@ -1,28 +1,30 @@
 <h1>Teléfono de la Person</h1>
-<p>
-	<strong>Person:</strong>
-	<%= @person_phone.person_id %>
-</p>
-<p>
-	<strong>Phone Type:</strong>
-	<%= @person_phone.phone_type_id %>
-</p>
-<p>
-	<strong>Phone Number:</strong>
-	<%= @person_phone.phone_number %>
-</p>
-<p>
-	<strong>Created User:</strong>
-	<%= @person_phone.created_user_id %>
-</p>
-<p>
-	<strong>Updated User:</strong>
-	<%= @person_phone.updated_user_id %>
-</p>
-<p>
-	<strong>Notes:</strong>
-	<%= @person_phone.notes %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Person:</strong></td>
+		<td style="width:70%"><%= @person_phone.person_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Phone Type:</strong></td>
+		<td style="width:70%"><%= @person_phone.phone_type_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Phone Number:</strong></td>
+		<td style="width:70%"><%= @person_phone.phone_number %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Created User:</strong></td>
+		<td style="width:70%"><%= @person_phone.created_user_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Updated User:</strong></td>
+		<td style="width:70%"><%= @person_phone.updated_user_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Notes:</strong></td>
+		<td style="width:70%"><%= @person_phone.notes %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_person_phone_path(@person_phone) %> |
 	<%= link_to "Eliminar", @person_phone, :confirm => 'Esta seguro?', :method => :delete %> |

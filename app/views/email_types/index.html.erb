@@ -13,7 +13,7 @@
 		<tr>
 			<td><%= email_type.name %></td>
 			<td><%= email_type.code %></td>
-			<td><%= email_type.default %></td>
+			<td><%= check_box_tag "eula", email_type.default, email_type.default, :disabled => true %></td>
 			<td><%= link_to "Ver", email_type %></td>
 			<td><%= link_to "Editar", edit_email_type_path(email_type) %></td>
 			<td><%= link_to "Eliminar", email_type, :confirm => 'Esta seguro?', :method => :delete %></td>

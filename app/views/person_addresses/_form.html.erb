@@ -9,49 +9,73 @@
 			</ul>
 		</div>
 	<% end %>
-	<p>
-		<%= f.label :person_id %><br />
-		<%= f.text_field :person_id %>
-	</p>
-	<p>
-		<%= f.label :address_type_id %><br />
-		<%= f.collection_select :address_type_id, AddressType.all, :id, :name %>
-	</p>
-	<p>
-		<%= f.label :state_id %><br />
-		<%= f.collection_select :state_id, State.all, :id, :name %>
-	</p>
-	<p>
-		<%= f.label :street %><br />
-		<%= f.text_field :street %>
-	</p>
-	<p>
-		<%= f.label :floor %><br />
-		<%= f.text_field :floor %>
-	</p>
-	<p>
-		<%= f.label :dept %><br />
-		<%= f.text_field :dept %>
-	</p>
-	<p>
-		<%= f.label :ring %><br />
-		<%= f.text_field :ring %>
-	</p>
-	<p>
-		<%= f.label :postal_code %><br />
-		<%= f.text_field :postal_code %>
-	</p>
-	<p>
-		<%= f.label :created_user_id %><br />
-		<%= f.text_field :created_user_id %>
-	</p>
-	<p>
-		<%= f.label :updated_user_id %><br />
-		<%= f.text_field :updated_user_id %>
-	</p>
-	<p>
-		<%= f.label :notes %><br />
-		<%= f.text_field :notes %>
-	</p>
+	<table class="data" style="width:100%" >
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :person_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :person_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :address_type_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :address_type_id, AddressType.all, :id, :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :state_id %></strong></td>
+			<td style="width:70%">
+				<%= f.collection_select :state_id, State.all, :id, :name %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :street %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :street %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :floor %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :floor %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :dept %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :dept %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :ring %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :ring %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :postal_code %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :postal_code %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :created_user_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :created_user_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :updated_user_id %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :updated_user_id %>
+			</td>
+		</tr>
+		<tr>
+			<td style="width:30%;background-color: #C3D5D5;"><strong><%= f.label :notes %></strong></td>
+			<td style="width:70%">
+				<%= f.text_field :notes %>
+			</td>
+		</tr>
+	</table>
 	<p><%= f.submit %></p>
 <% end %>

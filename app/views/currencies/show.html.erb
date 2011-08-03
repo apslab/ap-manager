@@ -1,16 +1,18 @@
 <h1>Moneda</h1>
-<p>
-	<strong>Name:</strong>
-	<%= @currency.name %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @currency.code %>
-</p>
-<p>
-	<strong>Default:</strong>
-	<%= @currency.default %>
-</p>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Name:</strong></td>
+		<td style="width:70%"><%= @currency.name %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @currency.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Default:</strong></td>
+		<td style="width:70%"><%= @currency.default %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_currency_path(@currency) %> |
 	<%= link_to "Eliminar", @currency, :confirm => 'Esta seguro?', :method => :delete %> |

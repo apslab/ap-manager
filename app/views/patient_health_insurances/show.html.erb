@@ -1,26 +1,28 @@
-<h1>Patient Health Insurance</h1>
-<p>
-	<strong>Patient:</strong>
-	<%= @patient_health_insurance.patient_id %>
-</p>
-<p>
-	<strong>Code:</strong>
-	<%= @patient_health_insurance.code %>
-</p>
-<p>
-	<strong>Health Insurance:</strong>
-	<%= @patient_health_insurance.health_insurance_id %>
-</p>
-<p>
-	<strong>Health Insurance Plan:</strong>
-	<%= @patient_health_insurance.health_insurance_plan_id %>
-</p>
-<p>
-	<strong>Affiliate Number:</strong>
-	<%= @patient_health_insurance.affiliate_number %>
-</p>
+<h1>Paciente Obra Social</h1>
+<table class="data" style="width:50%">
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Patient:</strong></td>
+		<td style="width:70%"><%= @patient_health_insurance.patient_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Code:</strong></td>
+		<td style="width:70%"><%= @patient_health_insurance.code %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Health Insurance:</strong></td>
+		<td style="width:70%"><%= @patient_health_insurance.health_insurance_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Health Insurance Plan:</strong></td>
+		<td style="width:70%"><%= @patient_health_insurance.health_insurance_plan_id %></td>
+	</tr>
+	<tr>
+		<td style="width:30%;background-color: #C3D5D5;"><strong>Affiliate Number:</strong></td>
+		<td style="width:70%"><%= @patient_health_insurance.affiliate_number %></td>
+	</tr>
+</table>
 <p>
 	<%= link_to "Editar", edit_patient_health_insurance_path(@patient_health_insurance) %> |
 	<%= link_to "Eliminar", @patient_health_insurance, :confirm => 'Esta seguro?', :method => :delete %> |
-	<%= link_to "Patient Health Insurances", patient_health_insurances_path %>
+	<%= link_to "Pacientes Obra Social", patient_health_insurances_path %>
 </p>
