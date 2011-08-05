@@ -31,6 +31,7 @@ class HealthInsurancePlansController < ApplicationController
 	def update
 		@health_insurance_plan = HealthInsurancePlan.find(params[:id])
 		flash[:notice] = "Plan de la Obra Social actualizado con exito." if @health_insurance_plan.update_attributes(params[:health_insurance_plan])
+		respond_with(@health_insurance_plan)
 	end
 
 	def destroy

@@ -19,7 +19,7 @@ class AddressTypesController < ApplicationController
 
 	def create
 		@address_type = AddressType.new(params[:address_type])
-		@address_type.company = current_company
+		@address_type.company_id = current_company.id
 		flash[:notice] = "Tipo de Dirección creado con exito." if @address_type.save
 		respond_with(@address_type)
 	end
@@ -32,6 +32,7 @@ class AddressTypesController < ApplicationController
 	def update
 		@address_type = AddressType.find(params[:id])
 		flash[:notice] = "Tipo de Dirección actualizado con exito." if @address_type.update_attributes(params[:address_type])
+		respond_with(@address_type)
 	end
 
 	def destroy

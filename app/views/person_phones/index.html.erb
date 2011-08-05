@@ -20,9 +20,11 @@
 			<td><%= person_phone.created_user_id %></td>
 			<td><%= person_phone.updated_user_id %></td>
 			<td><%= person_phone.notes %></td>
-			<td><%= link_to "Ver", person_phone %></td>
-			<td><%= link_to "Editar", edit_person_phone_path(person_phone) %></td>
-			<td><%= link_to "Eliminar", person_phone, :confirm => 'Esta seguro?', :method => :delete %></td>
+            <td><a href="/person_phones/<%= person_phone.id.to_s %>"><img alt="Ver" src="images/icons/16x16/application_get.png" title="Ver" /></a></td>
+            <td><a href="/person_phones/<%= person_phone.id.to_s %>/edit"><img alt="Editar" src="images/icons/16x16/application_edit.png" title="Editar" /></a></td>
+            <td><a href="/person_phones/<%= person_phone.id.to_s %>" data-confirm="Esta ud. seguro?" data-method="delete" rel="nofollow">
+				<img alt="Eliminar" src="images/icons/16x16/application_delete.png" title="Eliminar" /></a>
+			</td>
 		</tr>
 	<% end %>
 </table>

@@ -19,7 +19,7 @@ class EmailTypesController < ApplicationController
 
 	def create
 		@email_type = EmailType.new(params[:email_type])
-		@email_type.company = current_company
+		@email_type.company_id = current_company.id
 		flash[:notice] = "Tipo de Email creado con exito." if @email_type.save
 		respond_with(@email_type)
 	end
@@ -32,6 +32,7 @@ class EmailTypesController < ApplicationController
 	def update
 		@email_type = EmailType.find(params[:id])
 		flash[:notice] = "Tipo de Email actualizado con exito." if @email_type.update_attributes(params[:email_type])
+		respond_with(@email_type)
 	end
 
 	def destroy

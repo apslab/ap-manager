@@ -31,6 +31,7 @@ class CareTypeDetailsController < ApplicationController
 	def update
 		@care_type_detail = CareTypeDetail.find(params[:id])
 		flash[:notice] = "Care Type Detail actualizado con exito." if @care_type_detail.update_attributes(params[:care_type_detail])
+		respond_with(@care_type_detail)
 	end
 
 	def destroy

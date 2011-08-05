@@ -22,9 +22,11 @@
 			<td><%= care_type.print_message %></td>
 			<td><%= check_box_tag "eula", care_type.need_form, care_type.need_form, :disabled => true %></td>
 			<td><%= check_box_tag "eula", care_type.default, care_type.default, :disabled => true %></td>
-			<td><%= link_to "Ver", care_type %></td>
-			<td><%= link_to "Editar", edit_care_type_path(care_type) %></td>
-			<td><%= link_to "Eliminar", care_type, :confirm => 'Esta seguro?', :method => :delete %></td>
+            <td><a href="/care_types/<%= care_type.id.to_s %>"><img alt="Ver" src="images/icons/16x16/application_get.png" title="Ver" /></a></td>
+            <td><a href="/care_types/<%= care_type.id.to_s %>/edit"><img alt="Editar" src="images/icons/16x16/application_edit.png" title="Editar" /></a></td>
+            <td><a href="/care_types/<%= care_type.id.to_s %>" data-confirm="Esta ud. seguro?" data-method="delete" rel="nofollow">
+				<img alt="Eliminar" src="images/icons/16x16/application_delete.png" title="Eliminar" /></a>
+			</td>
 		</tr>
 	<% end %>
 </table>

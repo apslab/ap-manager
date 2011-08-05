@@ -26,6 +26,18 @@ class Company < ActiveRecord::Base
   has_many :condicionivas, :foreign_key => "empresa_id"
   has_many :products
 
+  has_many :address_types
+  has_many :assistance_types
+  has_many :care_types
+  has_many :currencies
+  has_many :document_types
+  has_many :email_types
+  has_many :health_insurance
+  has_many :marital_statuses
+  has_many :people
+  has_many :services
+  has_many :specialties
+
   attr_reader :current_exercise
 
   serialize :engines

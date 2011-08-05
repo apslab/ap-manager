@@ -31,6 +31,7 @@ class ProfessionalSpecialitiesController < ApplicationController
 	def update
 		@professional_speciality = ProfessionalSpeciality.find(params[:id])
 		flash[:notice] = "Professional Speciality actualizada con exito." if @professional_speciality.update_attributes(params[:professional_speciality])
+		respond_with(@professional_speciality)
 	end
 
 	def destroy

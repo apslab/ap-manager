@@ -31,6 +31,7 @@ class PersonAddressesController < ApplicationController
 	def update
 		@person_address = PersonAddress.find(params[:id])
 		flash[:notice] = "Domicilio de la Persona actualizado con exito." if @person_address.update_attributes(params[:person_address])
+		respond_with(@person_address)
 	end
 
 	def destroy

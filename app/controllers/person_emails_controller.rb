@@ -31,6 +31,7 @@ class PersonEmailsController < ApplicationController
 	def update
 		@person_email = PersonEmail.find(params[:id])
 		flash[:notice] = "Email de la Persona actualizado con exito." if @person_email.update_attributes(params[:person_email])
+		respond_with(@person_email)
 	end
 
 	def destroy

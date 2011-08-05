@@ -31,6 +31,7 @@ class ProfessionalSchedulersController < ApplicationController
 	def update
 		@professional_scheduler = ProfessionalScheduler.find(params[:id])
 		flash[:notice] = "Agenda del Profesional actualizado con exito." if @professional_scheduler.update_attributes(params[:professional_scheduler])
+		respond_with(@professional_scheduler)
 	end
 
 	def destroy

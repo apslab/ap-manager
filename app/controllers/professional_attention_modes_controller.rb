@@ -31,6 +31,7 @@ class ProfessionalAttentionModesController < ApplicationController
 	def update
 		@professional_attention_mode = ProfessionalAttentionMode.find(params[:id])
 		flash[:notice] = "Professional Attention Mode actualizado con exito." if @professional_attention_mode.update_attributes(params[:professional_attention_mode])
+		respond_with(@professional_attention_mode)
 	end
 
 	def destroy

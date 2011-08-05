@@ -19,7 +19,7 @@ class ServicesController < ApplicationController
 
 	def create
 		@service = Service.new(params[:service])
-		@service.company = current_company
+		@service.company_id = current_company.id
 		flash[:notice] = "Servicio creado con exito." if @service.save
 		respond_with(@service)
 	end
@@ -32,6 +32,7 @@ class ServicesController < ApplicationController
 	def update
 		@service = Service.find(params[:id])
 		flash[:notice] = "Servicio actualizado con exito." if @service.update_attributes(params[:service])
+		respond_with(@service)
 	end
 
 	def destroy

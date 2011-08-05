@@ -46,6 +46,13 @@ ApSys::Application.routes.draw do
   resources :specialty_nomenclatures
   resources :states
 
+  resources :menus do
+    resources :menu_roles
+    resources :menu_users
+  end
+  resources :user_authorizations
+  resources :user_roles
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

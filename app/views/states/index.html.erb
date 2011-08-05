@@ -14,9 +14,11 @@
 			<td><%= state.country_id %></td>
 			<td><%= state.name %></td>
 			<td><%= state.code %></td>
-			<td><%= link_to "Ver", state %></td>
-			<td><%= link_to "Editar", edit_state_path(state) %></td>
-			<td><%= link_to "Eliminar", state, :confirm => 'Esta seguro?', :method => :delete %></td>
+            <td><a href="/states/<%= state.id.to_s %>"><img alt="Ver" src="images/icons/16x16/application_get.png" title="Ver" /></a></td>
+            <td><a href="/states/<%= state.id.to_s %>/edit"><img alt="Editar" src="images/icons/16x16/application_edit.png" title="Editar" /></a></td>
+            <td><a href="/states/<%= state.id.to_s %>" data-confirm="Esta ud. seguro?" data-method="delete" rel="nofollow">
+				<img alt="Eliminar" src="images/icons/16x16/application_delete.png" title="Eliminar" /></a>
+			</td>
 		</tr>
 	<% end %>
 </table>

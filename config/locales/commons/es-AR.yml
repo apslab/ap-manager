@@ -1,4 +1,4 @@
-'es-AR':
+es-AR:
   title: Título de la aplicación por favor reemplazar
   description: descripcion de la aplicación, por favor reemplazar.
   keywords: keywords de la aplicacion, por favor reemplazar.
@@ -22,4 +22,3 @@
   unauthorized:
     manage:
       all: "Usted no esta autorizado a realizar esta operación %{action} %{subject}."
-

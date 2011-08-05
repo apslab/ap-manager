@@ -31,6 +31,7 @@ class StatesController < ApplicationController
 	def update
 		@state = State.find(params[:id])
 		flash[:notice] = "Estado actualizada con exito." if @state.update_attributes(params[:state])
+		respond_with(@state)
 	end
 
 	def destroy

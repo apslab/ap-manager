@@ -24,9 +24,11 @@
 			<td><%= check_box_tag "eula", professional.schedule_appointments, professional.schedule_appointments, :disabled => true %></td>
 			<td><%= check_box_tag "eula", professional.on_demand_appointments, professional.on_demand_appointments, :disabled => true %></td>
 			<td><%= check_box_tag "eula", professional.own, professional.own, :disabled => true %></td>
-			<td><%= link_to "Ver", professional %></td>
-			<td><%= link_to "Editar", edit_professional_path(professional) %></td>
-			<td><%= link_to "Eliminar", professional, :confirm => 'Esta seguro?', :method => :delete %></td>
+            <td><a href="/professionals/<%= professional.id.to_s %>"><img alt="Ver" src="images/icons/16x16/application_get.png" title="Ver" /></a></td>
+            <td><a href="/professionals/<%= professional.id.to_s %>/edit"><img alt="Editar" src="images/icons/16x16/application_edit.png" title="Editar" /></a></td>
+            <td><a href="/professionals/<%= professional.id.to_s %>" data-confirm="Esta ud. seguro?" data-method="delete" rel="nofollow">
+				<img alt="Eliminar" src="images/icons/16x16/application_delete.png" title="Eliminar" /></a>
+			</td>
 		</tr>
 	<% end %>
 </table>

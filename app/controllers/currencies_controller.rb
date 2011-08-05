@@ -19,7 +19,7 @@ class CurrenciesController < ApplicationController
 
 	def create
 		@currency = Currency.new(params[:currency])
-		#@currency.company = current_company
+		@currency.company_id = current_company.id
 		flash[:notice] = "Moneda creada con exito." if @currency.save
 		respond_with(@currency)
 	end
@@ -32,6 +32,7 @@ class CurrenciesController < ApplicationController
 	def update
 		@currency = Currency.find(params[:id])
 		flash[:notice] = "Moneda actualizada con exito." if @currency.update_attributes(params[:currency])
+		respond_with(@currency)
 	end
 
 	def destroy

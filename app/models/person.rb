@@ -1,11 +1,11 @@
 class Person < ActiveRecord::Base
-	has_many :document_types
-	has_many :marital_statuses
-	belongs_to :patient
-	belongs_to :person_address
-	belongs_to :person_email
-	belongs_to :person_phone
-	belongs_to :professional
+	belongs_to :document_types
+	belongs_to :marital_statuses
+	has_many :patient
+	has_many :person_address
+	has_many :person_email
+	has_many :person_phone
+	has_many :professional
 
 	validates_presence_of		:last_name, :case_sensitive => false, :message => "es un dato requerido."
 	validates_presence_of		:sure_name, :case_sensitive => false, :message => "es un dato requerido."

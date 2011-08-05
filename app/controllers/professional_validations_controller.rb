@@ -31,6 +31,7 @@ class ProfessionalValidationsController < ApplicationController
 	def update
 		@professional_validation = ProfessionalValidation.find(params[:id])
 		flash[:notice] = "Professional Validation actualizado con exito." if @professional_validation.update_attributes(params[:professional_validation])
+		respond_with(@professional_validation)
 	end
 
 	def destroy

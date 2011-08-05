@@ -19,7 +19,7 @@ class CareTypesController < ApplicationController
 
 	def create
 		@care_type = CareType.new(params[:care_type])
-		@care_type.company = current_company
+		@care_type.company_id = current_company.id
 		flash[:notice] = "Care Type creada con exito." if @care_type.save
 		respond_with(@care_type)
 	end
@@ -32,6 +32,7 @@ class CareTypesController < ApplicationController
 	def update
 		@care_type = CareType.find(params[:id])
 		flash[:notice] = "Care Type actualizada con exito." if @care_type.update_attributes(params[:care_type])
+		respond_with(@care_type)
 	end
 
 	def destroy

@@ -16,9 +16,11 @@
 			<td><%= assistance_type.code %></td>
 			<td><%= check_box_tag "eula", assistance_type.default, assistance_type.default, :disabled => true %></td>
 			<td><%= assistance_type.color %></td>
-			<td><%= link_to "Ver", assistance_type %></td>
-			<td><%= link_to "Editar", edit_assistance_type_path(assistance_type) %></td>
-			<td><%= link_to "Eliminar", assistance_type, :confirm => 'Esta seguro?', :method => :delete %></td>
+            <td><a href="/assistance_types/<%= assistance_type.id.to_s %>"><img alt="Ver" src="images/icons/16x16/application_get.png" title="Ver" /></a></td>
+            <td><a href="/assistance_types/<%= assistance_type.id.to_s %>/edit"><img alt="Editar" src="images/icons/16x16/application_edit.png" title="Editar" /></a></td>
+            <td><a href="/assistance_types/<%= assistance_type.id.to_s %>" data-confirm="Esta ud. seguro?" data-method="delete" rel="nofollow">
+				<img alt="Eliminar" src="images/icons/16x16/application_delete.png" title="Eliminar" /></a>
+			</td>
 		</tr>
 	<% end %>
 </table>

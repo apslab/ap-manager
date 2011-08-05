@@ -19,7 +19,7 @@ class MaritalStatusesController < ApplicationController
 
 	def create
 		@marital_status = MaritalStatus.new(params[:marital_status])
-		@marital_status.company = current_company
+		@marital_status.company_id = current_company.id
 		flash[:notice] = "Estado Civil creado con exito." if @marital_status.save
 		respond_with(@marital_status)
 	end
@@ -32,6 +32,7 @@ class MaritalStatusesController < ApplicationController
 	def update
 		@marital_status = MaritalStatus.find(params[:id])
 		flash[:notice] = "Estado Civil actualizado con exito." if @marital_status.update_attributes(params[:marital_status])
+		respond_with(@marital_status)
 	end
 
 	def destroy

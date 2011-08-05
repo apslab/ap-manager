@@ -19,7 +19,7 @@ class PhoneTypesController < ApplicationController
 
 	def create
 		@phone_type = PhoneType.new(params[:phone_type])
-		@phone_type.company = current_company
+		@phone_type.company_id = current_company.id
 		flash[:notice] = "Tipo de Teléfono creado con exito." if @phone_type.save
 		respond_with(@phone_type)
 	end
@@ -32,6 +32,7 @@ class PhoneTypesController < ApplicationController
 	def update
 		@phone_type = PhoneType.find(params[:id])
 		flash[:notice] = "Tipo de Teléfono actualizado con exito." if @phone_type.update_attributes(params[:phone_type])
+		respond_with(@phone_type)
 	end
 
 	def destroy

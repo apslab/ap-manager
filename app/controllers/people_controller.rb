@@ -31,6 +31,7 @@ class PeopleController < ApplicationController
 	def update
 		@person = Person.find(params[:id])
 		flash[:notice] = "Persona actualizada con exito." if @person.update_attributes(params[:person])
+		respond_with(@person)
 	end
 
 	def destroy

@@ -19,7 +19,7 @@ class DocumentTypesController < ApplicationController
 
 	def create
 		@document_type = DocumentType.new(params[:document_type])
-		@document_type.company = current_company
+		@document_type.company_id = current_company.id
 		flash[:notice] = "Tipo de Documento creado con exito." if @document_type.save
 		respond_with(@document_type)
 	end
@@ -32,6 +32,7 @@ class DocumentTypesController < ApplicationController
 	def update
 		@document_type = DocumentType.find(params[:id])
 		flash[:notice] = "Tipo de Documento actualizado con exito." if @document_type.update_attributes(params[:document_type])
+		respond_with(@document_type)
 	end
 
 	def destroy

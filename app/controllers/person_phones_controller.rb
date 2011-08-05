@@ -31,6 +31,7 @@ class PersonPhonesController < ApplicationController
 	def update
 		@person_phone = PersonPhone.find(params[:id])
 		flash[:notice] = "Teléfono de la Person actualizado con exito." if @person_phone.update_attributes(params[:person_phone])
+		respond_with(@person_phone)
 	end
 
 	def destroy

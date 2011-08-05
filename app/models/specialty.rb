@@ -1,10 +1,10 @@
 class Specialty < ActiveRecord::Base
-	has_many :companies
-	belongs_to :care_type
-	belongs_to :professional_scheduler
-	belongs_to :professional_speciality
-	belongs_to :service_specialty
-	belongs_to :specialty_nomenclature
+	belongs_to :companies
+	has_many :care_type
+	has_many :professional_scheduler
+	has_many :professional_speciality
+	has_many :service_specialty
+	has_many :specialty_nomenclature
 
 	validates_presence_of		:name, :case_sensitive => false, :message => "es un dato requerido."
 end

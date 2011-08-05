@@ -31,6 +31,7 @@ class PatientsController < ApplicationController
 	def update
 		@patient = Patient.find(params[:id])
 		flash[:notice] = "Paciente actualizado con exito." if @patient.update_attributes(params[:patient])
+		respond_with(@patient)
 	end
 
 	def destroy

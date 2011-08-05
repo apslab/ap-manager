@@ -19,7 +19,7 @@ class AttentionModesController < ApplicationController
 
 	def create
 		@attention_mode = AttentionMode.new(params[:attention_mode])
-		@attention_mode.company = current_company
+		@attention_mode.company_id = current_company.id
 		flash[:notice] = "Modo de Atención creado con exito." if @attention_mode.save
 		respond_with(@attention_mode)
 	end
@@ -32,6 +32,7 @@ class AttentionModesController < ApplicationController
 	def update
 		@attention_mode = AttentionMode.find(params[:id])
 		flash[:notice] = "Modo de Atención actualizado con exito." if @attention_mode.update_attributes(params[:attention_mode])
+		respond_with(@attention_mode)
 	end
 
 	def destroy

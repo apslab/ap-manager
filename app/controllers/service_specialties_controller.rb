@@ -31,6 +31,7 @@ class ServiceSpecialtiesController < ApplicationController
 	def update
 		@service_specialty = ServiceSpecialty.find(params[:id])
 		flash[:notice] = "Especialidad por Servicio actualizado con exito." if @service_specialty.update_attributes(params[:service_specialty])
+		respond_with(@service_specialty)
 	end
 
 	def destroy

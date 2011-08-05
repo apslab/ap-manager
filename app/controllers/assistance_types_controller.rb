@@ -19,7 +19,7 @@ class AssistanceTypesController < ApplicationController
 
 	def create
 		@assistance_type = AssistanceType.new(params[:assistance_type])
-		@assistance_type.company = current_company
+		@assistance_type.company_id = current_company.id
 		flash[:notice] = "Tipo de Asistencia creado con exito." if @assistance_type.save
 		respond_with(@assistance_type)
 	end
@@ -32,6 +32,7 @@ class AssistanceTypesController < ApplicationController
 	def update
 		@assistance_type = AssistanceType.find(params[:id])
 		flash[:notice] = "Tipo de Asistencia actualizado con exito." if @assistance_type.update_attributes(params[:assistance_type])
+		respond_with(@assistance_type)
 	end
 
 	def destroy

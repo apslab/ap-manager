@@ -31,6 +31,7 @@ class SpecialtyNomenclaturesController < ApplicationController
 	def update
 		@specialty_nomenclature = SpecialtyNomenclature.find(params[:id])
 		flash[:notice] = "Especialidad por Nomenclador actualizada con exito." if @specialty_nomenclature.update_attributes(params[:specialty_nomenclature])
+		respond_with(@specialty_nomenclature)
 	end
 
 	def destroy

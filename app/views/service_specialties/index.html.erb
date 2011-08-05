@@ -14,9 +14,11 @@
 			<td><%= service_specialty.service_id %></td>
 			<td><%= service_specialty.name %></td>
 			<td><%= service_specialty.specialty_id %></td>
-			<td><%= link_to "Ver", service_specialty %></td>
-			<td><%= link_to "Editar", edit_service_specialty_path(service_specialty) %></td>
-			<td><%= link_to "Eliminar", service_specialty, :confirm => 'Esta seguro?', :method => :delete %></td>
+            <td><a href="/service_specialties/<%= service_specialty.id.to_s %>"><img alt="Ver" src="images/icons/16x16/application_get.png" title="Ver" /></a></td>
+            <td><a href="/service_specialties/<%= service_specialty.id.to_s %>/edit"><img alt="Editar" src="images/icons/16x16/application_edit.png" title="Editar" /></a></td>
+            <td><a href="/service_specialties/<%= service_specialty.id.to_s %>" data-confirm="Esta ud. seguro?" data-method="delete" rel="nofollow">
+				<img alt="Eliminar" src="images/icons/16x16/application_delete.png" title="Eliminar" /></a>
+			</td>
 		</tr>
 	<% end %>
 </table>

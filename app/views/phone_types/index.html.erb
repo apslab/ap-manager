@@ -14,9 +14,11 @@
 			<td><%= phone_type.name %></td>
 			<td><%= phone_type.code %></td>
 			<td><%= check_box_tag "eula", phone_type.default, phone_type.default, :disabled => true %></td>
-			<td><%= link_to "Ver", phone_type %></td>
-			<td><%= link_to "Editar", edit_phone_type_path(phone_type) %></td>
-			<td><%= link_to "Eliminar", phone_type, :confirm => 'Esta seguro?', :method => :delete %></td>
+            <td><a href="/phone_types/<%= phone_type.id.to_s %>"><img alt="Ver" src="images/icons/16x16/application_get.png" title="Ver" /></a></td>
+            <td><a href="/phone_types/<%= phone_type.id.to_s %>/edit"><img alt="Editar" src="images/icons/16x16/application_edit.png" title="Editar" /></a></td>
+            <td><a href="/phone_types/<%= phone_type.id.to_s %>" data-confirm="Esta ud. seguro?" data-method="delete" rel="nofollow">
+				<img alt="Eliminar" src="images/icons/16x16/application_delete.png" title="Eliminar" /></a>
+			</td>
 		</tr>
 	<% end %>
 </table>
